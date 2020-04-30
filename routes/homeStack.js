@@ -53,6 +53,7 @@ import COVIDDispoMGH from '../src/components/MGH/COVID/COVIDDispoMGH'
 import COVIDWorkflowMGH from '../src/components/MGH/COVID/COVIDWorkflowMGH'
 import ClinicalManagementMGH from '../src/components/MGH/COVID/ClinicalManagementMGH'
 import ClinicalManagementBWH from '../src/components/BWH/COVID/ClinicalManagementBWH'
+import COVIDTestingCriteriaMGH from '../src/components/MGH/COVID/COVIDTestingCriteriaMGH'
 
 import COVIDWorkflowBWH from '../src/components/BWH/COVID/COVIDWorkflowBWH'
 import COVIDDispoBWH from '../src/components/BWH/COVID/COVIDDispoBWH'
@@ -110,6 +111,7 @@ const HomeStack = createStackNavigator({
   COVIDWorkflowBWH: { screen: COVIDWorkflowBWH },
   COVIDDispoMGH: { screen: COVIDDispoMGH },
   COVIDDispoBWH: { screen: COVIDDispoBWH },
+  COVIDTestingCriteriaMGH: { screen: COVIDTestingCriteriaMGH }
 })
 
 export default HomeStack

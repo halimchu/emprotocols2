@@ -1,13 +1,11 @@
 import React from 'react'
-import { Linking, Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
+import {ScrollView, Linking, Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
 import { Button, Divider } from 'react-native-elements'
-import LinearGradient from 'react-native-linear-gradient'
 import Icon from 'react-native-vector-icons/Ionicons' 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons' 
-import ComponentTwo from '../../ComponentTwo'
-import MTPNeedMoreBlood from './MTPNeedMoreBlood'
+import LinearGradient from 'react-native-linear-gradient'
 
-export default class MTPMGH extends React.Component {
+export default class MTPNextStepsRememberBWH extends React.Component {
   static navigationOptions = ({ navigation }) => {
     let headerLeft = ( 
       <View style={{ flexDirection: 'row' }}>
@@ -49,7 +47,7 @@ export default class MTPMGH extends React.Component {
           fontSize: Dimensions.get('window').height/43, 
           marginTop: Dimensions.get('window').height/200, 
           color: 'white', fontWeight: 'bold', 
-          textAlign: 'center'}}>MGH</Text>
+          textAlign: 'center'}}>BWH</Text>
       </View>
     )
       
@@ -83,109 +81,112 @@ export default class MTPMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#008CB1', '#1192BC', ]}
+            colors={['#0440A7', '#0F82B8']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
         />
-      ),   
-      // headerStyle: {backgroundColor: '#709CD0'},      
+      ),        
     }
-  }
-
-  dialCall = () => {
-    let phoneNumber = '';
-    if (Platform.OS === 'android') { phoneNumber = `tel:6177263333` }
-    else {phoneNumber = `telprompt:6177263333` }
-    Linking.openURL(phoneNumber);
-  }
-
-
-  onPressNeedBloodHidden = () => {
-    this.setState({ needBloodHidden: !this.state.needBloodHidden })
   }
 
 
   state = {
-    needBloodHidden: true,
-
     data: [
-      'If indicated, order 1g TXA followed by another gram to be given over 8 hours',
-      'Give 2 grams of Ca++ up front',
-      'Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals'
+      '1. If indicated, order 1g TXA followed by another gram to be given over 8 hours',
+      '2. Give 2 grams of Ca++ up front',
+      '3. Check Ca++, INR, platelets, & fibrinogen levels at regular intervals'
     ]
   }
 
 
-  
+
   render() { 
     return (  
       <SafeAreaView style={styles.container}>
-          <View style={styles.top}>
-            <View style={{marginBottom: Dimensions.get('window').height/100}}>
-              <Text style={styles.title}>MTP</Text>
-            </View>
-            <Divider />
-          </View>
-
-
-
-          <View style={styles.middle}>
-            <View style={{alignItems: 'center'}}>
-              <Text style={{fontSize: Dimensions.get('window').height/35,}}>Emergency Blood Release</Text>
-            </View>
-
-            <View style={{paddingLeft: Dimensions.get('window').width/20, paddingRight: Dimensions.get('window').width/30,}}>
-                <View style={{marginTop: Dimensions.get('window').height/35}}>
-                  <Text style={{fontWeight: '500', fontSize: Dimensions.get('window').height/39}}>Process:</Text>
-                  <Text style={{fontWeight: '300', fontSize: Dimensions.get('window').height/39}}>Ask the coordinator to call for emergency release blood and then complete the emergency blood slip when coordinator brings it to you.</Text>
-                  <View style={{marginTop: Dimensions.get('window').height/35}}>
-                    <Text style={{fontWeight: '500', fontSize: Dimensions.get('window').height/39}}>First Pack:</Text>
-                    <Text style={{fontWeight: '300', fontSize: Dimensions.get('window').height/39}}>4 units of O whole blood</Text>
-                    <Text style={{fontWeight: '300', fontSize: Dimensions.get('window').height/39}}>(4U PRBCs, 4U FFP, 4U Platelets)</Text>
+      <View style={styles.top}>
+      <Text style={styles.title}>Massive Transfusion Protocol</Text>
+      <View style={{marginTop: Dimensions.get('window').height/64, }}>
+      <View style={{alignItems: 'center'}}>
+                  <View style={{ flexDirection: 'row'}}>
+                     <View style={styles.firstCircle}>
+                     </View>
+                     <View style={styles.secondCircle}>
+                     </View>
+                     <View style={styles.thirdCircle}>
+                     </View>
                   </View>
-                </View>
             </View>
+      </View>
+    </View>
 
+    <View style={{
+      marginLeft: Dimensions.get('window').width/30, 
+      marginRight: Dimensions.get('window').width/30,
+      marginTop: Dimensions.get('window').height/70, }}>
+      <Text style={styles.header}>Remember:</Text>
+      <View style={{flexDirection: 'row', marginTop: Dimensions.get('window').height/50}}>
+          <Text style={styles.text}>1) </Text>
+          <Text style={styles.text}>If indicated, order 1g TXA followed by another gram to be given over 8 hours</Text>
+      </View>
 
+      <View style={{
+        flexDirection: 'row',
+        marginTop: Dimensions.get('window').height/40,
+      }}>
+          <Text style={styles.text}>2) </Text>
+          <Text style={styles.text}>Give 2 grams of Ca++ up front</Text>
+      </View>
 
-              <View style={{ marginTop: Dimensions.get('window').height/40 }}>
-                      <ComponentTwo 
-                        toggle={this.onPressNeedBloodHidden} 
-                        hidden = {this.state.needBloodHidden}
-                        component={<MTPNeedMoreBlood />}
-                        buttonTitle='Need More Blood?'
-                      />
-              </View>    
-          </View>
+      <View style={{
+        flexDirection: 'row',
+        marginTop: Dimensions.get('window').height/40,
+        marginRight: Dimensions.get('window').width/20
 
+      }}>
+          <Text style={styles.text}>3) </Text>
+          <Text style={styles.text}>Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals</Text>
+      </View>
+    </View>
 
-
-
-
-        <View style={styles.bottom}>
-          <TouchableOpacity
-            style={styles.customBtnBG} 
-            onPress={() => this.props.navigation.navigate('MTPNextStepsMGH')}>
-            <Text style={styles.customBtnText}>Next Steps</Text>
-          </TouchableOpacity>  
-        </View>
-      </SafeAreaView>
+  </SafeAreaView>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  firstCircle: {
+    width: 10,
+    height: 10,
+    borderRadius: 100/2,
+    marginTop: Dimensions.get('window').height/150,
+    borderWidth: 1,
+    borderColor: '#6c9ea1',
+  },
+  secondCircle: {
+    width: 10,
+    height: 10,
+    borderRadius: 100/2,
+    marginTop: Dimensions.get('window').height/150,
+    marginLeft: Dimensions.get('window').width/25,
+    marginRight: Dimensions.get('window').width/25,
+    borderWidth: 1,
+    borderColor: '#6c9ea1',
+  },
+  thirdCircle: {
+    width: 10,
+    height: 10,
+    borderRadius: 100/2,
+    marginTop: Dimensions.get('window').height/150,
+    backgroundColor: '#6c9ea1',
+  },
+  
   container: {
     flex: 1
   },
   top: {
-    height: '10%',
+    height: '15%',
     // backgroundColor: 'yellow'
-  },
-  middle: {
-    height: '75%',
-    // backgroundColor: 'pink'
   },
   bottom: {
     height: '15%',
@@ -211,36 +212,32 @@ const styles = StyleSheet.create({
   header: {
     fontWeight: 'bold',
     color: '#2b2b2b',
-    marginLeft: Dimensions.get('window').width/20,
-    fontSize: Dimensions.get('window').height/37,
+    fontSize: Dimensions.get('window').height/36,
+  },
+  text: {
+    fontSize: Dimensions.get('window').width/20,
   },
   bulletPoints: {
     flexDirection: 'row',
     marginLeft: Dimensions.get('window').width/10,
     marginTop: Dimensions.get('window').height/120,
   },
-  bulletPoint: {
-    color: 'gray',
-    fontSize: Dimensions.get('window').height/40,
-  },
-  bulletPointText: {
-    marginLeft: Dimensions.get('window').height/120,
-    fontSize: Dimensions.get('window').height/37,
-  },
+
   customBtnText: {
     fontWeight: '600',
-    color: 'white',
     textAlign: 'center',
     textAlignVertical: "center",
     fontSize: Dimensions.get('window').height/40,
     marginTop: Dimensions.get('window').height/40,
   },
   customBtnBG: {
-    backgroundColor: "#8dabc2",
+    borderWidth: 4,
+    borderColor: '#69c8a1',
     paddingHorizontal: 1,
     paddingVertical: 1,
-    borderRadius: 15,
-    width: Dimensions.get('window').width/1.2,
-    height: Dimensions.get('window').height/12,
+    borderRadius: 30,
+    shadowOpacity: .1,
+    width: Dimensions.get('window').width/1.25,
+    height: Dimensions.get('window').height/10.75,
   },
 })

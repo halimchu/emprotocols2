@@ -539,6 +539,7 @@ export default class CardiacArrestCOVID extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   top: {
     paddingTop: Dimensions.get('window').height/300,

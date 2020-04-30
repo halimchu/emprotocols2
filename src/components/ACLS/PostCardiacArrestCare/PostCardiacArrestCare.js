@@ -280,6 +280,7 @@ export default class PostCardiacArrestCare extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'white',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'

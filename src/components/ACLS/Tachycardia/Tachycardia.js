@@ -275,7 +275,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'white',
   },
   top: {
     paddingTop: Dimensions.get('window').height/300,

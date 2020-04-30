@@ -6,6 +6,7 @@ import HomeStack from './homeStack'
 import AboutStack from './aboutStack'
 import TermsConditionsStack from './termsConditionsStack'
 import PrivacyPolicy from './privacyPolicyStack'
+import ContactUsStack from './contactUsStack'
 
 
 const RootDrawerNavigator = createDrawerNavigator({
@@ -22,7 +23,13 @@ const RootDrawerNavigator = createDrawerNavigator({
       drawerLabel: "Privacy Policy"
     },
     screen: PrivacyPolicy
-  }
+  },
+  ContactUs: {
+    navigationOptions: {
+      drawerLabel: "Contact Us",
+    },
+    screen: ContactUsStack
+  },
 })
 
 export default createAppContainer(RootDrawerNavigator)

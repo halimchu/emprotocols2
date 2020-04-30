@@ -1,13 +1,14 @@
 import React from 'react'
 import { Linking, Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
 import { Button, Divider } from 'react-native-elements'
-import LinearGradient from 'react-native-linear-gradient'
 import Icon from 'react-native-vector-icons/Ionicons' 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons' 
+import LinearGradient from 'react-native-linear-gradient'
 import ComponentTwo from '../../ComponentTwo'
-import MTPNeedMoreBlood from './MTPNeedMoreBlood'
+import StrokeOne from './StrokeOne'
+import StrokeTwo from './StrokeTwo'
 
-export default class MTPMGH extends React.Component {
+export default class StrokeMGH extends React.Component {
   static navigationOptions = ({ navigation }) => {
     let headerLeft = ( 
       <View style={{ flexDirection: 'row' }}>
@@ -83,7 +84,7 @@ export default class MTPMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#008CB1', '#1192BC', ]}
+            colors={['#0c79b6', '#01a8ce']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -100,75 +101,84 @@ export default class MTPMGH extends React.Component {
     Linking.openURL(phoneNumber);
   }
 
-
-  onPressNeedBloodHidden = () => {
-    this.setState({ needBloodHidden: !this.state.needBloodHidden })
-  }
-
-
   state = {
-    needBloodHidden: true,
-
-    data: [
-      'If indicated, order 1g TXA followed by another gram to be given over 8 hours',
-      'Give 2 grams of Ca++ up front',
-      'Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals'
+    button1Hidden: true,
+    button2Hidden: true,
+    dataOne: [
+      'Facial Droop',
+      'Arm or Leg Weakness',
+      'Speech Difficulties',
+      'Fingerstick Glucose >50 or <400'
+    ],
+    dataTwo: [
+      'Obtain Last Seen Well (LSW) time',
+      'Obtain fingerstick glucose: Treat <50 or >400',
     ]
   }
+
+
+
+  onPressButton1 = () => {
+    this.setState({ button1Hidden: !this.state.button1Hidden })
+    this.setState({ button2Hidden: true })
+  }
+  onPressButton2 = () => {
+    this.setState({ button1Hidden: true })
+    this.setState({ button2Hidden: !this.state.button2Hidden })
+  }
+
+
+
+
+
+
 
 
   
   render() { 
     return (  
       <SafeAreaView style={styles.container}>
-          <View style={styles.top}>
-            <View style={{marginBottom: Dimensions.get('window').height/100}}>
-              <Text style={styles.title}>MTP</Text>
-            </View>
-            <Divider />
+        <View style={styles.top}>
+          <View style={{marginBottom: Dimensions.get('window').height/100}}>
+            <Text style={styles.title}>Stroke</Text>
           </View>
+          <Divider />
+        </View>
+          
 
 
 
-          <View style={styles.middle}>
-            <View style={{alignItems: 'center'}}>
-              <Text style={{fontSize: Dimensions.get('window').height/35,}}>Emergency Blood Release</Text>
+          <View>
+            <View style={{marginLeft: Dimensions.get('window').width/200}}>
+              <Text style={styles.header}>Concern for Acute Stroke?</Text>
             </View>
-
-            <View style={{paddingLeft: Dimensions.get('window').width/20, paddingRight: Dimensions.get('window').width/30,}}>
-                <View style={{marginTop: Dimensions.get('window').height/35}}>
-                  <Text style={{fontWeight: '500', fontSize: Dimensions.get('window').height/39}}>Process:</Text>
-                  <Text style={{fontWeight: '300', fontSize: Dimensions.get('window').height/39}}>Ask the coordinator to call for emergency release blood and then complete the emergency blood slip when coordinator brings it to you.</Text>
-                  <View style={{marginTop: Dimensions.get('window').height/35}}>
-                    <Text style={{fontWeight: '500', fontSize: Dimensions.get('window').height/39}}>First Pack:</Text>
-                    <Text style={{fontWeight: '300', fontSize: Dimensions.get('window').height/39}}>4 units of O whole blood</Text>
-                    <Text style={{fontWeight: '300', fontSize: Dimensions.get('window').height/39}}>(4U PRBCs, 4U FFP, 4U Platelets)</Text>
-                  </View>
+            {this.state.dataOne.map((item) => (
+              <View key={item} style={ styles.bulletPoints }>
+                <View style={{ flexDirection: 'row' }}>
+                  <Text style={styles.bulletPoint}>{`\u2022`}</Text>
+                  <Text style={styles.bulletPointText}>{item}</Text>
                 </View>
-            </View>
-
-
-
-              <View style={{ marginTop: Dimensions.get('window').height/40 }}>
-                      <ComponentTwo 
-                        toggle={this.onPressNeedBloodHidden} 
-                        hidden = {this.state.needBloodHidden}
-                        component={<MTPNeedMoreBlood />}
-                        buttonTitle='Need More Blood?'
-                      />
-              </View>    
+              </View>        
+            ))} 
           </View>
+         
 
 
+          <View style={{ marginTop: Dimensions.get('window').height/37 }}>
+          <ComponentTwo 
+            toggle={this.onPressButton1} 
+            hidden = {this.state.button1Hidden}
+            component={<StrokeOne />}
+            buttonTitle="If LSW <6 hours"
+          />
 
+          <ComponentTwo
+            toggle={this.onPressButton2} 
+            hidden = {this.state.button2Hidden}
+            component={<StrokeTwo />}
+            buttonTitle="If LSW 6-24 hours"
+          />
 
-
-        <View style={styles.bottom}>
-          <TouchableOpacity
-            style={styles.customBtnBG} 
-            onPress={() => this.props.navigation.navigate('MTPNextStepsMGH')}>
-            <Text style={styles.customBtnText}>Next Steps</Text>
-          </TouchableOpacity>  
         </View>
       </SafeAreaView>
     )
@@ -182,24 +192,6 @@ const styles = StyleSheet.create({
   top: {
     height: '10%',
     // backgroundColor: 'yellow'
-  },
-  middle: {
-    height: '75%',
-    // backgroundColor: 'pink'
-  },
-  bottom: {
-    height: '15%',
-    alignItems: 'center', 
-    justifyContent: 'center',
-    // backgroundColor: 'gray',
-  },
-  divider: {
-    backgroundColor: '#CDCDCD', 
-    marginTop: Dimensions.get('window').height/64, 
-    marginBottom: Dimensions.get('window').height/64, 
-    marginLeft: Dimensions.get('window').width/60, 
-    marginRight: Dimensions.get('window').width/60, 
-    height: Dimensions.get('window').height/600
   },
   title: {
     fontWeight: 'bold',
@@ -226,21 +218,5 @@ const styles = StyleSheet.create({
   bulletPointText: {
     marginLeft: Dimensions.get('window').height/120,
     fontSize: Dimensions.get('window').height/37,
-  },
-  customBtnText: {
-    fontWeight: '600',
-    color: 'white',
-    textAlign: 'center',
-    textAlignVertical: "center",
-    fontSize: Dimensions.get('window').height/40,
-    marginTop: Dimensions.get('window').height/40,
-  },
-  customBtnBG: {
-    backgroundColor: "#8dabc2",
-    paddingHorizontal: 1,
-    paddingVertical: 1,
-    borderRadius: 15,
-    width: Dimensions.get('window').width/1.2,
-    height: Dimensions.get('window').height/12,
-  },
+  }
 })
