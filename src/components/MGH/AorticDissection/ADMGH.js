@@ -151,7 +151,6 @@ export default class ADMGH extends React.Component {
       <View style={styles.middle}>
         <View style={styles.middleOne}>
           <Text style={styles.header}>Concern for Acute Aortic Dissection or AAA Rupture?</Text>
-          {/* <Text style={styles.header}>Dissection or AAA Rupture?</Text> */}
         </View>
 
         <View style={styles.middleTwo}>
@@ -237,6 +236,7 @@ const styles = StyleSheet.create({
   header: {
     fontWeight: '500',
     fontSize: Dimensions.get('window').height/38,
+    textAlign: 'center',
     // fontSize: Dimensions.get('window').width/18.5,
   },
   bulletPoint: {
@@ -246,14 +246,14 @@ const styles = StyleSheet.create({
   },
   customBtnText: {
     fontWeight: '600',
-    color: 'white',
+    color: '#2b2b2b',
     textAlign: 'center',
     textAlignVertical: "center",
     fontSize: Dimensions.get('window').height/40,
     marginTop: Dimensions.get('window').height/35,
   },
   customBtnBG: {
-    backgroundColor: '#8dabc2',
+    backgroundColor: '#c9c9c9',
     paddingHorizontal: 1,
     paddingVertical: 1,
     borderRadius: 30,

@@ -38,7 +38,7 @@ export default class Home extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0B58AC', '#0F93BD']}
+            colors={['#2AC5D7', '#2EC6D6', '#31C6D6']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -52,20 +52,21 @@ export default class Home extends React.Component {
     return (  
       <SafeAreaView style={styles.container}>
 
-          {/* <Text>Home Screen</Text>
-          <Icon name="ios-arrow-back" size={30} color="black" /> 
-          <MaterialIcons name="menu" size={30} color="black" /> */}
+
 
         <View style={styles.top}>
-          <View style={{
-            marginTop: Dimensions.get('window').height/25,
-            marginBottom: Dimensions.get('window').height/70,
-          }}>
-            <Text style={styles.title}>Select Your Hospital</Text>
-          </View>
-          <Text style={styles.header}>To view your institution's list</Text>
-          <Text style={styles.header}>of emergency protocols</Text>
+
+              <Image
+                      source={require('../../assets/homeHeader_3x.png')}
+                      style={{
+                        width: Dimensions.get('window').width, 
+                        height: Dimensions.get('window').height/4.4
+                        // height: 200
+                      }}
+                  />
         </View>
+
+
 
 
 
@@ -102,14 +103,13 @@ export default class Home extends React.Component {
 
 
         <View style={styles.bottom}>
-          {/* <Image
-            source={require('../../assets/mgh-htl-stacked.png')}
-            // source={require('../../assets/HealthcareTransformationLab_RGB.png')}
+          <Image
+            source={require('../../assets/HealthcareTransformationLab_RGB.png')}
             style={{
               marginRight: Dimensions.get('window').width/35, 
-              width: Dimensions.get('window').width/1.4, 
-              height: Dimensions.get('window').height/10 }}
-          /> */}
+              width: Dimensions.get('window').width/1.3, 
+              height: Dimensions.get('window').height/9 }}
+          />
         </View>
       </SafeAreaView>
     )
@@ -118,16 +118,17 @@ export default class Home extends React.Component {
   
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white',
   },
   top: {
-    height: '19%',
+    height: '25%',
     alignItems: 'center',
-    paddingTop: Dimensions.get('window').height/55, 
+    // paddingTop: Dimensions.get('window').height/55, 
     // backgroundColor: 'yellow',
   },
   middle: {
-    height: '66%',
+    height: '60%',
     justifyContent: 'center',
     alignItems: 'center',
     // backgroundColor: 'pink'
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
   bottom: {
     height: '15%',
     alignItems: 'center', 
-    paddingTop: Dimensions.get('window').height/80, 
+    // paddingTop: Dimensions.get('window').height/80, 
     // backgroundColor: 'green'
   },
   title: {
@@ -152,12 +153,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: "#fff",
     textAlign: 'center',
-    fontSize: Dimensions.get('window').height/35,
-    marginTop: Dimensions.get('window').height/32,
+    fontSize: Dimensions.get('window').height/34,
+    marginTop: Dimensions.get('window').height/22,
   },
   button: {
     borderRadius: 15,
-    height: Dimensions.get('window').height/10.5,
-    width: Dimensions.get('window').width/1.09,
+    height: Dimensions.get('window').height/8,
+    width: Dimensions.get('window').width/1.16,
   },
 })

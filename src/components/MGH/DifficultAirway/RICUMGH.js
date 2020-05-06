@@ -151,36 +151,46 @@ export default class RICUMGH extends React.Component {
             </View>
           </View>
 
-          <View style={{ alignItems: 'center', marginTop: Dimensions.get('window').height/30}}>
-            <TouchableOpacity onPress={()=>{this.dialCall()}}>
-                <LinearGradient 
-                  style={styles.callButton}
-                  colors={['#B62619', '#F63826', '#B62619']}
-                  start={{x: 0, y: 0}}
-                  end={{x: 1, y: 0}}
-                >
-                    <View style={{ flexDirection: 'row' }}>
-                      <MaterialIcons name="phone" size={19} color="white" />
-                      <Text style={{ fontSize: Dimensions.get('window').width/21, color: 'white', fontWeight: 'bold' }}> Call RICU Consult</Text>
-                    </View>
-                    <Text style={{ 
-                      marginTop: Dimensions.get('window').height/150, 
-                      color: 'white', 
-                      fontSize: Dimensions.get('window').width/24, fontWeight: '400'
-                    }}>x6-3333
-                    </Text>
-                </LinearGradient>
-            </TouchableOpacity>
-          </View>
-
-
-
+<View style={{
+    paddingBottom: Dimensions.get('window').height/45,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F7F7F7'
+    }}>
+          <TouchableOpacity style={styles.shadow} onPress={()=>{this.dialCall()}}>
+                    <LinearGradient 
+                      style={styles.callButton}
+                      colors={['#B62619', '#F63826', '#B62619']}
+                      start={{x: 0, y: 0}}
+                      end={{x: 1, y: 0}}
+                    >
+                        <View style={{ flexDirection: 'row'}}>
+                          <View style={{flexDirection: 'column'}}>
+                            <View style={{marginLeft: Dimensions.get('window').width/15}}>
+                              <MaterialIcons name="phone-in-talk" size={Dimensions.get('window').width/10} color="white" />
+                            </View>
+                          </View>
+                          <View style={{flexDirection: 'column',}}>
+                            <Text style={{marginLeft: Dimensions.get('window').width/12, fontSize: Dimensions.get('window').width/21, color: 'white', fontWeight: 'bold' }}>Call RICU Consult</Text>
+                            <Text style={{ 
+                              marginTop: Dimensions.get('window').height/150, 
+                              color: 'white', 
+                              textAlign: 'center',
+                              fontSize: Dimensions.get('window').width/24, fontWeight: '400'
+                            }}>x6-3333
+                            </Text>
+                          </View>
+                        </View>
+                        
+                    </LinearGradient>
+              </TouchableOpacity>
+</View>
 
 
           <View style={{ 
             marginTop: Dimensions.get('window').height/20, 
-            marginLeft: Dimensions.get('window').width/37,
-            marginRight: Dimensions.get('window').width/37,
+            marginLeft: Dimensions.get('window').width/15,
+            marginRight: Dimensions.get('window').width/15,
           }}>
             <Text style={{fontSize: Dimensions.get('window').height/37}}>  
                     <Text>
@@ -198,8 +208,8 @@ export default class RICUMGH extends React.Component {
 
           <View style={{
             marginTop: Dimensions.get('window').height/30, 
-            marginLeft: Dimensions.get('window').width/37,
-            marginRight: Dimensions.get('window').width/37,
+            marginLeft: Dimensions.get('window').width/15,
+            marginRight: Dimensions.get('window').width/15,
           }}>
             <Text style={{fontSize: Dimensions.get('window').height/37,}}>
                       <Text>
@@ -238,7 +248,7 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     height: Dimensions.get('window').height/11,
     width: Dimensions.get('window').width/1.17,
-    alignItems: "center",
+    // alignItems: "center",
     justifyContent: "center",
   },
 
@@ -295,7 +305,8 @@ const styles = StyleSheet.create({
   },
   customBtnBG: {
     borderRadius: 10,
-    backgroundColor: "#8FABC6",
+    // backgroundColor: "#8FABC6",
+    backgroundColor: "#0d90b9",
     width: Dimensions.get('window').width/1.25,
     height: Dimensions.get('window').height/22, 
   },

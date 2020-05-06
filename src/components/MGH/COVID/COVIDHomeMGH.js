@@ -141,14 +141,14 @@ export default class COVIDHomeMGH extends React.Component {
                           </TouchableOpacity>
                 </View>
 
-                <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
+                {/* <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
                           <TouchableOpacity
                             style={styles.customBtnBG} 
                             onPress={() => this.props.navigation.navigate('')}>
                             <Text style={styles.customBtnTextFirstLine}>Other</Text>
                             <Text style={styles.customBtnTextSecondLine}>Logistics</Text>
                           </TouchableOpacity>  
-                </View>
+                </View> */}
                 
 
 

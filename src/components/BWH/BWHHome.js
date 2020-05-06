@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions } from 'react-native'
+import { Image, View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions } from 'react-native'
 import { Button } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Ionicons' 
 import LinearGradient from 'react-native-linear-gradient'
@@ -80,7 +80,7 @@ export default class BWHHome extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0440A7', '#0F82B8']}
+            colors={['#06b8d8', '#06b8d8']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -92,73 +92,93 @@ export default class BWHHome extends React.Component {
   render() { 
     return (  
         <SafeAreaView style={styles.container}>
-          <View style={styles.top}>
+          {/* <View style={styles.top}>
             <Text style={styles.title}>Choose the Appropriate</Text>
             <Text style={styles.title}>Emergency Medicine Protocol</Text>
-          </View>
+          </View> */}
   
   
           <View style={styles.middle}>
-                <View style={{ marginLeft: Dimensions.get('window').width/13, }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('ACLSHome')}>
-                            <Text style={styles.customBtnTextSingleLine}>ACLS</Text>
-                          </TouchableOpacity>
-                </View>
-                <View style={{ marginLeft: 1.5 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('ADBWH')}>
-                            <Text style={styles.customBtnTextSingleLine}>Aorta</Text>
-                          </TouchableOpacity>
-                </View> 
-                <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('RICUBWH')}>
-                            <Text style={styles.customBtnTextFirstLine}>Difficult</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Airway</Text>
-                          </TouchableOpacity>  
-                </View> 
-                <View style={{ marginLeft: 1.5, marginTop: 1.5 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('MTPBWH')}>
-                            <Text style={styles.customBtnTextFirstLineMTP}>Massive</Text>
-                            <Text style={styles.customBtnTextMTP}>Transfusion</Text>
-                            <Text style={styles.customBtnTextMTP}>Protocol</Text>
-                          </TouchableOpacity>
-                </View>
-                <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('FirstPagePE')}>
-                            <Text style={styles.customBtnTextFirstLine}>Pulmonary</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Embolism</Text>
-                          </TouchableOpacity>
-                </View>
-                <View style={{ marginLeft: 1.5, marginTop: 1.5 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('STEMIBWH')}>
-                            <Text style={styles.customBtnTextSingleLine}>STEMI</Text>
-                          </TouchableOpacity>
-                </View>
-                <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('StrokeBWH')}>
-                            <Text style={styles.customBtnTextSingleLine}>Stroke</Text>
-                          </TouchableOpacity>
-                </View>
-                <View style={{ marginLeft: 1.5, marginTop: 1.5 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('TraumaBWH')}>
-                            <Text style={styles.customBtnTextSingleLine}>Trauma</Text>
-                          </TouchableOpacity>
-                </View>
+
+          <Image
+                source={require('../../../assets/header3x.png')}
+                style={{
+                  // marginRight: Dimensions.get('window').width/35, 
+                  // width: Dimensions.get('window').width, 
+                  // height: Dimensions.get('window').height/4
+                  // marginBottom: 30,
+                  width: Dimensions.get('window').width, 
+                  height: Dimensions.get('window').height/3.75
+                }}
+            />
+
+              <View style={{ paddingTop: 5, flexDirection: 'row', flexWrap: 'wrap',}}>
+
+
+                
+                    <View style={{ marginLeft: Dimensions.get('window').width/13, }}>
+                              <TouchableOpacity
+                                style={styles.customBtnBG} 
+                                onPress={() => this.props.navigation.navigate('ACLSHome')}>
+                                <Text style={styles.customBtnTextSingleLine}>ACLS</Text>
+                              </TouchableOpacity>
+                    </View>
+                    <View style={{ marginLeft: 1.5 }}>
+                              <TouchableOpacity
+                                style={styles.customBtnBG} 
+                                onPress={() => this.props.navigation.navigate('ADBWH')}>
+                                <Text style={styles.customBtnTextSingleLine}>Acute Aortic Syndrome</Text>
+                              </TouchableOpacity>
+                    </View> 
+                    <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
+                              <TouchableOpacity
+                                style={styles.customBtnBG} 
+                                onPress={() => this.props.navigation.navigate('RICUBWH')}>
+                                <Text style={styles.customBtnTextFirstLine}>Difficult</Text>
+                                <Text style={styles.customBtnTextSecondLine}>Airway</Text>
+                              </TouchableOpacity>  
+                    </View> 
+                    <View style={{ marginLeft: 1.5, marginTop: 1.5 }}>
+                              <TouchableOpacity
+                                style={styles.customBtnBG} 
+                                onPress={() => this.props.navigation.navigate('MTPBWH')}>
+                                <Text style={styles.customBtnTextFirstLineMTP}>Massive</Text>
+                                <Text style={styles.customBtnTextMTP}>Transfusion</Text>
+                                <Text style={styles.customBtnTextMTP}>Protocol</Text>
+                              </TouchableOpacity>
+                    </View>
+                    <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
+                              <TouchableOpacity
+                                style={styles.customBtnBG} 
+                                onPress={() => this.props.navigation.navigate('FirstPagePE')}>
+                                <Text style={styles.customBtnTextFirstLine}>Pulmonary</Text>
+                                <Text style={styles.customBtnTextSecondLine}>Embolism</Text>
+                              </TouchableOpacity>
+                    </View>
+                    <View style={{ marginLeft: 1.5, marginTop: 1.5 }}>
+                              <TouchableOpacity
+                                style={styles.customBtnBG} 
+                                onPress={() => this.props.navigation.navigate('STEMIBWH')}>
+                                <Text style={styles.customBtnTextSingleLine}>STEMI</Text>
+                              </TouchableOpacity>
+                    </View>
+                    <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
+                              <TouchableOpacity
+                                style={styles.customBtnBG} 
+                                onPress={() => this.props.navigation.navigate('StrokeBWH')}>
+                                <Text style={styles.customBtnTextSingleLine}>Stroke</Text>
+                              </TouchableOpacity>
+                    </View>
+                    <View style={{ marginLeft: 1.5, marginTop: 1.5 }}>
+                              <TouchableOpacity
+                                style={styles.customBtnBG} 
+                                onPress={() => this.props.navigation.navigate('TraumaBWH')}>
+                                <Text style={styles.customBtnTextSingleLine}>Trauma</Text>
+                              </TouchableOpacity>
+                    </View>
+              </View>
+
+
           </View>
 
 
@@ -200,21 +220,22 @@ const styles = StyleSheet.create({
     // backgroundColor: 'pink'
   },
   top: { 
-    height: '15%',
-    paddingTop: Dimensions.get('window').height/21, 
+    height: '5%',
+    // paddingTop: Dimensions.get('window').height/21, 
     alignItems: 'center',
     // backgroundColor: 'yellow'
   },
   middle: {
-    height: '70%',
-    flexDirection: 'row', 
-    flexWrap: 'wrap',
-    paddingTop: Dimensions.get('window').height/45, 
+    height: '85%',
+    // flexDirection: 'row', 
+    // flexWrap: 'wrap',
+    // paddingTop: Dimensions.get('window').height/45, 
     // backgroundColor: 'pink'
   },
   bottom: {
     height: '15%',
     alignItems: 'center', 
+    justifyContent: 'center',
     // backgroundColor: 'gray'
   },
   
@@ -225,9 +246,11 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/40, 
   },
   customBtnBG: {
-    backgroundColor: "#DCE2EA",
+    // backgroundColor: "#f0f0f0",
+    backgroundColor: '#e0e0e0',
+    borderRadius: 5,
     width: Dimensions.get('window').width/2.385,
-    height: Dimensions.get('window').height/7.36,
+    height: Dimensions.get('window').height/9,
   },
   customBtnTextSingleLine: {
     // fontFamily: 'Interstate-Bold',
@@ -235,8 +258,8 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: 'center',
     textAlignVertical: "center",
-    paddingTop: Dimensions.get('window').height/20,
-    fontSize: Dimensions.get('window').height/40,
+    paddingTop: Dimensions.get('window').height/25,
+    fontSize: Dimensions.get('window').height/45,
   },
   customBtnTextFirstLine: { 
     // fontFamily: 'Interstate-Bold',
@@ -244,8 +267,8 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: 'center',
     textAlignVertical: "center",
-    paddingTop: Dimensions.get('window').height/27,
-    fontSize: Dimensions.get('window').height/40,
+    paddingTop: Dimensions.get('window').height/35,
+    fontSize: Dimensions.get('window').height/45,
   },
   customBtnTextSecondLine: {
     // fontFamily: 'Interstate-Bold',
@@ -253,7 +276,7 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: 'center',
     textAlignVertical: "center",
-    fontSize: Dimensions.get('window').height/40,
+    fontSize: Dimensions.get('window').height/45,
   },
   customBtnTextFirstLineMTP: {
     // fontFamily: 'Interstate-Bold',
@@ -261,8 +284,8 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: 'center',
     textAlignVertical: "center",
-    paddingTop: Dimensions.get('window').height/45,
-    fontSize: Dimensions.get('window').height/40,
+    paddingTop: Dimensions.get('window').height/70,
+    fontSize: Dimensions.get('window').height/45,
   },
   customBtnTextMTP: {
     // fontFamily: 'Interstate-Bold',
@@ -270,6 +293,6 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: 'center',
     textAlignVertical: "center",
-    fontSize: Dimensions.get('window').height/40,
+    fontSize: Dimensions.get('window').height/45,
   },
 })
