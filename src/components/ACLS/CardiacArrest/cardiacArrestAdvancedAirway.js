@@ -11,8 +11,8 @@ export default class CardiacArrestAdvancedAirway extends React.Component {
 	}
   render() {
     return (
-      <SafeAreaView style={{marginBottom: Dimensions.get('window').height/120}}>
-        <View style={{marginLeft: Dimensions.get('window').width/30 }}>
+      <SafeAreaView style={styles.container}>
+        <View style={{}}>
             {this.state.data.map((item) => (
               <View key={item} style={ styles.bulletPoints }>
                 <View style={{ flexDirection: 'row', }}>
@@ -26,20 +26,25 @@ export default class CardiacArrestAdvancedAirway extends React.Component {
         </View>
 			</SafeAreaView>       
     )
-  }
+  } 
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginBottom: Dimensions.get('window').height/120,
+    marginLeft: Dimensions.get('window').width/30, 
+    marginRight: Dimensions.get('window').width/30,
+  },
   bulletPoints: {
     marginTop: Dimensions.get('window').height/120,
-    // marginRight: Dimensions.get('window').width/50
   },
   bulletPoint: {
     fontWeight: 'bold',
+    marginTop: 1,
     fontSize: Dimensions.get('window').height/60,
   },
   bulletPointText: {
     marginLeft: Dimensions.get('window').height/150,
-    fontSize: Dimensions.get('window').height/50,
+    fontSize: Dimensions.get('window').width/24
   },
 })

@@ -127,21 +127,14 @@ export default class COVIDWorkflowMGH extends React.Component {
                           </TouchableOpacity>
                 </View>
                 <View style={{marginLeft: 1.5, marginTop: 1.5}}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => {Linking.openURL('https://www.dropbox.com/s/s2dvb27gfo2pcfu/STEMIWorkflow_MGH.pdf?dl=0')}}>
-                            <Text style={styles.customBtnTextFirstLine}>STEMI</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Workflow</Text>
-                          </TouchableOpacity>  
-                </View>
-                <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5 }}>
-                          <TouchableOpacity
+                <TouchableOpacity
                             style={styles.customBtnBG} 
                             onPress={ () => { Linking.openURL('https://www.dropbox.com/s/ygssdkstobks5nv/DeathPaperwork_MGH.pdf?dl=0')}}>
                             <Text style={styles.customBtnTextFirstLine}>Death</Text>
                             <Text style={styles.customBtnTextSecondLine}>Paperwork</Text>
                           </TouchableOpacity>
                 </View>
+               
                 
                 
           </View>

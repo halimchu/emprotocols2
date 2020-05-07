@@ -13,7 +13,7 @@ export default class CardiacArrestAdvancedAirwayCOVID extends React.Component {
     return (
       <SafeAreaView style={{marginBottom: Dimensions.get('window').height/120}}>
 
-        <View style={{marginLeft: Dimensions.get('window').width/30 }}>
+        <View style={{marginLeft: Dimensions.get('window').width/30, paddingRight: Dimensions.get('window').width/30 }}>
 
               <View style={ styles.bulletPoints }>
                 <View style={{ flexDirection: 'row', }}>
@@ -56,6 +56,7 @@ export default class CardiacArrestAdvancedAirwayCOVID extends React.Component {
                 </View>
               </View> 
             ))} 
+
         </View>
 			</SafeAreaView>       
     )
@@ -65,7 +66,6 @@ export default class CardiacArrestAdvancedAirwayCOVID extends React.Component {
 const styles = StyleSheet.create({
   bulletPoints: {
     marginTop: Dimensions.get('window').height/120,
-    // marginRight: Dimensions.get('window').width/50
   },
   bulletPoint: {
     fontWeight: 'bold',
@@ -73,12 +73,12 @@ const styles = StyleSheet.create({
   },
   bulletPointText: {
     marginLeft: Dimensions.get('window').height/150,
-    fontSize: Dimensions.get('window').height/50,
+    fontSize: Dimensions.get('window').width/24
   },
   bulletPointTextUnderline: {
     marginLeft: Dimensions.get('window').height/150,
-    fontSize: Dimensions.get('window').height/50,
     textDecorationLine: 'underline',
     fontWeight: 'bold',
+    fontSize: Dimensions.get('window').width/24
   },
 })

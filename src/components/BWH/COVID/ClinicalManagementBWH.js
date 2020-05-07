@@ -95,7 +95,11 @@ export default class ClinicalManagementBWH extends React.Component {
         <SafeAreaView style={styles.container}>
           <View style={styles.top}>
             <View style={{alignItems: 'center', marginBottom: Dimensions.get('window').height/100, }}>
-              <Text style={styles.title}>COVID-19</Text>
+           
+              <Text style={styles.title}>
+                <Text style={{color: 'red'}}>COVID-19 </Text>
+              </Text>
+                <Text style={styles.title}>Clinical Management</Text>
             </View>
               <Divider />
           </View>
@@ -106,7 +110,8 @@ export default class ClinicalManagementBWH extends React.Component {
                           <TouchableOpacity
                             style={styles.customBtnBG} 
                             onPress={ () => { Linking.openURL('https://www.dropbox.com/s/y2gpj9hlpnuyn74/Intubation%26SedationRx_BOTH.pdf?dl=0')}} >
-                            <Text style={styles.customBtnTextFirstLine}>Intubation & Sedation Rx</Text>
+                            <Text style={styles.customBtnTextFirstLine}>Intubation &</Text>
+                            <Text style={styles.customBtnTextSecondLine}>Sedation Rx</Text>
                           </TouchableOpacity>
                 </View>
                 <View style={{marginLeft: 1.5}}>
@@ -164,7 +169,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     height: '100%',
-    // backgroundColor: 'pink'
+    backgroundColor: 'white'
   },
   top: {
     height: '10%',
@@ -214,7 +219,8 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/47,
   },
   customBtnBG: {
-    backgroundColor: "#DCE2EA",
+    borderRadius: 5,
+    backgroundColor: "#e8e8e8" ,
     width: Dimensions.get('window').width/2.385,
     height: Dimensions.get('window').height/7.36,
   },

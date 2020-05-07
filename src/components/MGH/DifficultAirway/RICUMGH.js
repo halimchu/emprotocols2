@@ -73,13 +73,12 @@ export default class RICUMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#008CB1', '#1192BC', ]}
+            colors={['#02bfdb', '#00c0dc', '#02c1dd' ]}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
         />
-      ),   
-      // headerStyle: {backgroundColor: '#709CD0'},      
+      ),        
     }
   }
   
@@ -155,7 +154,6 @@ export default class RICUMGH extends React.Component {
     paddingBottom: Dimensions.get('window').height/45,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F7F7F7'
     }}>
           <TouchableOpacity style={styles.shadow} onPress={()=>{this.dialCall()}}>
                     <LinearGradient 
@@ -188,11 +186,11 @@ export default class RICUMGH extends React.Component {
 
 
           <View style={{ 
-            marginTop: Dimensions.get('window').height/20, 
+            // marginTop: Dimensions.get('window').height/20, 
             marginLeft: Dimensions.get('window').width/15,
             marginRight: Dimensions.get('window').width/15,
           }}>
-            <Text style={{fontSize: Dimensions.get('window').height/37}}>  
+            <Text style={{fontSize: Dimensions.get('window').height/37, textAlign: 'center'}}>  
                     <Text>
                       If concern for 
                     </Text>
@@ -211,7 +209,7 @@ export default class RICUMGH extends React.Component {
             marginLeft: Dimensions.get('window').width/15,
             marginRight: Dimensions.get('window').width/15,
           }}>
-            <Text style={{fontSize: Dimensions.get('window').height/37,}}>
+            <Text style={{fontSize: Dimensions.get('window').height/37, textAlign: 'center'}}>
                       <Text>
                         If concern for 
                       </Text>
@@ -248,13 +246,18 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     height: Dimensions.get('window').height/11,
     width: Dimensions.get('window').width/1.17,
-    // alignItems: "center",
     justifyContent: "center",
+  },
+  shadow: {
+    shadowColor: 'black',
+    shadowOpacity: 0.8,
+    shadowOffset : { width: 1, height: 1},
   },
 
   
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   top: {
     height: '10%',
@@ -298,16 +301,17 @@ const styles = StyleSheet.create({
   },
   customBtnText: {
     fontWeight: '600',
-    color: "#fff",
     textAlign: 'center',
     fontSize: Dimensions.get('window').height/44,
-    marginTop: Dimensions.get('window').height/150,
+    marginTop: Dimensions.get('window').height/120,
   },
   customBtnBG: {
     borderRadius: 10,
-    // backgroundColor: "#8FABC6",
-    backgroundColor: "#0d90b9",
+    backgroundColor: "#ededed",
     width: Dimensions.get('window').width/1.25,
     height: Dimensions.get('window').height/22, 
+    shadowColor: 'gray',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 4},
   },
 }) 

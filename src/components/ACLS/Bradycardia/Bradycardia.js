@@ -174,7 +174,7 @@ export default class BradyCardia extends React.Component {
       return (
         <Image 
           source={require('../../../../assets/Bradycardia3000x2300.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.22}}
+          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.25}}
         />
       )
     }
@@ -213,8 +213,8 @@ export default class BradyCardia extends React.Component {
           <View styles={styles.top}>
             <Text style={styles.titleFirstLine}>Bradycardia with a Pulse</Text>
             <Divider style={styles.divider} />
-            {/* <Text>{Dimensions.get('window').height}</Text>
-            <Text>{Dimensions.get('window').width}</Text> */}
+            <Text>{Dimensions.get('window').height}</Text>
+            <Text>{Dimensions.get('window').width}</Text>
           </View>
               
           <View onLayout={this.measureImageView}>
@@ -233,7 +233,7 @@ export default class BradyCardia extends React.Component {
             }  
           </View>
 
-
+          <View style={{marginBottom: Dimensions.get('window').height/80}}></View>
 
           <View onLayout={this.measureDosesDetailsView}>
             <Component
@@ -263,7 +263,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#2b2b2b',
     paddingTop: Dimensions.get('window').height/60,
-    fontSize: Dimensions.get('window').height/33,
+    fontSize: Dimensions.get('window').height/38,
   },
   titleSecondLine: {
     fontWeight: 'bold',

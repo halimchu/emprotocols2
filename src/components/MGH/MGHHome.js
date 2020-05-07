@@ -87,59 +87,38 @@ export default class MGHHome extends React.Component {
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
         />
-      ),   
-      // headerBackground: (
-      //   <LinearGradient
-      //       colors={['#06b8d6' ]}
-      //       style={{ flex: 1 }}
-      //       start={{x: 0, y: 0}}
-      //       end={{x: 1, y: 0}}
-      //   />
-      // ),   
+      ),     
+    }
+  }
+
+  iPhonesUpTo8 = () => {
+    if (
+      Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667 ||
+      Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736 ||
+      Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568
+    ){
+      return true
     }
   }
 
   render() { 
     return (   
       <SafeAreaView style={styles.container}>
-        {/* <View style={styles.top}> */}
-
-          {/* <Image
-            source={require('../../../assets/header3x.png')}
-            style={{
-              // marginRight: Dimensions.get('window').width/35, 
-              // width: Dimensions.get('window').width, 
-              // height: Dimensions.get('window').height/4
-              width: Dimensions.get('window').width, 
-              height: Dimensions.get('window').height/3.75
-            }}
-          /> */}
-        {/* </View> */}
-
-
-
-      
 
 
         <View style={styles.middle}>
             <Image
-                // source={require('../../../assets/header3x.png')}
-                // source={require('../../../assets/headerMGHBWH.png')}
-                // source={require('../../../assets/headerMGHBWH750x250_2x.png')}
-                source={require('../../../assets/1125x400_3x.png')}
-                style={{
-                  // marginRight: Dimensions.get('window').width/35, 
-                  // width: Dimensions.get('window').width, 
-                  // height: Dimensions.get('window').height/4
-                  marginBottom: Dimensions.get('window').height/30,
-                  width: Dimensions.get('window').width, 
-                  height: Dimensions.get('window').height/6
-                }}
+              source={require('../../../assets/1125x400_3x.png')}
+              style={[ this.iPhonesUpTo8() ? styles.imageiPhonesUpTo8 : styles.imageiPhonesAfter8]}
             />
+
+
+            {/* <Text>{Dimensions.get('window').width}</Text>
+            <Text>{Dimensions.get('window').height}</Text> */}
 
      
 
-          <View style={{ paddingTop: 5, flexDirection: 'row', flexWrap: 'wrap',}}>
+          <View style={{ paddingTop: Dimensions.get('window').height/25, flexDirection: 'row', flexWrap: 'wrap',}}>
               <View style={{ marginLeft: Dimensions.get('window').width/13, }}>
                         <TouchableOpacity
                           style={styles.customBtnBG} 
@@ -151,7 +130,8 @@ export default class MGHHome extends React.Component {
                         <TouchableOpacity
                           style={styles.customBtnBG} 
                           onPress={() => this.props.navigation.navigate('ADMGH')}>
-                          <Text style={styles.customBtnTextSingleLine}>Acute Aortic Syndrom</Text>
+                          <Text style={styles.customBtnTextFirstLine}>Acute Aortic</Text>
+                          <Text style={styles.customBtnTextSecondLine}>Syndrome</Text>
                         </TouchableOpacity>
               </View> 
               <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
@@ -201,14 +181,10 @@ export default class MGHHome extends React.Component {
                         </TouchableOpacity>
               </View>
           </View>
-        </View>
 
+<View style={{alignItems: 'center', marginTop: 10}}>
 
-        
-
-        
-        <View style={styles.bottom}>
-              <TouchableOpacity onPress={() => this.props.navigation.navigate('COVIDHomeMGH')}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('COVIDHomeMGH')}>
                 <LinearGradient 
                   style={styles.covidButton}
                   colors={['#9A0100', '#E7522E']}
@@ -219,7 +195,13 @@ export default class MGHHome extends React.Component {
                 </LinearGradient>
               </TouchableOpacity>
         </View>
-      
+</View>
+
+
+        
+
+        
+
         
 
 
@@ -229,17 +211,27 @@ export default class MGHHome extends React.Component {
 }
   
 const styles = StyleSheet.create({
+  imageiPhonesUpTo8: {
+    width: Dimensions.get('window').width, 
+    height: Dimensions.get('window').height/5,
+  },
+  imageiPhonesAfter8: {
+    width: Dimensions.get('window').width, 
+    height: Dimensions.get('window').height/6
+  },
   covidCustomBtnText: {
     fontWeight: '600',
     color: "#fff",
     textAlign: 'center',
     fontSize: Dimensions.get('window').height/35,
-    marginTop: Dimensions.get('window').height/32,
+    marginTop: Dimensions.get('window').height/28,
   },
   covidButton: {
-    borderRadius: 15,
-    height: Dimensions.get('window').height/10.5,
-    width: Dimensions.get('window').width/1.2,
+    borderRadius: 5,
+    // height: Dimensions.get('window').height/10.5,
+    // width: Dimensions.get('window').width/1.2,
+    width: Dimensions.get('window').width/1.19,
+    height: Dimensions.get('window').height/9,
   },
 
 

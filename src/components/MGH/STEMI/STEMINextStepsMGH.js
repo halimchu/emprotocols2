@@ -80,13 +80,12 @@ export default class STEMINextStepsMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0c79b6', '#01a8ce']}
+            colors={['#02bfdb', '#00c0dc', '#02c1dd']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
         />
-      ), 
-      // headerStyle: {backgroundColor: '#709CD0'},      
+      ),   
     }
   }
 
@@ -137,13 +136,42 @@ export default class STEMINextStepsMGH extends React.Component {
             </View>        
           ))} 
         </View>
+
+
+<View style={{marginTop: Dimensions.get('window').height/40, alignItems: 'center'}}>
+        <TouchableOpacity onPress={() => {Linking.openURL('https://www.dropbox.com/s/s2dvb27gfo2pcfu/STEMIWorkflow_MGH.pdf?dl=0')}}>
+                <LinearGradient 
+                  style={styles.covidButton}
+                  colors={['#9A0100', '#E7522E']}
+                  start={{x: 0, y: 0}}
+                  end={{x: 1, y: 0}}
+                >
+                  <Text style={styles.covidCustomBtnText}>COVID-19 STEMI Pathway</Text>
+                </LinearGradient>
+              </TouchableOpacity>
+</View>
+
+
         
-      </SafeAreaView>
+      </SafeAreaView> 
     )
   }
 }
 
 const styles = StyleSheet.create({
+  covidCustomBtnText: {
+    fontWeight: '600',
+    color: "#fff",
+    textAlign: 'center',
+    fontSize: Dimensions.get('window').height/35,
+    marginTop: Dimensions.get('window').height/32,
+  },
+  covidButton: {
+    borderRadius: 15,
+    height: Dimensions.get('window').height/10.5,
+    width: Dimensions.get('window').width/1.2,
+  },
+
   firstCircle: {
     width: 10,
     height: 10,
@@ -194,6 +222,7 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {
+    fontWeight: '300',
     marginLeft: Dimensions.get('window').height/120,
     fontSize: Dimensions.get('window').height/37,
   }

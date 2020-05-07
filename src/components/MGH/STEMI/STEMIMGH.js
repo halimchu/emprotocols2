@@ -81,7 +81,7 @@ export default class STEMIMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0c79b6', '#01a8ce']}
+            colors={['#02bfdb', '#00c0dc', '#02c1dd']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -98,13 +98,6 @@ export default class STEMIMGH extends React.Component {
     Linking.openURL(phoneNumber);
   }
 
-  // state = {
-  //   data: [
-  //     'Symptoms of cardiac ischemia with onset within 12 hours of ED presentation',
-  //     'New ST segment elevations of at least 1mm in at least two contiguous leads',
-  //     'Alternative diagnoses such as pulmonary embolism or aortic dissection less likely'
-  //   ]
-  // }
   
 
   state = {
@@ -200,25 +193,37 @@ export default class STEMIMGH extends React.Component {
 
         <View style={styles.middle}>
           <View style={{ alignItems: 'center' }}>
-            <TouchableOpacity onPress={()=>{this.dialCall()}}>
-                <LinearGradient 
-                  style={styles.callButton}
-                  colors={['#B62619', '#F63826', '#B62619']}
-                  start={{x: 0, y: 0}}
-                  end={{x: 1, y: 0}}
-                >
-                    <View style={{ flexDirection: 'row' }}>
-                      <MaterialIcons name="phone" size={19} color="white" />
-                      <Text style={{ fontSize: Dimensions.get('window').width/21, color: 'white', fontWeight: 'bold' }}> Activate Cath Lab</Text>
-                    </View>
-                    <Text style={{ 
-                      marginTop: Dimensions.get('window').height/150, 
-                      color: 'white', 
-                      fontSize: Dimensions.get('window').width/24, fontWeight: '400'
-                    }}>x6-8282
-                    </Text>
-                </LinearGradient>
-            </TouchableOpacity>
+
+          <TouchableOpacity style={styles.shadow} onPress={()=>{this.dialCall()}}>
+                    <LinearGradient 
+                      style={styles.callButton}
+                      colors={['#B62619', '#F63826', '#B62619']}
+                      start={{x: 0, y: 0}}
+                      end={{x: 1, y: 0}}
+                    >
+                        <View style={{ flexDirection: 'row'}}>
+                          <View style={{flexDirection: 'column'}}>
+                            <View style={{}}>
+                              <MaterialIcons name="phone-in-talk" size={Dimensions.get('window').width/10} color="white" />
+                            </View>
+                          </View>
+                          <View style={{flexDirection: 'column',}}>
+                            <Text style={{marginLeft: Dimensions.get('window').width/15, fontSize: Dimensions.get('window').width/21, color: 'white', fontWeight: 'bold' }}>Activate Cath Lab</Text>
+                            <Text style={{ 
+                              marginTop: Dimensions.get('window').height/150, 
+                              color: 'white', 
+                              textAlign: 'center',
+                              fontSize: Dimensions.get('window').width/24, fontWeight: '400'
+                            }}>x6-8282
+                            </Text>
+                          </View>
+                        </View>
+                        
+                    </LinearGradient>
+              </TouchableOpacity>
+
+
+            
           </View>
 
 
@@ -294,6 +299,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  shadow: {
+    shadowColor: 'black',
+    shadowOpacity: 0.8,
+    shadowOffset : { width: 1, height: 1},
+  },
   container: {
     flex: 1,
   },
@@ -322,23 +332,6 @@ const styles = StyleSheet.create({
   },
 
 
-  
-  customBtnText: {
-    fontWeight: '600',
-    color: 'white',
-    textAlign: 'center',
-    textAlignVertical: "center",
-    fontSize: Dimensions.get('window').height/40,
-    marginTop: Dimensions.get('window').height/40,
-  },
-  customBtnBG: {
-    backgroundColor: "#8dabc2",
-    paddingHorizontal: 1,
-    paddingVertical: 1,
-    borderRadius: 15,
-    width: Dimensions.get('window').width/1.2,
-    height: Dimensions.get('window').height/12,
-  },
   bulletPoints: {
     flexDirection: 'row',
     marginRight: 40,
@@ -356,5 +349,24 @@ const styles = StyleSheet.create({
   bulletPointSmall: {
     fontSize: Dimensions.get('window').height/45,
     marginRight: Dimensions.get('window').height/275
+  },
+  customBtnText: {
+    fontWeight: '600',
+    color: '#2b2b2b',
+    textAlign: 'center',
+    textAlignVertical: "center",
+    fontSize: Dimensions.get('window').height/40,
+    marginTop: Dimensions.get('window').height/35,
+  },
+  customBtnBG: {
+    backgroundColor: '#ededed',
+    paddingHorizontal: 1,
+    paddingVertical: 1,
+    borderRadius: 30,
+    width: Dimensions.get('window').width/1.2,
+    height: Dimensions.get('window').height/11,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 1},
   },
 })

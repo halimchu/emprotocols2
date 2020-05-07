@@ -4,10 +4,7 @@ import { Dimensions, View, Text, StyleSheet } from 'react-native'
 export default class CardiacArrestROSC extends React.Component {
   render() {
     return (
-      <View style={{
-        marginTop: Dimensions.get('window').height/200, 
-        marginLeft: Dimensions.get('window').width/100,
-        marginBottom: Dimensions.get('window').height/150}}>
+      <View style={styles.container}>
 
         <View style={{ flexDirection: 'row', }}>
           <Text style={styles.bulletPoint}>{`\u2022`} </Text>
@@ -31,7 +28,7 @@ export default class CardiacArrestROSC extends React.Component {
 
         <View style={{ marginTop: Dimensions.get('window').height/200, flexDirection: 'row' }}>
           <Text style={styles.bulletPoint}>{`\u2022`} </Text>
-          <Text style={styles.text}>Quantitative waveform capnography</Text>
+          <Text style={styles.text}>Spontaneous arterial pressure waves with intra-arterial monitoring</Text>
         </View>
     
 			</View>       
@@ -40,12 +37,17 @@ export default class CardiacArrestROSC extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginTop: Dimensions.get('window').height/200, 
+    marginLeft: Dimensions.get('window').width/30,
+    marginBottom: Dimensions.get('window').height/150
+  },
   bulletPoint: {
     fontWeight: 'bold',
     fontSize: Dimensions.get('window').height/60,
   },
   text: {
     marginRight: Dimensions.get('window').width/100,
-    fontSize: Dimensions.get('window').height/50,
+    fontSize: Dimensions.get('window').width/24
   }
 })

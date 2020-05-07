@@ -290,7 +290,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#2b2b2b',
     paddingTop: Dimensions.get('window').height/60,
-    fontSize: Dimensions.get('window').height/33,
+    fontSize: Dimensions.get('window').height/38,
   },
   titleSecondLine: {
     fontWeight: 'bold',

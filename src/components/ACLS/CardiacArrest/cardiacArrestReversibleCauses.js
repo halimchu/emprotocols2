@@ -22,7 +22,7 @@ export default class CardiacArrestReversibleCauses extends React.Component {
                                     <Text style={styles.regular}>ypovolemia</Text>
                                   </View>
 
-                                  <View style={{flexDirection: 'row'}}>
+                                  {/* <View style={{flexDirection: 'row'}}>
                                     <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                     <Text style={styles.subRegular}>IV fluid boluses</Text>
                                   </View>
@@ -30,7 +30,7 @@ export default class CardiacArrestReversibleCauses extends React.Component {
                                   <View style={{flexDirection: 'row'}}>
                                     <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                     <Text style={styles.subRegular}>Vasopressors</Text>
-                                  </View>
+                                  </View> */}
 
                                   <View style={styles.flexDirection}>
                                       <Text style={styles.bulletPoint}>{`\u2022`}</Text>
@@ -38,7 +38,7 @@ export default class CardiacArrestReversibleCauses extends React.Component {
                                       <Text style={styles.regular}>ypoxia</Text>
                                   </View>
 
-                                  <View style={{flexDirection: 'row'}}>
+                                  {/* <View style={{flexDirection: 'row'}}>
                                       <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                       <Text style={styles.subRegular}>Bag-valve-mask</Text>
                                   </View> 
@@ -46,23 +46,23 @@ export default class CardiacArrestReversibleCauses extends React.Component {
                                   <View style={{flexDirection: 'row'}}>
                                       <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                       <Text style={styles.subRegular}>Intubation</Text>
-                                  </View>
+                                  </View> */}
 
                                   <View style={styles.flexDirection}>
                                     <Text style={styles.bulletPoint}>{`\u2022`}</Text>
                                     <Text style={styles.bold}>H</Text>
-                                    <Text style={styles.regular}>ydrogen ions</Text>
+                                    <Text style={styles.regular}>ydrogen ion</Text>
                                   </View>
                                   <View style={styles.titleBottom}>
                                     <Text style={styles.regular}>(acidosis)</Text>
                                   </View>  
-                                  <View style={{flexDirection: 'row'}}>
+                                  {/* <View style={{flexDirection: 'row'}}>
                                     <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                     <Text style={styles.subRegular}>Sodium</Text>
                                   </View>  
                                   <View style={{ marginLeft: Dimensions.get('window').width/20 }}>
                                     <Text style={styles.subRegular}>bicarbonate</Text>
-                                  </View>
+                                  </View> */}
 
 
 
@@ -70,15 +70,15 @@ export default class CardiacArrestReversibleCauses extends React.Component {
                                   <View style={styles.flexDirection}>
                                       <Text style={styles.bulletPoint}>{`\u2022`}</Text>
                                       <Text style={styles.bold}>H</Text>
-                                      <Text style={styles.regular}>ypokalemia/</Text>
+                                      <Text style={styles.regular}>ypo-/</Text>
                                 </View>
 
                                   <View style={{flexDirection: 'row', marginLeft: Dimensions.get('window').width/55.5,}}>
-                                      <Text style={styles.bold}>H</Text>
+                                      <Text style={styles.regular}>h</Text>
                                       <Text style={styles.regular}>yperkalemia</Text>
                                   </View>
                                 
-                                  <View style={{flexDirection: 'row'}}>
+                                  {/* <View style={{flexDirection: 'row'}}>
                                       <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                       <Text style={styles.subRegular}>Hypokalemia:</Text>
                                   </View>
@@ -93,7 +93,7 @@ export default class CardiacArrestReversibleCauses extends React.Component {
 
                                   <View style={styles.subBulletPointSecondLine}>
                                     <Text style={styles.subRegular}>Calcium gluconate</Text>
-                                  </View>
+                                  </View> */}
                           
                                   <View style={styles.flexDirection}>
                                     <Text style={styles.bulletPoint}>{`\u2022`}</Text>
@@ -101,7 +101,7 @@ export default class CardiacArrestReversibleCauses extends React.Component {
                                     <Text style={styles.regular}>ypothermia</Text>
                                   </View>
 
-                                  <View style={{flexDirection: 'row'}}>
+                                  {/* <View style={{flexDirection: 'row'}}>
                                     <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                     <Text style={styles.subRegular}>Active internal </Text>
                                   </View>
@@ -146,7 +146,7 @@ export default class CardiacArrestReversibleCauses extends React.Component {
                                    </View>
                                    <View style={{ marginLeft: Dimensions.get('window').width/20 }}>
                                     <Text style={styles.subRegular}>rewarming tubes</Text>
-                                   </View>
+                                   </View> */}
         
                     </View>
                   </View>
@@ -184,23 +184,26 @@ export default class CardiacArrestReversibleCauses extends React.Component {
                                      
 
 
-                                        <View style={{flexDirection: 'row'}}>
+                                        {/* <View style={{flexDirection: 'row'}}>
                                           <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                           <Text style={styles.subRegular}>Needle & tube</Text>
                                         </View>
                                         <View style={styles.subBulletPointSecondLine}>
                                           <Text style={styles.subRegular}>thoracostomy</Text>
-                                        </View>
+                                        </View> */}
 
 
 
                                         <View style={styles.flexDirection}>
                                           <Text style={styles.bulletPoint}>{`\u2022`}</Text>
                                           <Text style={styles.bold}>T</Text>
-                                          <Text style={styles.regular}>amponade</Text>
+                                          <Text style={styles.regular}>amponade,</Text>
+                                        </View>
+                                        <View style={styles.titleBottom}>
+                                          <Text style={styles.regular}>cardiac</Text>
                                         </View>
 
-                                        <View style={{flexDirection: 'row'}}>
+                                        {/* <View style={{flexDirection: 'row'}}>
                                           <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                           <Text style={styles.subRegular}>Bedside ECHO</Text>
                                         </View>
@@ -211,7 +214,7 @@ export default class CardiacArrestReversibleCauses extends React.Component {
                                         <View style={{flexDirection: 'row'}}>
                                           <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                           <Text style={styles.subRegular}>Pericardiocentesis</Text>
-                                        </View>
+                                        </View> */}
 
                                         <View style={styles.flexDirection}>
                                           <Text style={styles.bulletPoint}>{`\u2022`}</Text>
@@ -224,14 +227,14 @@ export default class CardiacArrestReversibleCauses extends React.Component {
                                         <View style={styles.flexDirection}>
                                           <Text style={styles.bulletPoint}>{`\u2022`}</Text>
                                           <Text style={styles.bold}>T</Text>
-                                          <Text style={styles.regular}>hrombosis:</Text>
+                                          <Text style={styles.regular}>hrombosis,</Text>
                                         </View>
                                         <View style={styles.titleBottom}>
-                                          <Text style={styles.regular}>Pulmonary embolism</Text>
+                                          <Text style={styles.regular}>pulmonary</Text>
                                         </View>
 
 
-                                        <View style={{flexDirection: 'row'}}>
+                                        {/* <View style={{flexDirection: 'row'}}>
                                           <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                           <Text style={styles.subRegular}>Thrombolysis</Text>
                                         </View>
@@ -242,19 +245,19 @@ export default class CardiacArrestReversibleCauses extends React.Component {
                                         <View style={{flexDirection: 'row'}}>
                                           <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                           <Text style={styles.subRegular}>Mechanical embolectomy</Text>
-                                        </View>
+                                        </View> */}
 
 
                                         <View style={styles.flexDirection}>
                                           <Text style={styles.bulletPoint}>{`\u2022`}</Text>
                                           <Text style={styles.bold}>T</Text>
-                                          <Text style={styles.regular}>hrombosis:</Text>
+                                          <Text style={styles.regular}>hrombosis,</Text>
                                         </View>
                                         <View style={styles.titleBottom}>
-                                          <Text style={styles.regular}>Myocardial infarction</Text>
+                                          <Text style={styles.regular}>coronary</Text>
                                         </View>
 
-                                        <View style={{flexDirection: 'row'}}>
+                                        {/* <View style={{flexDirection: 'row'}}>
                                           <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                           <Text style={styles.subRegular}>PCI</Text>
                                         </View>
@@ -262,7 +265,7 @@ export default class CardiacArrestReversibleCauses extends React.Component {
                                         <View style={{flexDirection: 'row'}}>
                                           <Text style={styles.subBulletPoint}>{`\u2022`}</Text>
                                           <Text style={styles.subRegular}>Thrombolysis</Text>
-                                        </View>
+                                        </View> */}
                         </View>
                   </View>
 
@@ -329,7 +332,6 @@ const styles = StyleSheet.create({
   },
   subBulletPointTwo: {
     fontWeight: 'bold',
-    fontSize: Dimensions.get('window').height/80,
     marginTop: Dimensions.get('window').height/300,
     marginLeft: Dimensions.get('window').width/15,
     marginRight: Dimensions.get('window').width/150,
@@ -339,17 +341,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: Dimensions.get('window').height/80,
     marginTop: Dimensions.get('window').height/300,
-    // marginLeft: Dimensions.get('window').width/15,
     marginRight: Dimensions.get('window').width/150,
     color: '#0031C0',
   },
   bold: {
     fontWeight: '800',
-    fontSize: Dimensions.get('window').height/50,
+    fontSize: Dimensions.get('window').width/24,
   }, 
   regular: {
     fontWeight: '400',
-    fontSize: Dimensions.get('window').height/50,
+    fontSize: Dimensions.get('window').width/24,
   },
   subRegular: {
     fontWeight: '300',

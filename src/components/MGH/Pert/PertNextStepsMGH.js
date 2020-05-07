@@ -71,7 +71,7 @@ export default class PertNextStepsMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0c79b6', '#01a8ce']}
+            colors={['#02bfdb', '#00c0dc', '#02c1dd']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -123,7 +123,9 @@ export default class PertNextStepsMGH extends React.Component {
 
        
           <View style={styles.middle}>
-            <Text style={styles.header}>If not already obtained, please order:</Text>
+            <View style={{marginBottom: Dimensions.get('window').height/80, marginLeft: Dimensions.get('window').width/25, marginRight: Dimensions.get('window').width/20,}}>
+              <Text style={styles.header}>If not already obtained, please order:</Text>
+            </View>
             {this.state.data.map((item) => (
                 <View key={item} style={ styles.bulletPoints }>
                   <View style={{ flexDirection: 'row' }}>
@@ -176,7 +178,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#6c9ea1',
   },
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white',
+    // paddingLeft: Dimensions.get('window').width/20,
+    // paddingRight: Dimensions.get('window').width/2,
   },
   top: {
     height: '15%',
@@ -184,7 +189,7 @@ const styles = StyleSheet.create({
   },
   middle: {
     height: '45%',
-    marginLeft: Dimensions.get('window').width/27
+    marginLeft: Dimensions.get('window').width/27,
     // backgroundColor: 'pink'
   },
   bottom: {
@@ -212,18 +217,17 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height/600
   },
   header: {
-    fontWeight: '500',
-    color: '#515254',
-    fontSize: Dimensions.get('window').height/34,
+    fontWeight: '400',
+    fontSize: Dimensions.get('window').width/18,
   },
   bulletPoint: {
     color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {
+    fontWeight: '300',
     marginLeft: Dimensions.get('window').width/100,
-    // fontSize: Dimensions.get('window').height/40,
-    fontSize: Dimensions.get('window').width/20,
+    fontSize: Dimensions.get('window').width/19,
   },
   bulletPoints: {
     flexDirection: 'row',

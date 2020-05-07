@@ -80,13 +80,12 @@ export default class ADMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#008CB1', '#1192BC', ]}
+            colors={['#02bfdb', '#00c0dc', '#02c1dd' ]}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
         />
-      ),   
-      // headerStyle: {backgroundColor: '#709CD0'},      
+      ),         
     }
   }
 
@@ -194,6 +193,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    backgroundColor: 'white'
   },
   top: {
     height: '10%',
@@ -253,12 +253,14 @@ const styles = StyleSheet.create({
     marginTop: Dimensions.get('window').height/35,
   },
   customBtnBG: {
-    backgroundColor: '#c9c9c9',
+    backgroundColor: '#ededed',
     paddingHorizontal: 1,
     paddingVertical: 1,
     borderRadius: 30,
-    shadowOpacity: .1,
     width: Dimensions.get('window').width/1.2,
     height: Dimensions.get('window').height/11,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 1},
   },
 })

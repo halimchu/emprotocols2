@@ -80,12 +80,22 @@ export default class BWHHome extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#06b8d8', '#06b8d8']}
+            colors={['#146EB5', '#1D74B7', '#277ABB']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
         />
       ),    
+    }
+  }
+
+  iPhonesUpTo8 = () => {
+    if (
+      Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667 ||
+      Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736 ||
+      Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568
+    ){
+      return true
     }
   }
  
@@ -101,18 +111,15 @@ export default class BWHHome extends React.Component {
           <View style={styles.middle}>
 
           <Image
-                source={require('../../../assets/header3x.png')}
-                style={{
-                  // marginRight: Dimensions.get('window').width/35, 
-                  // width: Dimensions.get('window').width, 
-                  // height: Dimensions.get('window').height/4
-                  // marginBottom: 30,
-                  width: Dimensions.get('window').width, 
-                  height: Dimensions.get('window').height/3.75
-                }}
-            />
+              source={require('../../../assets/BWH_1125x400_3x.png')}
+              style={[ this.iPhonesUpTo8() ? styles.imageiPhonesUpTo8 : styles.imageiPhonesAfter8]}
+          />
 
-              <View style={{ paddingTop: 5, flexDirection: 'row', flexWrap: 'wrap',}}>
+
+            {/* <Text>{Dimensions.get('window').width}</Text>
+            <Text>{Dimensions.get('window').height}</Text> */}
+
+              <View style={{ paddingTop: Dimensions.get('window').height/25, flexDirection: 'row', flexWrap: 'wrap',}}>
 
 
                 
@@ -127,7 +134,8 @@ export default class BWHHome extends React.Component {
                               <TouchableOpacity
                                 style={styles.customBtnBG} 
                                 onPress={() => this.props.navigation.navigate('ADBWH')}>
-                                <Text style={styles.customBtnTextSingleLine}>Acute Aortic Syndrome</Text>
+                                <Text style={styles.customBtnTextFirstLine}>Aortic</Text>
+                                <Text style={styles.customBtnTextSecondLine}>Dissection</Text>
                               </TouchableOpacity>
                     </View> 
                     <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
@@ -202,6 +210,14 @@ export default class BWHHome extends React.Component {
 }
   
 const styles = StyleSheet.create({
+  imageiPhonesUpTo8: {
+    width: Dimensions.get('window').width, 
+    height: Dimensions.get('window').height/5,
+  },
+  imageiPhonesAfter8: {
+    width: Dimensions.get('window').width, 
+    height: Dimensions.get('window').height/6
+  },
   covidCustomBtnText: {
     fontWeight: '600',
     color: "#fff",
@@ -217,6 +233,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     height: '100%',
+    backgroundColor: 'white',
     // backgroundColor: 'pink'
   },
   top: { 
@@ -247,7 +264,7 @@ const styles = StyleSheet.create({
   },
   customBtnBG: {
     // backgroundColor: "#f0f0f0",
-    backgroundColor: '#e0e0e0',
+    backgroundColor: '#e8e8e8',
     borderRadius: 5,
     width: Dimensions.get('window').width/2.385,
     height: Dimensions.get('window').height/9,

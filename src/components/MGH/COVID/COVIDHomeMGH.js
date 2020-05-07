@@ -1,5 +1,5 @@
 import React from 'react'
-import { Linking, View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions } from 'react-native'
+import { Image, Linking, View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions } from 'react-native'
 import { Button, Divider } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Ionicons' 
 import FontAwesome5Icons from 'react-native-vector-icons/FontAwesome5'
@@ -81,7 +81,7 @@ export default class COVIDHomeMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-          colors={['#008CB1', '#1192BC', ]}
+          colors={['#02bfdb', '#00c0dc', '#02c1dd' ]}
           style={{ flex: 1 }}
           start={{x: 0, y: 0}}
           end={{x: 1, y: 0}}
@@ -90,16 +90,27 @@ export default class COVIDHomeMGH extends React.Component {
     }
   }
 
+  iPhonesUpTo8 = () => {
+    if (
+      Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667 ||
+      Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736 ||
+      Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568
+    ){
+      return true
+    }
+  }
+
   render() { 
     return (  
         <SafeAreaView style={styles.container}>
 
-          <View style={styles.top}>
-            <View style={{alignItems: 'center', marginBottom: Dimensions.get('window').height/100, }}>
-              <Text style={styles.title}>COVID-19</Text>
-            </View>
-              <Divider />
-          </View>
+            <Image
+              source={require('../../../../assets/1125x400_3x_covid.png')}
+              style={[ this.iPhonesUpTo8() ? styles.imageiPhonesUpTo8 : styles.imageiPhonesAfter8]}
+            />
+
+
+     
 
      
 
@@ -171,25 +182,14 @@ export default class COVIDHomeMGH extends React.Component {
                     <Text style={styles.header}>Contacts</Text>
                   </View>
 
-                  {/* <View style={{ flexDirection: 'row', flexWrap: 'wrap',}}> */}
-                  
-                    {/* <Divider /> */}
 
-                        {/* <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
-                            <TouchableOpacity
-                                  style={styles.customBtnBG}
-                                  onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.mwl?APP=PDPERS&FF=PDA&ACTION=FROMDESKTOP&DACTION=PAGE&DTID=244807&DSRCHNM=')}}>
-                                  <View style={{ paddingTop: Dimensions.get('window').height/37 }}>
-                                    <View style={{ alignItems: 'center'}}>
-                                      <FontAwesome5Icons name="pager" size={22} color="black" />
-                                    </View>
-                                    <Text style={styles.customBtnTextSingleLinePager}>Biothreats</Text>
-                                  
-                                  </View>
-                              </TouchableOpacity>
-                        </View> */}
+              
 
-                      <View style={{ flexDirection: 'row', marginLeft: Dimensions.get('window').width/22, }}>
+
+
+<View style={{marginLeft: Dimensions.get('window').width/19,}}>
+
+                      <View style={{ flexDirection: 'row' }}>
                         <View style={{  marginTop: 1.5}}>
                             <TouchableOpacity
                                   style={styles.customBtnBG2}
@@ -203,19 +203,7 @@ export default class COVIDHomeMGH extends React.Component {
 
 
 
-                        {/* <View style={{ marginLeft: 1.5, marginTop: 1.5}}>
-                            <TouchableOpacity
-                                style={styles.customBtnBG}
-                                onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.swl?APP=PDPERS&ACTION=FROMDESKTOP&DACTION=PAGE&DSRCHNM=&DTID=246472&FF=PDA') }
-                                }>
-                                <View style={{ paddingTop: Dimensions.get('window').height/37 }}>
-                                  <View style={{ alignItems: 'center'}}>
-                                    <FontAwesome5Icons name="pager" size={22} color="black" />
-                                  </View>
-                                  <Text style={styles.customBtnTextSingleLinePager}>Intensivist (ICU)</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View> */}
+                      
 
                         <View style={{ marginLeft: 1.5, marginTop: 1.5 }}>
                             <TouchableOpacity
@@ -230,21 +218,9 @@ export default class COVIDHomeMGH extends React.Component {
                       </View>
 
 
-                        {/* <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
-                            <TouchableOpacity
-                                style={styles.customBtnBG}
-                                onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.swl?APP=PDPERS&FF=PDA&ACTION=FROMDESKTOP&DACTION=PAGE&DTID=198608&DSRCHNM=') }}>
-                                <View style={{ paddingTop: Dimensions.get('window').height/50 }}>
-                                  <View style={{ alignItems: 'center'}}>
-                                    <FontAwesome5Icons name="pager" size={22} color="black" />
-                                  </View>
-                                  <Text style={styles.customBtnTextSingleLinePager}>Palliative Care</Text>
-                                  <Text style={styles.customBtnTextSingleLinePagerSub}>(Mon-Sun 8A-4P)</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View> */}
+                        
 
-                      <View style={{ flexDirection: 'row', marginLeft: Dimensions.get('window').width/22, marginTop: 1.5}}>
+                      <View style={{ flexDirection: 'row', marginTop: 1.5}}>
                       
                               <TouchableOpacity
                                     style={styles.customBtnBG2}
@@ -263,20 +239,7 @@ export default class COVIDHomeMGH extends React.Component {
                         
           
 
-                        {/* <View style={{ marginLeft: 1.5, marginTop: 1.5}}>
-                            <TouchableOpacity
-                                style={styles.customBtnBG}
-                                onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.swl?APP=PDPERS&FF=PDA&ACTION=FROMDESKTOP&DACTION=PAGE&DTID=48423&DSRCHNM=') }
-                                }>
-                                <View style={{ paddingTop: Dimensions.get('window').height/50 }}>
-                                  <View style={{ alignItems: 'center'}}>
-                                    <FontAwesome5Icons name="pager" size={22} color="black" />
-                                  </View>
-                                  <Text style={styles.customBtnTextSingleLinePager}>Palliative Care</Text>
-                                  <Text style={styles.customBtnTextSingleLinePagerSub}>(After Hours)</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View> */}
+                        
 
                           <View style={{ marginLeft: 1.5, }}>
                             <TouchableOpacity
@@ -295,23 +258,11 @@ export default class COVIDHomeMGH extends React.Component {
                     </View>
 
 
-                        {/* <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
-                            <TouchableOpacity
-                                style={styles.customBtnBG}
-                                onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.swl?APP=PDPERS&FF=PDA&ACTION=PAGE&TID=237685') }}>
-                                <View style={{ paddingTop: Dimensions.get('window').height/50 }}>
-                                  <View style={{ alignItems: 'center'}}>
-                                    <FontAwesome5Icons name="pager" size={22} color="black" />
-                                  </View>
-                                  <Text style={styles.customBtnTextSingleLinePager}>Infection Control</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View> */}
-                  <View style={{ flexDirection: 'row', marginLeft: Dimensions.get('window').width/22, marginTop: 1.5}}>
+                       
+                  <View style={{ flexDirection: 'row',  marginTop: 1.5}}>
                       
                       <TouchableOpacity
                             style={styles.customBtnBG2}
-                            // onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.swl?APP=PDPERS&FF=PDA&ACTION=PAGE&TID=237685')}}>
                             onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.swl?APP=PDPERS&FF=PDA&ACTION=SEARCHRES&SRCHNM=26346')}}>
                             <View style={{flexDirection: 'row', marginLeft: Dimensions.get('window').width/40,  marginTop: Dimensions.get('window').height/50,}}>
                                 <FontAwesome5Icons name="pager" size={22} color="black" />
@@ -324,21 +275,7 @@ export default class COVIDHomeMGH extends React.Component {
                 
 
 
-                        {/* <View style={{ marginLeft: 1.5, marginTop: 1.5}}>
-                            <TouchableOpacity
-                                style={styles.customBtnBG2}
-                                onPress={ () => { Linking.openURL('') }
-                                }>
-                                <View style={{ paddingTop: Dimensions.get('window').height/50 }}>
-                                  <View style={{ alignItems: 'center'}}>
-                                    <FontAwesome5Icons name="pager" size={22} color="black" />
-                                  </View>
-                                  <Text style={styles.customBtnTextSingleLinePager}>Case</Text>
-                                  <Text style={styles.customBtnTextSingleLinePager}>Management</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View> */}
-
+                       
                           <View style={{ marginLeft: 1.5, }}>
                             <TouchableOpacity
                                   style={styles.customBtnBG2}
@@ -356,19 +293,7 @@ export default class COVIDHomeMGH extends React.Component {
                     </View>
 
 
-                        {/* <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
-                            <TouchableOpacity
-                                style={styles.customBtnBG2}
-                                onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.swl?APP=PDPERS&FF=PDA&ACTION=PAGE&TID=296480') }}>
-                                <View style={{ paddingTop: Dimensions.get('window').height/50 }}>
-                                  <View style={{ alignItems: 'center'}}>
-                                    <FontAwesome5Icons name="pager" size={22} color="black" />
-                                  </View>
-                                  <Text style={styles.customBtnTextSingleLinePager}>Alt. Pathways Navigator</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View> */}
-                    <View style={{ flexDirection: 'row', marginLeft: Dimensions.get('window').width/22, marginTop: 1.5}}>
+                    <View style={{ flexDirection: 'row',  marginTop: 1.5}}>
                       
                       <TouchableOpacity
                             style={styles.customBtnBG2}
@@ -382,6 +307,7 @@ export default class COVIDHomeMGH extends React.Component {
                             </View>
                       </TouchableOpacity>
                     </View>
+</View>
 
 
 
@@ -396,8 +322,17 @@ export default class COVIDHomeMGH extends React.Component {
 }
   
 const styles = StyleSheet.create({
+  imageiPhonesUpTo8: {
+    width: Dimensions.get('window').width, 
+    height: Dimensions.get('window').height/5,
+  },
+  imageiPhonesAfter8: {
+    width: Dimensions.get('window').width, 
+    height: Dimensions.get('window').height/6
+  },
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   top: {
     height: '9%',
@@ -466,14 +401,15 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/47,
   },
   customBtnBG: {
-    backgroundColor: "#DCE2EA",
+    borderRadius: 5,
+    backgroundColor: "#e8e8e8",
     width: Dimensions.get('window').width/2.385,
     height: Dimensions.get('window').height/9.5,
   },
   customBtnBG2: {
-    backgroundColor: "#DCE2EA",
+    backgroundColor: "#e8e8e8",
     borderRadius: 25,
-    width: Dimensions.get('window').width/2.2,
+    width: Dimensions.get('window').width/2.25,
     height: Dimensions.get('window').height/10.5,
   },
   customBtnTextSingleLinePager2: {

@@ -47,23 +47,30 @@ export default class Home extends React.Component {
     }
   }
 
+  iPhonesUpTo8 = () => {
+    if (
+      Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667 ||
+      Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736 ||
+      Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568
+    ){
+      return true
+    }
+  }
+
 
   render() { 
     return (  
-      <SafeAreaView style={styles.container}>
 
+
+
+<View style={styles.container}>
 
 
         <View style={styles.top}>
-
               <Image
-                      source={require('../../assets/homeHeader_3x.png')}
-                      style={{
-                        width: Dimensions.get('window').width, 
-                        height: Dimensions.get('window').height/4.4
-                        // height: 200
-                      }}
-                  />
+                  source={require('../../assets/homeHeader_3x.png')}
+                  style={[ this.iPhonesUpTo8() ? styles.imageiPhonesUpTo8 : styles.imageiPhonesAfter8]}
+              />
         </View>
 
 
@@ -111,12 +118,21 @@ export default class Home extends React.Component {
               height: Dimensions.get('window').height/9 }}
           />
         </View>
-      </SafeAreaView>
+      </View>
+
     )
   }
 }
   
 const styles = StyleSheet.create({
+  imageiPhonesUpTo8: {
+    width: Dimensions.get('window').width, 
+    height: Dimensions.get('window').height/4.2,
+  },
+  imageiPhonesAfter8: {
+    width: Dimensions.get('window').width, 
+    height: Dimensions.get('window').height/5
+  },
   container: {
     flex: 1,
     backgroundColor: 'white',
@@ -128,16 +144,18 @@ const styles = StyleSheet.create({
     // backgroundColor: 'yellow',
   },
   middle: {
-    height: '60%',
+    height: '50%',
     justifyContent: 'center',
     alignItems: 'center',
     // backgroundColor: 'pink'
   },
   bottom: {
-    height: '15%',
+    height: '25%',
     alignItems: 'center', 
+    // paddingTop: Dimensions.get('window').height/25,
+    justifyContent: 'center',
     // paddingTop: Dimensions.get('window').height/80, 
-    // backgroundColor: 'green'
+    // backgroundColor: 'gray'
   },
   title: {
     // fontFamily: 'Interstate-Bold',

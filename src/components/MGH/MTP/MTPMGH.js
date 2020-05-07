@@ -5,7 +5,6 @@ import LinearGradient from 'react-native-linear-gradient'
 import Icon from 'react-native-vector-icons/Ionicons' 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons' 
 import ComponentTwo from '../../ComponentTwo'
-import MTPNeedMoreBlood from './MTPNeedMoreBlood'
 
 export default class MTPMGH extends React.Component {
   static navigationOptions = ({ navigation }) => {
@@ -83,13 +82,12 @@ export default class MTPMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#008CB1', '#1192BC', ]}
+            colors={['#02bfdb', '#00c0dc', '#02c1dd']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
         />
-      ),   
-      // headerStyle: {backgroundColor: '#709CD0'},      
+      ),      
     }
   }
 
@@ -105,15 +103,43 @@ export default class MTPMGH extends React.Component {
     this.setState({ needBloodHidden: !this.state.needBloodHidden })
   }
 
+  show () {
+    return (
+      <View style={{
+        paddingLeft: Dimensions.get('window').width/20,
+        paddingRight: Dimensions.get('window').width/20,
+      }}>
+
+        <View style>
+          <Text style={{fontSize: Dimensions.get('window').width/23, fontWeight: '300' }}>
+        
+            <Text>
+                After the first trauma pack, you must pick up the
+                <Text> </Text>
+                <MaterialIcons name="phone" size={20} color="red" /> 
+                  <Text style={{fontWeight: 'bold', color: 'red'}}>RED PHONE</Text>
+                <MaterialIcons name="phone" size={20} color="red" /> 
+                <Text> </Text>
+                and individually request how many units
+                of each blood product you want at the intervals you want it, 
+                via paper form or Prepare/Transfuse order in EPIC.
+            </Text>
+          </Text>
+        </View>
+
+
+      
+        <View style={{ marginTop: Dimensions.get('window').height/40}}>
+          <Text style={{fontWeight: '300', fontSize: Dimensions.get('window').width/23}}>MGH recommends transfusing 1:2 (FFP : PRBC) ratio and platelets transfusion per labs.</Text>
+        </View>
+      </View>   
+    )
+  }
+
+
 
   state = {
     needBloodHidden: true,
-
-    data: [
-      'If indicated, order 1g TXA followed by another gram to be given over 8 hours',
-      'Give 2 grams of Ca++ up front',
-      'Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals'
-    ]
   }
 
 
@@ -149,14 +175,32 @@ export default class MTPMGH extends React.Component {
 
 
 
-              <View style={{ marginTop: Dimensions.get('window').height/40 }}>
+
+            <View style={{alignItems: 'center', marginTop: Dimensions.get('window').height/60}}>
+              <TouchableOpacity style={styles.customBtnBGSmall} onPress={() => {
+                  this.onPressNeedBloodHidden()
+                }}>
+                  <Text style={styles.customBtnTextSmall}>Need More Blood?</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View>
+              {!this.state.needBloodHidden ? this.show() : null}
+            </View> 
+
+
+
+
+
+
+              {/* <View style={{ marginTop: Dimensions.get('window').height/40 }}>
                       <ComponentTwo 
                         toggle={this.onPressNeedBloodHidden} 
                         hidden = {this.state.needBloodHidden}
                         component={<MTPNeedMoreBlood />}
                         buttonTitle='Need More Blood?'
                       />
-              </View>    
+              </View>      */}
           </View>
 
 
@@ -177,7 +221,8 @@ export default class MTPMGH extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   top: {
     height: '10%',
@@ -229,18 +274,36 @@ const styles = StyleSheet.create({
   },
   customBtnText: {
     fontWeight: '600',
-    color: 'white',
     textAlign: 'center',
     textAlignVertical: "center",
     fontSize: Dimensions.get('window').height/40,
     marginTop: Dimensions.get('window').height/40,
   },
   customBtnBG: {
-    backgroundColor: "#8dabc2",
+    backgroundColor: '#ededed',
     paddingHorizontal: 1,
     paddingVertical: 1,
-    borderRadius: 15,
+    borderRadius: 30,
     width: Dimensions.get('window').width/1.2,
-    height: Dimensions.get('window').height/12,
+    height: Dimensions.get('window').height/11,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 1},
+  },
+  customBtnTextSmall: {
+    fontWeight: '600',
+    textAlign: 'center',
+    textAlignVertical: "center",
+    fontSize: Dimensions.get('window').height/45,
+    marginTop: Dimensions.get('window').height/100,
+  },
+  customBtnBGSmall: {
+    borderRadius: 10,
+    backgroundColor: "#ededed",
+    width: Dimensions.get('window').width/1.25,
+    height: Dimensions.get('window').height/22, 
+    shadowColor: 'gray',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 4},
   },
 })

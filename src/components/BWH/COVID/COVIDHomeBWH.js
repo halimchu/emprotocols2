@@ -1,5 +1,5 @@
 import React from 'react'
-import { Linking, View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions } from 'react-native'
+import { Image, Linking, View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions } from 'react-native'
 import { Button, Divider } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Ionicons' 
 import FontAwesome5Icons from 'react-native-vector-icons/FontAwesome5'
@@ -81,7 +81,7 @@ export default class COVIDHomeBWH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0440A7', '#0F82B8']}
+            colors={['#146EB5', '#1D74B7', '#277ABB']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -90,18 +90,31 @@ export default class COVIDHomeBWH extends React.Component {
     }
   }
 
+  iPhonesUpTo8 = () => {
+    if (
+      Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667 ||
+      Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736 ||
+      Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568
+    ){
+      return true
+    }
+  }
+
   render() { 
     return (  
         <SafeAreaView style={styles.container}>
 
-          <View style={styles.top}>
-            <View style={{alignItems: 'center', marginBottom: Dimensions.get('window').height/100, }}>
-              <Text style={styles.title}>COVID-19</Text>
-            </View>
-              <Divider />
-          </View>
+          
 
-  
+
+          <Image
+              source={require('../../../../assets/BWH1125x400_3x_covid.png')}
+              style={[ this.iPhonesUpTo8() ? styles.imageiPhonesUpTo8 : styles.imageiPhonesAfter8]}
+          />
+
+  <View style={{marginTop: Dimensions.get('window').height/13}}>
+
+
           <View style={{ flexDirection: 'row', flexWrap: 'wrap',}}>
                 <View style={{marginLeft: Dimensions.get('window').width/13 }}>
                           <TouchableOpacity
@@ -150,7 +163,7 @@ export default class COVIDHomeBWH extends React.Component {
             <Text style={styles.header}>Contacts</Text>
           </View>
 
-          <View style={{ flexDirection: 'row', marginLeft: Dimensions.get('window').width/22, }}>
+          <View style={{ flexDirection: 'row', marginLeft: Dimensions.get('window').width/13, }}>
             <View style={{  marginTop: 1.5}}>
                 <TouchableOpacity
                       style={styles.customBtnBG2}
@@ -174,6 +187,8 @@ export default class COVIDHomeBWH extends React.Component {
             </View>   
           </View>
 
+          </View>
+
 
         </SafeAreaView>
     )
@@ -181,10 +196,18 @@ export default class COVIDHomeBWH extends React.Component {
 }
   
 const styles = StyleSheet.create({
+  imageiPhonesUpTo8: {
+    width: Dimensions.get('window').width, 
+    height: Dimensions.get('window').height/5,
+  },
+  imageiPhonesAfter8: {
+    width: Dimensions.get('window').width, 
+    height: Dimensions.get('window').height/6
+  },
   container: {
     flex: 1,
     height: '100%',
-    // backgroundColor: 'pink'
+    backgroundColor: 'white'
   },
   top: {
     height: '10%',
@@ -241,14 +264,15 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/47,
   },
   customBtnBG: {
-    backgroundColor: "#DCE2EA",
+    backgroundColor: "#e8e8e8",
     width: Dimensions.get('window').width/2.385,
     height: Dimensions.get('window').height/8.5,
+    borderRadius: 5,
   },
   customBtnBG2: {
-    backgroundColor: "#DCE2EA",
+    backgroundColor: "#e8e8e8",
     borderRadius: 25,
-    width: Dimensions.get('window').width/2.2,
-    height: Dimensions.get('window').height/10.5,
+    width: Dimensions.get('window').width/2.385,
+    height: Dimensions.get('window').height/9.5,
   },
 })

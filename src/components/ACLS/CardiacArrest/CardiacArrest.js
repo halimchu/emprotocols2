@@ -258,27 +258,27 @@ export default class CardiacArrest extends React.Component {
       
   
   goToComponentTwo = () => {
-    const added = this.state.imageHeight + this.state.reversibleCausesView
+    const added = this.state.imageHeight + this.state.CPRQualityView + this.state.shockEnergyView + 300
     this.scroller.scrollTo({x: 0, y: added, animated: true});
   }
   goToComponentThree = () => {
-    const added = this.state.imageHeight + this.state.reversibleCausesView 
+    const added = this.state.imageHeight + this.state.CPRQualityView + this.state.shockEnergyView + this.state.advancedAirwayView + this.state.drugTherapyView + 200
     this.scroller.scrollTo({x: 0, y: added, animated: true});
   }
   goToComponentFour = () => {
-    const added = this.state.imageHeight + this.state.reversibleCausesView + this.state.shockEnergyView + this.state.ROSCView
+    const added = this.state.imageHeight + this.state.CPRQualityView + this.state.shockEnergyView + this.state.drugTherapyView + this.state.advancedAirwayView  + 200
     this.scroller.scrollTo({x: 0, y: added, animated: true});
   }
   goToComponentFive = () => {
-    const added = this.state.imageHeight + this.state.reversibleCausesView + this.state.shockEnergyView + this.state.ROSCView + this.state.CPRQualityView
+    const added = this.state.imageHeight + this.state.CPRQualityView + this.state.shockEnergyView + this.state.drugTherapyView + this.state.advancedAirwayView + 200
     this.scroller.scrollTo({x: 0, y: added, animated: true});
   }
   goToComponentSix = () => {
-    const added = this.state.imageHeight + this.state.reversibleCausesView + this.state.shockEnergyView + this.state.ROSCView + this.state.CPRQualityView + this.state.advancedAirwayView
+    const added = this.state.imageHeight + this.state.CPRQualityView + this.state.shockEnergyView + this.state.drugTherapyView + this.state.advancedAirwayView + this.state.ROSCView + this.state.reversibleCausesView + 200
     this.scroller.scrollTo({x: 0, y: added, animated: true});
   }
   goToEnd = () => {
-    const added = this.state.imageHeight + this.state.reversibleCausesView + this.state.shockEnergyView + this.state.ROSCView + this.state.CPRQualityView + this.state.advancedAirwayView
+    const added = this.state.imageHeight + this.state.CPRQualityView + this.state.shockEnergyView + this.state.drugTherapyView + this.state.advancedAirwayView + this.state.ROSCView + this.state.reversibleCausesView + 200
     this.scroller.scrollTo({x: 0, y: added, animated: true});
   }
 
@@ -292,7 +292,7 @@ export default class CardiacArrest extends React.Component {
         />
       )
     }
-  }
+  } 
 
 
   IPhone375x812 () { // Xs, X, 11 Pro
@@ -353,184 +353,191 @@ export default class CardiacArrest extends React.Component {
     return ( 
       <SafeAreaView style={styles.container}>
 
-        <Timer />
-        <Divider />
+      <Timer />
+      <Divider />
+      
 
+      {/* <Text>{Dimensions.get('window').width}</Text>
+      <Text>{Dimensions.get('window').height}</Text> */}
 
-        <ScrollView 
-          maximumZoomScale={2.5}
-          ref={(scroller) => {this.scroller = scroller}}
-          onContentSizeChange={this.onContentSizeChange}
-        >
-
-
-
-
-          <View onLayout={this.measureImageView}>
-            {
-            
-                this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
-                
-                ? 
-                
-                this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
-                
-                : 
-                
-                this.IPhoneNotYet()
-            
-            }  
-          </View>
+      <ScrollView 
+        maximumZoomScale={2.5}
+        ref={(scroller) => {this.scroller = scroller}}
+        onContentSizeChange={this.onContentSizeChange}
+      >
 
 
 
-          <View style={{alignItems: 'center', marginBottom: Dimensions.get('window').height/50,}}>
+
+
+          {
+          
+              this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
+              
+              ? 
+              
+              this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
+              
+              : 
+              
+              this.IPhoneNotYet()
+          
+          }  
+   
+
+
+
+<View style={{alignItems: 'center',}}>
   <View style={{flexDirection: 'row'}}>
-
-
-    <View style={{
-      backgroundColor: '#CBE7F7', 
-      borderRadius: 10, 
-      width: '36%',
-      paddingTop: Dimensions.get('window').width/150,
-      paddingLeft: Dimensions.get('window').width/100,
-    }}>
-      <View style={{alignItems: 'center',}}>
-        <Text style={{fontWeight: 'bold', fontSize: Dimensions.get('window').width/26}}>CPR 2 min</Text>
-      </View>
-      <View style={{flexDirection: 'row'}}>
-          <Text style={{
-            fontSize: Dimensions.get('window').height/42, 
-            marginRight: Dimensions.get('window').width/90,}}>{`\u2022`}</Text>
-          <Text style={{marginTop: Dimensions.get('window').height/200}}>Amiodarone or Lidocaine</Text> 
-      </View>
-      <View style={{flexDirection: 'row'}}>
-          <Text style={{fontSize: Dimensions.get('window').height/40}}>{`\u2022`}</Text>
-          <Text style={{marginTop: Dimensions.get('window').height/200,  marginRight: Dimensions.get('window').width/90,}}>Treat reversible causes</Text> 
-      </View>
+  <View style={{
+    backgroundColor: '#CBE7F7', 
+    borderRadius: 10, 
+    width: '36%',
+    paddingTop: Dimensions.get('window').width/150,
+    paddingLeft: Dimensions.get('window').width/100,
+  }}>
+    <View style={{alignItems: 'center',}}>
+      <Text style={{fontWeight: 'bold', fontSize: Dimensions.get('window').width/26}}>CPR 2 min</Text>
     </View>
-
-
-
-
-      <View style={{
-          backgroundColor: '#EED8C5', 
-          borderRadius: 10, 
-          marginLeft: Dimensions.get('window').width/30,
-          width: '57%',
-          padding: Dimensions.get('window').width/150,
-      }}>
-        <View style={{flexDirection: 'row',}}>
-          <Text style={{
-            // marginTop: Dimensions.get('window').height/140, 
-            marginRight: Dimensions.get('window').width/90, 
-            fontSize: Dimensions.get('window').height/42,}}>{`\u2022`}</Text>
-          <Text style={{flex: 1, flexWrap: 'wrap', marginTop: Dimensions.get('window').height/200}}>
-            <Text>If no signs of ROSC, go to</Text>
-            <Text style={{fontWeight: 'bold'}}> 10</Text>
-            <Text> or</Text>
-            <Text style={{fontWeight: 'bold'}}> 11</Text> 
+    <View style={{flexDirection: 'row'}}>
+        <Text style={{
+          fontSize: Dimensions.get('window').height/42, 
+          marginRight: Dimensions.get('window').width/90,}}>{`\u2022`}</Text>
+          <Text>
+            <Text style={{marginTop: Dimensions.get('window').height/200, fontWeight: 'bold'}}>Amiodarone</Text> 
+            <Text style={{marginTop: Dimensions.get('window').height/200}}> or</Text> 
+            <Text style={{marginTop: Dimensions.get('window').height/200, fontWeight: 'bold'}}> Lidocaine</Text> 
           </Text>
-        </View>
-            
-
-        <View style={{flexDirection: 'row'}}>
-              <Text style={{
-                  marginRight: Dimensions.get('window').width/90,
-                  marginTop: Dimensions.get('window').height/140, 
-                  fontSize: Dimensions.get('window').height/42,}}>{`\u2022`}
-              </Text>
-
-              <Text style={{
-                marginTop: Dimensions.get('window').height/80, 
-                fontSize: Dimensions.get('window').width/27,}}>If ROSC, go to 
-              </Text>
-        </View>
-
-        <View style={{alignItems: 'center'}}>
-          <TouchableOpacity
-            style={styles.customBtnBG3} 
-            onPress={() => this.props.navigation.navigate('PostCardiacArrestCare')}>
-            <Text style={styles.customBtnText2}>Post Cardiac Arrest Care</Text>
-          </TouchableOpacity>
-        </View>
-
-      </View>
+    </View>
+    <View style={{flexDirection: 'row'}}>
+        <Text style={{fontSize: Dimensions.get('window').height/40}}>{`\u2022`}</Text>
+        <Text style={{marginTop: Dimensions.get('window').height/200,  marginRight: Dimensions.get('window').width/90,}}>Treat reversible causes</Text> 
     </View>
   </View>
 
 
 
 
+    <View style={{
+        backgroundColor: '#EED8C5', 
+        borderRadius: 10, 
+        marginLeft: Dimensions.get('window').width/30,
+        width: '57%',
+        padding: Dimensions.get('window').width/150,
+    }}>
+      <View style={{flexDirection: 'row',}}>
+        <Text style={{
+          // marginTop: Dimensions.get('window').height/140, 
+          marginRight: Dimensions.get('window').width/90, 
+          fontSize: Dimensions.get('window').height/42,}}>{`\u2022`}</Text>
+        <Text style={{flex: 1, flexWrap: 'wrap', marginTop: Dimensions.get('window').height/200}}>
+          <Text>If no signs of return of spontaneous circulation (ROSC), go to</Text>
+          <Text style={{fontWeight: 'bold'}}> 10</Text>
+          <Text> or</Text>
+          <Text style={{fontWeight: 'bold'}}> 11</Text> 
+        </Text>
+      </View>
+          
 
-          <View style={{ alignItems: 'center'  }}>
-              <View onLayout={this.measureReversibleCausesView}>
-                <Component 
-                  goToNextComponent={this.goToComponentTwo} 
-                  toggle={this.onPressReversibleCausesHidden} 
-                  hidden = {this.state.reversibleCausesHidden}
-                  component={<CardiacArrestReversibleCauses />}
-                  buttonTitle='Reversible Causes'
-                />
-              </View>
+      <View style={{flexDirection: 'row'}}>
+            <Text style={{
+                marginRight: Dimensions.get('window').width/90,
+                marginTop: Dimensions.get('window').height/140, 
+                fontSize: Dimensions.get('window').height/42,}}>{`\u2022`}
+            </Text>
+
+            <Text style={{
+              marginTop: Dimensions.get('window').height/80, 
+              fontSize: Dimensions.get('window').width/27,}}>If ROSC, go to 
+            </Text>
+      </View>
+
+      <View style={{alignItems: 'center'}}>
+        <TouchableOpacity
+          style={styles.customBtnBG3} 
+          onPress={() => this.props.navigation.navigate('PostCardiacArrestCare')}>
+          <Text style={styles.customBtnText2}>Post Cardiac Arrest Care</Text>
+        </TouchableOpacity>
+      </View>
+
+    </View>
+  </View>
+</View>
 
 
-              <View onLayout={this.measureShockEnergyView}>
-                <Component
-                  goToNextComponent={this.goToComponentThree} 
-                  toggle={this.onPressShockEnergyHidden} 
-                  hidden = {this.state.shockEnergyHidden}
-                  component={<CardiacArrestShockEnergy />}
-                  buttonTitle='Shock Energy for Defibrillation'
-                />
-              </View>
+
+
+<View style={{marginBottom: Dimensions.get('window').height/80,}}></View>
+        <View style={{ alignItems: 'center'  }}>
+        <View onLayout={this.measureCPRQualityView}>
+              <Component 
+                goToNextComponent={this.goToComponentTwo} 
+                toggle={this.onPressCPRQualityHidden} 
+                hidden = {this.state.CPRQualityHidden}
+                component={<CardiacArrestCPR />}
+                buttonTitle='CPR Quality'
+              />
+            </View>
+
+            <View onLayout={this.measureShockEnergyView}>
+              <Component
+                goToNextComponent={this.goToComponentThree} 
+                toggle={this.onPressShockEnergyHidden} 
+                hidden = {this.state.shockEnergyHidden}
+                component={<CardiacArrestShockEnergy />}
+                buttonTitle='Shock Energy for Defibrillation'
+              />
+            </View>
+
+
+            <View onLayout={this.measureDrugTherapyView}>
+              <Component 
+                goToNextComponent={this.goToComponentFour} 
+                toggle={this.onPressDrugTherapyHidden} 
+                hidden = {this.state.drugTherapyHidden}
+                component={<CardiacArrestDrugTherapy />}
+                buttonTitle='Drug Therapy'
+              />
+            </View>
+
+            <View onLayout={this.measureAdvancedAirwayView}>
+              <Component 
+                goToNextComponent={this.goToComponentFive} 
+                toggle={this.onPressAdvancedAirwayHidden} 
+                hidden = {this.state.advancedAirwayHidden}
+                component={<CardiacArrestAdvancedAirway />}
+                buttonTitle='Advanced Airway'
+              />
+            </View>
+          
             
-              <View onLayout={this.measureDrugTherapyView}>
-                <Component 
-                  goToNextComponent={this.goToComponentFour} 
-                  toggle={this.onPressDrugTherapyHidden} 
-                  hidden = {this.state.drugTherapyHidden}
-                  component={<CardiacArrestDrugTherapy />}
-                  buttonTitle='Drug Therapy'
-                />
-              </View>
 
-              <View onLayout={this.measureROSCView}>
-                <Component 
-                  goToNextComponent={this.goToComponentFive} 
-                  toggle={this.onPressROSCHidden} 
-                  hidden = {this.state.ROSCHidden}
-                  component={<CardiacArrestROSC />}
-                  buttonTitle='Return of Spontaneous Circulation (ROSC)'
-                />
-              </View>
+            <View onLayout={this.measureROSCView}>
+              <Component 
+                goToNextComponent={this.goToComponentSix} 
+                toggle={this.onPressROSCHidden} 
+                hidden = {this.state.ROSCHidden}
+                component={<CardiacArrestROSC />}
+                buttonTitle='Return of Spontaneous Circulation (ROSC)'
+              />
+            </View>
 
-              <View onLayout={this.measureCPRQualityView}>
-                <Component 
-                  goToNextComponent={this.goToComponentSix} 
-                  toggle={this.onPressCPRQualityHidden} 
-                  hidden = {this.state.CPRQualityHidden}
-                  component={<CardiacArrestCPR />}
-                  buttonTitle='CPR Quality'
-                />
-              </View>
 
-              <View style={{ }} onLayout={this.measureAdvancedAirwayView}>
-                <Component 
-                  goToNextComponent={this.goToEnd} 
-                  toggle={this.onPressAdvancedAirwayHidden} 
-                  hidden = {this.state.advancedAirwayHidden}
-                  component={<CardiacArrestAdvancedAirway />}
-                  buttonTitle='Advanced Airway'
-                />
-              </View>
+            <View onLayout={this.measureReversibleCausesView}>
+              <Component 
+                goToNextComponent={this.goToEnd} 
+                toggle={this.onPressReversibleCausesHidden} 
+                hidden = {this.state.reversibleCausesHidden}
+                component={<CardiacArrestReversibleCauses />}
+                buttonTitle='Reversible Causes'
+              />
+            </View>
 
-          </View>
+            
+        </View>
 
-        
-
-        </ScrollView>
-      </SafeAreaView> 
+      </ScrollView>
+    </SafeAreaView> 
     )
   }
 }

@@ -81,13 +81,13 @@ export default class MTPNextStepsMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#008CB1', '#1192BC', ]}
+            colors={['#02bfdb', '#00c0dc', '#02c1dd' ]}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
         />
       ),   
-      // headerStyle: {backgroundColor: '#709CD0'},      
+    
     }
   }
 
@@ -160,7 +160,8 @@ export default class MTPNextStepsMGH extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   top: {
     height: '10%',
@@ -188,11 +189,12 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/32.5,
   },
   header: {
-    fontWeight: 'bold',
+    fontWeight: '500',
     color: '#2b2b2b',
     fontSize: Dimensions.get('window').height/38,
   },
   text: {
+    fontWeight: '300',
     fontSize: Dimensions.get('window').height/38,
   },
 })

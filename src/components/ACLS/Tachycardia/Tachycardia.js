@@ -250,7 +250,7 @@ export default class Tachycardia extends React.Component {
             }  
           </View>
 
-
+          <View style={{marginBottom: Dimensions.get('window').height/80}}></View>
 
             <View onLayout={this.measureSynchronizedCardioversionView}>
               <Component
@@ -286,7 +286,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#2b2b2b',
     paddingTop: Dimensions.get('window').height/60,
-    fontSize: Dimensions.get('window').height/33,
+    fontSize: Dimensions.get('window').height/38,
   },
   titleSecondLine: {
     fontWeight: 'bold',

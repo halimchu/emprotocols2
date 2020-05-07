@@ -115,7 +115,10 @@ export default class COVIDDispoBWH extends React.Component {
         <SafeAreaView style={styles.container}>
           <View style={styles.top}>
             <View style={{alignItems: 'center', marginBottom: Dimensions.get('window').height/100, }}>
-              <Text style={styles.title}>COVID-19</Text>
+              <Text style={styles.title}>
+                <Text style={{color: 'red'}}>COVID-19 </Text>
+              </Text>
+                <Text style={styles.title}>Dispo</Text>
             </View>
               <Divider />
           </View>
