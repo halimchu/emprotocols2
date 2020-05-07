@@ -78,7 +78,7 @@ export default class ADBWH extends React.Component {
     return {
       headerLeft, 
       headerRight,
-      headerTitle,
+      headerTitle, 
       headerBackground: (
         <LinearGradient
             colors={['#146EB5', '#1D74B7', '#277ABB']}
@@ -86,8 +86,7 @@ export default class ADBWH extends React.Component {
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
         />
-      ),    
-      // headerStyle: {backgroundColor: '#709CD0'},      
+      ),       
     }
   }
 
@@ -124,7 +123,6 @@ export default class ADBWH extends React.Component {
                 paddingRight: Dimensions.get('window').width/25,
               }}>
                 <Text style={styles.headerOne}>Concern for Acute Aortic Dissection or AAA Rupture?</Text>
-                {/* <Text style={styles.headerOne}>Dissection or AAA Rupture?</Text> */}
               </View>
 
               <View style={{alignItems: 'center', marginTop: Dimensions.get('window').height/100,  }}>
@@ -258,19 +256,21 @@ const styles = StyleSheet.create({
   },
   customBtnText: {
     fontWeight: '600',
-    color: 'white',
+    color: '#2b2b2b',
     textAlign: 'center',
     textAlignVertical: "center",
     fontSize: Dimensions.get('window').height/40,
     marginTop: Dimensions.get('window').height/35,
   },
   customBtnBG: {
-    backgroundColor: '#8dabc2',
+    backgroundColor: '#ededed',
     paddingHorizontal: 1,
     paddingVertical: 1,
     borderRadius: 30,
-    shadowOpacity: .1,
     width: Dimensions.get('window').width/1.2,
     height: Dimensions.get('window').height/11,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 1},
   },
 })

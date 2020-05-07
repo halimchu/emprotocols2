@@ -71,7 +71,7 @@ export default class SecondPageNoPEBWH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0440A7', '#0F82B8']}
+            colors={['#146EB5', '#1D74B7', '#277ABB']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -115,12 +115,10 @@ export default class SecondPageNoPEBWH extends React.Component {
   render() { 
     return (  
       <SafeAreaView style={styles.container}>
-        <View style={styles.top}>
+       <View style={styles.top}>
           <Text style={styles.title}>Pulmonary Embolism</Text>
           <View style={{marginTop: Dimensions.get('window').height/64}}>
-              <View style={{alignItems: 'center'}}>
-                  
-            </View>
+            <Divider />
           </View>
 
 
@@ -196,7 +194,8 @@ const styles = StyleSheet.create({
     borderColor: '#6c9ea1',
   },
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   top: {
     height: '85%',
@@ -237,17 +236,21 @@ const styles = StyleSheet.create({
   
   customBtnText: {
     fontWeight: '600',
-    color: "#fff",
+    color: '#2b2b2b',
     textAlign: 'center',
-    fontSize: Dimensions.get('window').height/35,
-    marginTop: Dimensions.get('window').height/47,
+    textAlignVertical: "center",
+    fontSize: Dimensions.get('window').height/40,
+    marginTop: Dimensions.get('window').height/35,
   },
   customBtnBG: {
-    backgroundColor: "#8dabc2",
+    backgroundColor: '#ededed',
     paddingHorizontal: 1,
     paddingVertical: 1,
-    borderRadius: 8,
+    borderRadius: 30,
     width: Dimensions.get('window').width/2.5,
-    height: Dimensions.get('window').height/12,
+    height: Dimensions.get('window').height/11,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 1},
   },
 })

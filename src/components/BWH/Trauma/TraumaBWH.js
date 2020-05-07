@@ -91,7 +91,7 @@ export default class TraumaBWH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0440A7', '#0F82B8']}
+            colors={['#146EB5', '#1D74B7', '#277ABB']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -149,13 +149,6 @@ export default class TraumaBWH extends React.Component {
   }
 
   goToTopTwo = () => {
-
-
-     // if it's not 0, then don't scroll the screen
-
-
-
-
     // if parent is hidden
     if (!this.state.codeAlphaHidden && this.state.criteriaHidden) {
 
@@ -166,9 +159,6 @@ export default class TraumaBWH extends React.Component {
     } else if (!this.state.codeAlphaHidden) {
 
     }
-
-    // criteriaHidden
-    // codeAlphaHidden
   }
   
 
@@ -324,9 +314,10 @@ export default class TraumaBWH extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1
-  // },
+  container: {
+    flex: 1,
+    backgroundColor: 'white'
+  },
   divider: {
     backgroundColor: '#CDCDCD', 
     marginTop: Dimensions.get('window').height/64, 

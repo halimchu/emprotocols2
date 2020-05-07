@@ -80,7 +80,7 @@ export default class STEMIBWH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0440A7', '#0F82B8']}
+            colors={['#146EB5', '#1D74B7', '#277ABB']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -154,7 +154,7 @@ export default class STEMIBWH extends React.Component {
 
               <TouchableOpacity
                 style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIYesBWH')}>
+                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
                 <Text style={styles.customBtnText}>Next Steps</Text>
               </TouchableOpacity>
   
@@ -195,6 +195,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    backgroundColor: 'white'
   },
   top: {
     height: '10%',
@@ -245,17 +246,21 @@ const styles = StyleSheet.create({
 
   customBtnText: {
     fontWeight: '600',
-    color: "#fff",
+    color: '#2b2b2b',
     textAlign: 'center',
-    fontSize: Dimensions.get('window').height/35,
-    marginTop: Dimensions.get('window').height/47,
+    textAlignVertical: "center",
+    fontSize: Dimensions.get('window').height/40,
+    marginTop: Dimensions.get('window').height/35,
   },
   customBtnBG: {
-    backgroundColor: "#8dabc2",
+    backgroundColor: '#ededed',
     paddingHorizontal: 1,
     paddingVertical: 1,
-    borderRadius: 8,
+    borderRadius: 30,
     width: Dimensions.get('window').width/1.2,
-    height: Dimensions.get('window').height/12,
+    height: Dimensions.get('window').height/11,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 1},
   },
 }) 

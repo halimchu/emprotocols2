@@ -182,7 +182,7 @@ export default class MGHHome extends React.Component {
               </View>
           </View>
 
-<View style={{alignItems: 'center', marginTop: 10}}>
+        <View style={{alignItems: 'center', marginTop: 10}}>
 
           <TouchableOpacity onPress={() => this.props.navigation.navigate('COVIDHomeMGH')}>
                 <LinearGradient 
@@ -195,14 +195,7 @@ export default class MGHHome extends React.Component {
                 </LinearGradient>
               </TouchableOpacity>
         </View>
-</View>
-
-
-        
-
-        
-
-        
+      </View>
 
 
       </SafeAreaView>

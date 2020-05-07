@@ -187,22 +187,21 @@ export default class BWHHome extends React.Component {
               </View>
 
 
+              <View style={{alignItems: 'center', marginTop: 10}}>
+
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('COVIDHomeBWH')}>
+                    <LinearGradient 
+                      style={styles.covidButton}
+                      colors={['#9A0100', '#E7522E']}
+                      start={{x: 0, y: 0}}
+                      end={{x: 1, y: 0}}
+                    >
+                      <Text style={styles.covidCustomBtnText}>COVID-19</Text>
+                    </LinearGradient>
+                  </TouchableOpacity>
+            </View>
           </View>
 
-
-
-          <View style={styles.bottom}>
-              <TouchableOpacity onPress={() => this.props.navigation.navigate('COVIDHomeBWH')}>
-                <LinearGradient 
-                  style={styles.covidButton}
-                  colors={['#9A0100', '#E7522E']}
-                  start={{x: 0, y: 0}}
-                  end={{x: 1, y: 0}}
-                >
-                  <Text style={styles.covidCustomBtnText}>COVID-19</Text>
-                </LinearGradient>
-              </TouchableOpacity>
-        </View>
         
       </SafeAreaView>
     )
@@ -259,18 +258,15 @@ const styles = StyleSheet.create({
 
 
   title: {
-    // fontFamily: 'Interstate-Bold',
     fontSize: Dimensions.get('window').height/40, 
   },
   customBtnBG: {
-    // backgroundColor: "#f0f0f0",
-    backgroundColor: '#e8e8e8',
+    backgroundColor: '#e8e8e8', 
     borderRadius: 5,
     width: Dimensions.get('window').width/2.385,
     height: Dimensions.get('window').height/9,
   },
   customBtnTextSingleLine: {
-    // fontFamily: 'Interstate-Bold',
     fontWeight: '600',
     color: "black",
     textAlign: 'center',
@@ -279,7 +275,6 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/45,
   },
   customBtnTextFirstLine: { 
-    // fontFamily: 'Interstate-Bold',
     fontWeight: '600',
     color: "black",
     textAlign: 'center',
@@ -288,7 +283,6 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/45,
   },
   customBtnTextSecondLine: {
-    // fontFamily: 'Interstate-Bold',
     fontWeight: '600',
     color: "black",
     textAlign: 'center',
@@ -296,7 +290,6 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/45,
   },
   customBtnTextFirstLineMTP: {
-    // fontFamily: 'Interstate-Bold',
     fontWeight: '600',
     color: "black",
     textAlign: 'center',
@@ -311,5 +304,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: "center",
     fontSize: Dimensions.get('window').height/45,
+  },
+  covidCustomBtnText: {
+    fontWeight: '600',
+    color: "#fff",
+    textAlign: 'center',
+    fontSize: Dimensions.get('window').height/35,
+    marginTop: Dimensions.get('window').height/28,
+  },
+  covidButton: {
+    borderRadius: 5,
+    width: Dimensions.get('window').width/1.19,
+    height: Dimensions.get('window').height/9,
   },
 })

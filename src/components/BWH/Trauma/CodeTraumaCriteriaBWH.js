@@ -37,7 +37,7 @@ export default class CodeTraumaCriteriaBWH extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#ECECEC'
+    backgroundColor: '#f2f2f2'
   },
   bulletPoints: {
     flexDirection: 'row',

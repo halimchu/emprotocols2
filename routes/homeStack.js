@@ -33,9 +33,9 @@ import FourthPagePEBWH from '../src/components/BWH/Pert/FourthPagePEBWH'
 import ThirdPageYESPEBWH from '../src/components/BWH/Pert/ThirdPageYESPEBWH'
 import RICUBWH from '../src/components/BWH/DifficultAirway/RICUBWH'
 import STEMIBWH from '../src/components/BWH/STEMI/STEMIBWH'
-import STEMIYesBWH from '../src/components/BWH/STEMI/STEMIYesBWH'
+import STEMIPageBWH from '../src/components/BWH/STEMI/STEMIPageBWH'
 import STEMIUncertainBWH from '../src/components/BWH/STEMI/STEMIUncertainBWH'
-import STEMINextStepsBWHYes from '../src/components/BWH/STEMI/STEMINextStepsBWHYes'
+import STEMILastBWH from '../src/components/BWH/STEMI/STEMILastBWH'
 import STEMINextStepsBWHUncertain from '../src/components/BWH/STEMI/STEMINextStepsBWHUncertain'
 import StrokeBWH from '../src/components/BWH/Stroke/StrokeBWH'
 import EmergencyBloodReleaseBWH from '../src/components/BWH/MTP/EmergencyBloodReleaseBWH'
@@ -86,9 +86,9 @@ const HomeStack = createStackNavigator({
   STEMIMGH: { screen: STEMIMGH },
   STEMINextStepsMGH: { screen: STEMINextStepsMGH },
   STEMIBWH: { screen: STEMIBWH },
-  STEMIYesBWH: { screen: STEMIYesBWH },
+  STEMIPageBWH: { screen: STEMIPageBWH },
   STEMIUncertainBWH: { screen: STEMIUncertainBWH },
-  STEMINextStepsBWHYes: { screen: STEMINextStepsBWHYes },
+  STEMILastBWH: { screen: STEMILastBWH },
   STEMINextStepsBWHUncertain: { screen: STEMINextStepsBWHUncertain },
   StrokeMGH: { screen: StrokeMGH },
   StrokeBWH: { screen: StrokeBWH },

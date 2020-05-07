@@ -82,13 +82,12 @@ export default class MassiveTransfusionProtocolBWH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0440A7', '#0F82B8']}
+            colors={['#146EB5', '#1D74B7', '#277ABB']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
         />
-      ),    
-      // headerStyle: {backgroundColor: '#709CD0'},      
+      ),       
     }
   }
 
@@ -131,7 +130,7 @@ export default class MassiveTransfusionProtocolBWH extends React.Component {
         </View>
 
 
-        <View style={styles.middle}>
+        <View style={styles.middle}> 
             <View style={{
               marginTop: Dimensions.get('window').height/40,
               marginLeft: Dimensions.get('window').width/200,
@@ -153,25 +152,42 @@ export default class MassiveTransfusionProtocolBWH extends React.Component {
                     shadowColor: 'black',
                     shadowOpacity: .5,}}>
 
-                <TouchableOpacity onPress={()=>{this.dialCall()}}>
+
+
+<TouchableOpacity style={styles.shadow} onPress={()=>{this.dialCall()}}>
                     <LinearGradient 
                       style={styles.callButton}
                       colors={['#B62619', '#F63826', '#B62619']}
                       start={{x: 0, y: 0}}
                       end={{x: 1, y: 0}}
                     >
-                        <View style={{ flexDirection: 'row' }}>
-                          <MaterialIcons name="phone" size={19} color="white" />
-                          <Text style={{ fontSize: Dimensions.get('window').width/21, color: 'white', fontWeight: 'bold' }}> Call to activate MTP</Text>
+                        <View style={{ flexDirection: 'row'}}>
+                          <View style={{flexDirection: 'column'}}>
+                            <View style={{}}>
+                              <MaterialIcons name="phone-in-talk" size={Dimensions.get('window').width/10} color="white" />
+                            </View>
+                          </View>
+                          <View style={{flexDirection: 'column',}}>
+                            <Text style={{marginLeft: Dimensions.get('window').width/15, fontSize: Dimensions.get('window').width/21, color: 'white', fontWeight: 'bold' }}>Call to activate MTP</Text>
+                            <Text style={{ 
+                              marginTop: Dimensions.get('window').height/150, 
+                              color: 'white', 
+                              textAlign: 'center',
+                              fontSize: Dimensions.get('window').width/24, fontWeight: '400'
+                            }}>x2-7290
+                            </Text>
+                          </View>
                         </View>
-                        <Text style={{ 
-                          marginTop: Dimensions.get('window').height/150, 
-                          color: 'white', 
-                          fontSize: Dimensions.get('window').width/24, fontWeight: '400'
-                        }}>x2-7290
-                        </Text>
+                        
                     </LinearGradient>
-                </TouchableOpacity>   
+              </TouchableOpacity>
+
+
+
+
+
+
+                
             </View>
           </View>
 
@@ -223,8 +239,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  shadow: {
+    shadowColor: 'black',
+    shadowOpacity: 0.8,
+    shadowOffset : { width: 1, height: 1},
+  },
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   top: {
     height: '15%',
@@ -278,20 +300,22 @@ const styles = StyleSheet.create({
   },
   customBtnText: {
     fontWeight: '600',
-    color: 'white',
+    color: '#2b2b2b',
     textAlign: 'center',
     textAlignVertical: "center",
     fontSize: Dimensions.get('window').height/40,
     marginTop: Dimensions.get('window').height/35,
   },
   customBtnBG: {
-    backgroundColor: '#8dabc2',
+    backgroundColor: '#ededed',
     paddingHorizontal: 1,
     paddingVertical: 1,
     borderRadius: 30,
-    shadowOpacity: .1,
     width: Dimensions.get('window').width/1.2,
     height: Dimensions.get('window').height/11,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 1},
   },
 
 })

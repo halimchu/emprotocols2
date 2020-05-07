@@ -84,13 +84,12 @@ export default class MTPBWH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0440A7', '#0F82B8']}
+            colors={['#146EB5', '#1D74B7', '#277ABB']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
         />
-      ),    
-      // headerStyle: {backgroundColor: '#709CD0'},      
+      ),        
     }
   }
 
@@ -127,17 +126,21 @@ export default class MTPBWH extends React.Component {
     return (  
       <View style={styles.container}>
 
-        <View style={styles.top}>
+        <View style={styles.top} >
           <Text style={styles.title}>Massive Transfusion Protocol</Text>
-          <View style={{marginTop: Dimensions.get('window').height/64, }}>
-          
+          <View style={{paddingTop: Dimensions.get('window').height/80}}>
+            <Divider />
           </View>
         </View>
 
 
+
+
+       
+
         <View style={styles.bottom}>
           <TouchableOpacity
-            style={styles.customBtnBG1} 
+            style={styles.customBtnBG} 
             onPress={() => this.props.navigation.navigate('EmergencyBloodReleaseBWH')}>
             <Text style={styles.customBtnText}>Emergency Blood Release</Text>
           </TouchableOpacity>  
@@ -145,7 +148,7 @@ export default class MTPBWH extends React.Component {
 
           <View style={{marginTop: Dimensions.get('window').height/20, }}>
             <TouchableOpacity
-              style={styles.customBtnBG2} 
+              style={styles.customBtnBG} 
               onPress={() => this.props.navigation.navigate('MassiveTransfusionProtocolBWH')}>
               <Text style={styles.customBtnText}>Massive Transfusion Protocol</Text>
             </TouchableOpacity>   
@@ -158,6 +161,10 @@ export default class MTPBWH extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white'
+  },
   firstCircle: {
     width: 10,
     height: 10,
@@ -240,23 +247,23 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/40,
     marginTop: Dimensions.get('window').height/35,
   },
-  customBtnBG1: {
-    paddingHorizontal: 1,
-    paddingVertical: 1,
-    borderRadius: 30,
-    shadowOpacity: .1,
-    backgroundColor: '#3A7290',
-    width: Dimensions.get('window').width/1.25,
-    height: Dimensions.get('window').height/10.75,
+  customBtnText: {
+    fontWeight: '600',
+    textAlign: 'center',
+    textAlignVertical: "center",
+    fontSize: Dimensions.get('window').height/40,
+    marginTop: Dimensions.get('window').height/38,
   },
-  customBtnBG2: {
+  customBtnBG: {
+    backgroundColor: '#ededed',
     paddingHorizontal: 1,
     paddingVertical: 1,
     borderRadius: 30,
-    shadowOpacity: .1,
-    backgroundColor: '#3A7290',
-    width: Dimensions.get('window').width/1.25,
-    height: Dimensions.get('window').height/10.75,
+    width: Dimensions.get('window').width/1.2,
+    height: Dimensions.get('window').height/11,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 1},
   },
 
 })

@@ -131,25 +131,35 @@ export default class RICUBWH extends React.Component {
 
 
         <View style={{ alignItems: 'center', marginTop: Dimensions.get('window').height/40}}>
-          <TouchableOpacity onPress={()=>{this.dialCall()}}>
-              <LinearGradient 
-                style={styles.callButton}
-                colors={['#B62619', '#F63826', '#B62619']}
-                start={{x: 0, y: 0}}
-                end={{x: 1, y: 0}}
-              >
-                  <View style={{ flexDirection: 'row' }}>
-                    <MaterialIcons name="phone" size={19} color="white" />
-                    <Text style={{ fontSize: Dimensions.get('window').width/21, color: 'white', fontWeight: 'bold' }}> Call Anesthesia Consult</Text>
-                  </View>
-                  <Text style={{ 
-                    marginTop: Dimensions.get('window').height/150, 
-                    color: 'white', 
-                    fontSize: Dimensions.get('window').width/24, fontWeight: '400'
-                  }}>x2-6555
-                  </Text>
-              </LinearGradient>
-          </TouchableOpacity>   
+
+        <TouchableOpacity style={styles.shadow} onPress={()=>{this.dialCall()}}>
+                    <LinearGradient 
+                      style={styles.callButton}
+                      colors={['#B62619', '#F63826', '#B62619']}
+                      start={{x: 0, y: 0}}
+                      end={{x: 1, y: 0}}
+                    >
+                        <View style={{ flexDirection: 'row'}}>
+                          <View style={{flexDirection: 'column'}}>
+                            <View style={{}}>
+                              <MaterialIcons name="phone-in-talk" size={Dimensions.get('window').width/10} color="white" />
+                            </View>
+                          </View>
+                          <View style={{flexDirection: 'column',}}>
+                            <Text style={{marginLeft: Dimensions.get('window').width/15, fontSize: Dimensions.get('window').width/21, color: 'white', fontWeight: 'bold' }}>Call Anesthesia Consult</Text>
+                            <Text style={{ 
+                              marginTop: Dimensions.get('window').height/150, 
+                              color: 'white', 
+                              textAlign: 'center',
+                              fontSize: Dimensions.get('window').width/24, fontWeight: '400'
+                            }}>x2-6555
+                            </Text>
+                          </View>
+                        </View>
+                        
+                    </LinearGradient>
+              </TouchableOpacity>
+
         </View>
 
 
@@ -159,8 +169,9 @@ export default class RICUBWH extends React.Component {
             marginTop: Dimensions.get('window').height/23, 
             marginLeft: Dimensions.get('window').width/37,
             marginRight: Dimensions.get('window').width/37,
+            
           }}>
-            <Text style={{fontSize: Dimensions.get('window').height/37}}>  
+            <Text style={{fontSize: Dimensions.get('window').height/37, textAlign: 'center'}}>  
                     <Text>
                       If concern for 
                     </Text>
@@ -179,7 +190,7 @@ export default class RICUBWH extends React.Component {
             marginLeft: Dimensions.get('window').width/37,
             marginRight: Dimensions.get('window').width/37,
           }}>
-            <Text style={{fontSize: Dimensions.get('window').height/37,}}>
+            <Text style={{fontSize: Dimensions.get('window').height/37, textAlign: 'center'}}>
                       <Text>
                         If concern for 
                       </Text>
@@ -219,8 +230,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  shadow: {
+    shadowColor: 'black',
+    shadowOpacity: 0.8,
+    shadowOffset : { width: 1, height: 1},
+  },
+
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   top: {
     height: '10%'
@@ -273,15 +291,17 @@ const styles = StyleSheet.create({
   },
   customBtnText: {
     fontWeight: '600',
-    color: "#fff",
     textAlign: 'center',
     fontSize: Dimensions.get('window').height/44,
-    marginTop: Dimensions.get('window').height/150,
+    marginTop: Dimensions.get('window').height/120,
   },
   customBtnBG: {
-    backgroundColor: "#8FABC6",
     borderRadius: 10,
+    backgroundColor: "#ededed",
     width: Dimensions.get('window').width/1.25,
-    height: Dimensions.get('window').height/22,
+    height: Dimensions.get('window').height/22, 
+    shadowColor: 'gray',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 4},
   },
 })

@@ -71,7 +71,7 @@ export default class ThirdPageNoPEBWH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0440A7', '#0F82B8']}
+            colors={['#146EB5', '#1D74B7', '#277ABB']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -117,9 +117,8 @@ export default class ThirdPageNoPEBWH extends React.Component {
         <View style={styles.top}>
           <Text style={styles.title}>Pulmonary Embolism</Text>
           <View style={{marginTop: Dimensions.get('window').height/64}}>
-              
+            <Divider />
           </View>
-
 
           <View style={{
             marginLeft: Dimensions.get('window').width/60, 
@@ -176,7 +175,8 @@ const styles = StyleSheet.create({
     borderColor: '#6c9ea1',
   },
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   top: {
     height: '85%',

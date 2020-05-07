@@ -81,7 +81,7 @@ export default class MTPNextStepsBWH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0440A7', '#0F82B8']}
+            colors={['#146EB5', '#1D74B7', '#277ABB']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -112,8 +112,8 @@ export default class MTPNextStepsBWH extends React.Component {
 
   render() { 
     return (  
-      <SafeAreaView>
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
+      <View>
         <View style={styles.top}>
           <Text style={styles.title}>Massive Transfusion Protocol</Text>
           <View style={{paddingTop: Dimensions.get('window').height/64, }}>
@@ -191,6 +191,10 @@ export default class MTPNextStepsBWH extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white'
+  },
   firstCircle: {
     width: 10,
     height: 10,
@@ -230,7 +234,7 @@ const styles = StyleSheet.create({
   bottom: {
     height: '15%',
     alignItems: 'center', 
-    justifyContent: 'center'
+    justifyContent: 'center',
     // backgroundColor: 'gray',
   },
 
@@ -268,20 +272,22 @@ const styles = StyleSheet.create({
   },
   customBtnText: {
     fontWeight: '600',
-    color: 'white',
+    color: '#2b2b2b',
     textAlign: 'center',
     textAlignVertical: "center",
     fontSize: Dimensions.get('window').height/40,
     marginTop: Dimensions.get('window').height/35,
   },
   customBtnBG: {
-    backgroundColor: '#8dabc2',
+    backgroundColor: '#ededed',
     paddingHorizontal: 1,
     paddingVertical: 1,
     borderRadius: 30,
-    shadowOpacity: .1,
     width: Dimensions.get('window').width/1.2,
     height: Dimensions.get('window').height/11,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 1},
   },
 
 })

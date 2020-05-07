@@ -3,8 +3,9 @@ import { Linking, Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeArea
 import { Button, Divider } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Ionicons' 
 import LinearGradient from 'react-native-linear-gradient'
+import FontAwesome5Icons from 'react-native-vector-icons/FontAwesome5'
 
-export default class STEMINextStepsBWHYes extends React.Component {
+export default class STEMIPageBWH extends React.Component {
   static navigationOptions = ({ navigation }) => {
     let headerLeft = ( 
       <View style={{ flexDirection: 'row' }}>
@@ -80,7 +81,7 @@ export default class STEMINextStepsBWHYes extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0440A7', '#0F82B8']}
+            colors={['#146EB5', '#1D74B7', '#277ABB']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -95,25 +96,15 @@ export default class STEMINextStepsBWHYes extends React.Component {
     else {phoneNumber = `telprompt:6177268282` }
     Linking.openURL(phoneNumber);
   }
-
-  state = {
-    data: [
-      'IV access',
-      'ASA 325 mg (unless already given by EMS)',
-      'Unfractionated heparin weight adjusted to a max dose of 5000 units bolused IV',
-      'Consider 2b/3a inhibitor',
-      'Labs including BMP, CBC, PT/PTT, Troponin, Type & Screen',
-      'Place defibrillator pads'
-    ]
-  }
   
   render() { 
     return (  
       <SafeAreaView style={styles.container}>
+
         <View style={styles.top}>
           <Text style={styles.title}>STEMI</Text>
           <View style={{marginTop: Dimensions.get('window').height/64}}>
-          <View style={{alignItems: 'center'}}>
+            <View style={{alignItems: 'center'}}>
                   <View style={{ flexDirection: 'row'}}>
                      <View style={styles.firstCircle}>
                      </View>
@@ -125,37 +116,62 @@ export default class STEMINextStepsBWHYes extends React.Component {
             </View>
           </View>
         </View>
+  
+
 
 
         <View style={styles.middle}>
-            <View style={ styles.bulletPoints }>
-              <View style={{ flexDirection: 'row' }}>
-                  <Text style={styles.bulletPoint}>{`\u2022`}</Text>
-                  <Text style={{ marginLeft: Dimensions.get('window').width/100}}>
-                    <Text style={{
-                      fontWeight: '300',
-                      fontSize: Dimensions.get('window').height/38,}}>Serial VS, supplemental O</Text>
-                    <Text style={{
-                      fontSize: Dimensions.get('window').height/55, 
-                      fontWeight: '500'}}>2
-                    </Text>
-                  </Text>
-              </View>
-            </View>    
+          <Text style={{fontSize: Dimensions.get('window').height/36}}>EM attending can STAT pages</Text>
+          <Text style={{
+            marginTop: Dimensions.get('window').height/70, 
+            fontSize: Dimensions.get('window').height/36,
+            fontWeight: 'bold',}}>"Code STEMI"</Text>
+          <Text style={{
+            marginTop: Dimensions.get('window').height/70, 
+            fontSize: Dimensions.get('window').height/36}}>to activate the Cath Lab Team</Text>
+        
+        <View style={{ marginTop: Dimensions.get('window').height/50, alignItems: 'center' }}>
+
+          
+                        <TouchableOpacity
+                          style={{
+                            alignItems: "center",
+                            justifyContent: "center",
+                            borderRadius: 60,
+                            // backgroundColor: '#9A9B9F',
+                            backgroundColor: '#53a3b5',
+                            height: Dimensions.get('window').height/7.5,
+                            width: Dimensions.get('window').width/1.2,
+                            shadowColor: 'black',
+                            shadowOpacity: 0.8,
+                            shadowOffset : { width: 1, height: 2},
+                          }}
+                          onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.mwl?APP=PDPERS&FF=PDA&ACTION=SEARCHRES&SRCHNM=14264') }
+                          }>
+
+                             
+                                  <View style={{ flexDirection: 'row' }}>
+                                    <View style={{ marginTop: Dimensions.get('window').height/350 }}>
+                                      <FontAwesome5Icons name="pager" size={22} color="white" />
+                                    </View>
+                                    <Text style={{ fontSize: Dimensions.get('window').height/37, color: 'white', fontWeight: '500' }}>  Page On-Call</Text>
+                                  </View>
+                                  <Text style={{ fontSize: Dimensions.get('window').height/37, color: 'white', fontWeight: '500' }}>Interventional Cardiology</Text>
+                                  <Text style={{ marginTop: Dimensions.get('window').height/150, color: 'white', fontSize: Dimensions.get('window').height/47, fontWeight: '500'}}>(14264)</Text>
+                        </TouchableOpacity>
+                      </View>
+        </View>
 
 
-              
 
 
 
-            {this.state.data.map((item) => (
-              <View key={item} style={ styles.bulletPoints }>
-                <View style={{ flexDirection: 'row' }}>
-                    <Text style={styles.bulletPoint}>{`\u2022`}</Text>
-                    <Text style={styles.bulletPointText}>{item}</Text>
-                </View>
-              </View>        
-            ))}   
+        <View style={styles.bottom}>
+          <TouchableOpacity
+            style={styles.customBtnBG} 
+            onPress={() => this.props.navigation.navigate('STEMILastBWH')}>
+            <Text style={styles.customBtnText}>Next Steps</Text>
+          </TouchableOpacity>  
         </View>
 
       </SafeAreaView>
@@ -164,6 +180,13 @@ export default class STEMINextStepsBWHYes extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  callButton: {
+    borderRadius: 40,
+    height: Dimensions.get('window').height/11,
+    width: Dimensions.get('window').width/1.17,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   firstCircle: {
     width: 10,
     height: 10,
@@ -179,29 +202,36 @@ const styles = StyleSheet.create({
     marginTop: Dimensions.get('window').height/150,
     marginLeft: Dimensions.get('window').width/25,
     marginRight: Dimensions.get('window').width/25,
-    borderWidth: 1,
-    borderColor: '#6c9ea1',
+    backgroundColor: '#6c9ea1',
   },
   thirdCircle: {
     width: 10,
     height: 10,
     borderRadius: 100/2,
     marginTop: Dimensions.get('window').height/150,
-    backgroundColor: '#6c9ea1',
+    borderWidth: 1,
+    borderColor: '#6c9ea1',
   },
   container: {
     flex: 1,
+    backgroundColor: 'white'
   },
   top: {
     height: '10%',
-    // backgroundColor: 'yellow'
+    // backgroundColor: 'marginTop: Dimensions.get('window').height/64yellow'
   },
   middle: {
-    height: '45%',
+    height: '75%',
+    alignItems: 'center',
+    // paddingTop: Dimensions.get('window').height/4.25,
     justifyContent: 'center',
-    marginTop: Dimensions.get('window').height/40,
-    // backgroundColor: '#F7F7F7',
-
+    // backgroundColor: 'pink'
+  },
+  bottom: {
+    height: '15%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor: 'gray',
   },
   title: {
     fontWeight: 'bold',
@@ -218,29 +248,6 @@ const styles = StyleSheet.create({
     marginRight: Dimensions.get('window').width/60, 
     height: Dimensions.get('window').height/600
   },
-
-  bulletPoint: {
-    color: 'gray',
-    fontSize: Dimensions.get('window').height/40,
-  },
-  bulletPoints: {
-    flexDirection: 'row',
-    marginTop: Dimensions.get('window').height/150,
-    marginLeft: Dimensions.get('window').width/13,
-    marginRight: Dimensions.get('window').width/8,
-  },
-  bulletPointText: {
-    fontWeight: '300',
-    fontSize: Dimensions.get('window').height/38,
-    marginLeft: Dimensions.get('window').width/100,
-  },
-  bulletPointText2: {
-    fontWeight: '400',
-    marginTop: Dimensions.get('window').height/100,
-    fontSize: Dimensions.get('window').height/60,
-    marginLeft: Dimensions.get('window').width/100,
-  },
-
   textFirstLine: {
     fontWeight: '500',
     textAlign: 'center',
@@ -262,5 +269,24 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     paddingTop: Dimensions.get('window').height/100,
     fontSize: Dimensions.get('window').height/35,
-  }
+  },
+  customBtnText: {
+    fontWeight: '600',
+    color: '#2b2b2b',
+    textAlign: 'center',
+    textAlignVertical: "center",
+    fontSize: Dimensions.get('window').height/40,
+    marginTop: Dimensions.get('window').height/35,
+  },
+  customBtnBG: {
+    backgroundColor: '#ededed',
+    paddingHorizontal: 1,
+    paddingVertical: 1,
+    borderRadius: 30,
+    width: Dimensions.get('window').width/1.2,
+    height: Dimensions.get('window').height/11,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    shadowOffset : { width: 1, height: 1},
+  },
 })

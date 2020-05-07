@@ -76,7 +76,7 @@ export default class STEMIMGH extends React.Component {
     )
     
     return {
-      headerLeft, 
+      headerLeft,  
       headerRight,
       headerTitle,
       headerBackground: (
@@ -243,20 +243,6 @@ export default class STEMIMGH extends React.Component {
             </View>
 
 
-            {/* <View style={{
-              marginLeft: Dimensions.get('window').width/16, 
-              marginRight: Dimensions.get('window').width/16,
-              marginTop: Dimensions.get('window').height/80,
-              }}>
-              {this.state.data.map((item) => (
-                  <View key={item} style={ styles.bulletPoints }>
-                  <View style={{ flexDirection: 'row' }}>
-                      <Text style={styles.bulletPoint}>{`\u2022`}</Text>
-                      <Text style={styles.bulletPointText}>{item}</Text>
-                  </View>
-                  </View>        
-              ))} 
-          </View> */}
         </View>
 
 
