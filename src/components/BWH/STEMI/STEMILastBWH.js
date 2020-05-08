@@ -133,7 +133,6 @@ export default class STEMILastBWH extends React.Component {
                   <Text style={styles.bulletPoint}>{`\u2022`}</Text>
                   <Text style={{ marginLeft: Dimensions.get('window').width/100}}>
                     <Text style={{
-                      fontWeight: '300',
                       fontSize: Dimensions.get('window').height/38,}}>Serial VS, supplemental O</Text>
                     <Text style={{
                       fontSize: Dimensions.get('window').height/55, 
@@ -230,7 +229,6 @@ const styles = StyleSheet.create({
     marginRight: Dimensions.get('window').width/8,
   },
   bulletPointText: {
-    fontWeight: '300',
     fontSize: Dimensions.get('window').height/38,
     marginLeft: Dimensions.get('window').width/100,
   },

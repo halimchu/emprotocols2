@@ -121,17 +121,17 @@ export default class STEMIPageBWH extends React.Component {
 
 
         <View style={styles.middle}>
-          <Text style={{fontSize: Dimensions.get('window').height/36,}}>
+          <Text style={{fontWeight: '400',fontSize: Dimensions.get('window').height/40,}}>
             EM attending asks business specialist to call the STAT line to activate "Code STEMI" to activate the Cath Lab Team; EM attending name;
             EM attending name and cell phone call back number must be included in STAT line request
           </Text>
 
-          <Text style={{marginTop: Dimensions.get('window').height/50, fontSize: Dimensions.get('window').height/36,}}>
+          <Text style={{fontWeight: '400', marginTop: Dimensions.get('window').height/50, fontSize: Dimensions.get('window').height/40,}}>
            The On-Call Interventional Cardiology Attending is available 24/7 for the ED Attending to discuss patients with STEMI but meeting exclusion criteria for Code STEMI activation.
           </Text>
 
 
-        <View style={{ marginTop: Dimensions.get('window').height/25, alignItems: 'center' }}>
+        <View style={{ marginTop: Dimensions.get('window').height/20, alignItems: 'center' }}>
 
           
                         <TouchableOpacity
@@ -152,7 +152,7 @@ export default class STEMIPageBWH extends React.Component {
 
                              
                                   <View style={{ flexDirection: 'row' }}>
-                                    <View style={{ marginTop: Dimensions.get('window').height/350 }}>
+                                    <View style={{ marginTop: Dimensions.get('window').height/350}}>
                                       <FontAwesome5Icons name="pager" size={22} color="white" />
                                     </View>
                                     <Text style={{ fontSize: Dimensions.get('window').height/37, color: 'white', fontWeight: '500' }}>  Page On-Call</Text>
@@ -224,7 +224,8 @@ const styles = StyleSheet.create({
   middle: {
     height: '75%',
     alignItems: 'center',
-    // paddingTop: Dimensions.get('window').height/4.25,
+    marginLeft: 15,
+    marginRight: 15,
     justifyContent: 'center',
     // backgroundColor: 'pink'
   },

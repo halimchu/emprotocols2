@@ -287,7 +287,6 @@ const styles = StyleSheet.create({
     marginTop: Dimensions.get('window').height/120,
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {
@@ -311,20 +310,4 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width/1.25,
     height: Dimensions.get('window').height/10.75,
   },
-  // customBtnText: {
-  //   fontWeight: '600',
-  //   color: "#fff",
-  //   textAlign: 'center',
-  //   textAlignVertical: "center",
-  //   fontSize: Dimensions.get('window').height/35,
-  //   marginTop: Dimensions.get('window').height/47,
-  // },
-  // customBtnBG: {
-  //   backgroundColor: "#69c8a1",
-  //   paddingHorizontal: 1,
-  //   paddingVertical: 1,
-  //   borderRadius: 8,
-  //   width: Dimensions.get('window').width/1.13,
-  //   height: Dimensions.get('window').height/12,
-  // },
 })

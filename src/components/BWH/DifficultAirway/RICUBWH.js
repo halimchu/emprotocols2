@@ -196,7 +196,7 @@ export default class RICUBWH extends React.Component {
             </Text>
           </View>
 
-
+   
 
           <View style={{
             marginTop: Dimensions.get('window').height/200,
@@ -269,7 +269,6 @@ const styles = StyleSheet.create({
   },
 
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPoints: {

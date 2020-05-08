@@ -142,7 +142,6 @@ const styles = StyleSheet.create({
     marginBottom: Dimensions.get('window').height/120,
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {
@@ -154,13 +153,15 @@ const styles = StyleSheet.create({
     color: "#fff",
     textAlign: 'center',
     fontSize: Dimensions.get('window').height/44,
+    marginTop: Dimensions.get('window').height/300,
   },
   customBtnBG2: {
-    borderWidth: 1,
-    borderColor: 'white',
     borderRadius: 8,
     backgroundColor: "#69c8a1",
     width: Dimensions.get('window').width/3.5,
     height: Dimensions.get('window').height/30,
+    shadowColor: 'black',
+    shadowOpacity: 1,
+    shadowOffset : { width: 1, height: 1},
   },
 })

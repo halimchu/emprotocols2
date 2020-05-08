@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     marginBottom: Dimensions.get('window').height/200,
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {

@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
   header: {
     fontWeight: 'bold',
     color: '#2b2b2b',
-    fontSize: Dimensions.get('window').height/36,
+    fontSize: Dimensions.get('window').height/39,
   },
   text: {
     fontSize: Dimensions.get('window').width/20,

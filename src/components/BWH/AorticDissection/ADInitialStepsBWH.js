@@ -121,11 +121,11 @@ export default class ADInitialStepsBWH extends React.Component {
         <View key={item} style={{ 
           flexDirection: 'row', 
           marginBottom: Dimensions.get('window').height/120, 
-          marginLeft: Dimensions.get('window').width/10 
+          marginLeft: Dimensions.get('window').width/15
           }}>
             <Text style={styles.bulletPoint}>{`\u2022`}</Text>  
             <Text style={{flex: 1, flexWrap: 'wrap'}}>
-            <Text style={{ fontSize: Dimensions.get('window').height/37 }}> 
+            <Text style={{ fontSize: Dimensions.get('window').height/41 }}> 
               {item}
             </Text>
           </Text>   
@@ -140,10 +140,12 @@ export default class ADInitialStepsBWH extends React.Component {
         <View key={item} style={{ 
           flexDirection: 'row', 
           marginBottom: Dimensions.get('window').height/120, 
-          marginLeft: Dimensions.get('window').width/10 }}>
-          
+          marginLeft: Dimensions.get('window').width/15,
+          marginRight: Dimensions.get('window').width/10.
+           }}>
+            <Text style={styles.bulletPoint}>{`\u2022`}</Text>  
             <Text style={{flex: 1, flexWrap: 'wrap'}}>
-            <Text style={{ fontSize: Dimensions.get('window').height/35 }}> 
+            <Text style={{ fontSize: Dimensions.get('window').height/40 }}> 
               {item}
             </Text>
           </Text>   
@@ -160,43 +162,45 @@ export default class ADInitialStepsBWH extends React.Component {
     return ( 
       <SafeAreaView style={styles.container}>
 
-      <View style={styles.top}>
-        <Text style={styles.title}>Aortic Injury</Text>
-        <View style={{marginTop: Dimensions.get('window').height/64, }}>
-            <View style={{alignItems: 'center'}}>
-                  <View style={{ flexDirection: 'row'}}>
-                     <View style={styles.firstCircle}>
-                     </View>
-                     <View style={styles.secondCircle}>
-                     </View>
+
+            <View style={styles.top}>
+              <Text style={styles.title}>Aortic Injury</Text>
+              <View style={{marginTop: Dimensions.get('window').height/64, }}>
+                  <View style={{alignItems: 'center'}}>
+                        <View style={{ flexDirection: 'row'}}>
+                          <View style={styles.firstCircle}>
+                          </View>
+                          <View style={styles.secondCircle}>
+                          </View>
+                        </View>
                   </View>
+              </View>
             </View>
+
+
+            <View style={{marginTop: Dimensions.get('window').height/60, }}>
+              <Text style={styles.headerOne}>Initial Steps</Text>
+            
+              {this.firstFn()}
+
+              <View style={{ 
+                flexDirection: 'row', 
+                marginBottom: Dimensions.get('window').height/100, 
+                marginRight: Dimensions.get('window').width/20, 
+                marginLeft: Dimensions.get('window').width/10 
+                }}>
+
+                  <Text style={{flex: 1, flexWrap: 'wrap'}}>
+                
+                
+                </Text>   
+              </View>
         </View>
-      </View>
 
-
-      <View style={{marginTop: Dimensions.get('window').height/60, }}>
-        <Text style={styles.headerOne}>Initial Steps</Text>
-      
-        {this.firstFn()}
-
-        <View style={{ 
-          flexDirection: 'row', 
-          marginBottom: Dimensions.get('window').height/100, 
-          marginRight: Dimensions.get('window').width/20, 
-          marginLeft: Dimensions.get('window').width/10 
-          }}>
-
-            <Text style={{flex: 1, flexWrap: 'wrap'}}>
-           
-           
-          </Text>   
-        </View>
 
       
-        {/* {this.thirdFn()} */}
-           
-      </View>
+
+
     
 
 
@@ -232,6 +236,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   top: {
     height: '10%',
@@ -254,22 +259,18 @@ const styles = StyleSheet.create({
   },
 
   headerOne: {
-    fontWeight: '500',
+    fontWeight: 'bold',
     marginBottom: Dimensions.get('window').height/150, 
     marginLeft: Dimensions.get('window').height/60, 
-    fontSize: Dimensions.get('window').height/36,
+    fontSize: Dimensions.get('window').height/40,
   },
   headerTwo: {
-    fontWeight: '500',
-    // marginTop: Dimensions.get('window').height/60,
+    fontWeight: 'bold',
     marginBottom: Dimensions.get('window').height/120, 
     marginLeft: Dimensions.get('window').height/60, 
-    fontSize: Dimensions.get('window').height/36,
+    fontSize: Dimensions.get('window').height/40,
   },
-  // headerBottom: {
-  //   textAlign: 'center', 
-  //   fontSize: Dimensions.get('window').height/34.5, 
-  // },
+
   bulletPoint: {
     fontSize: Dimensions.get('window').height/40,
     marginRight: Dimensions.get('window').width/80, 
