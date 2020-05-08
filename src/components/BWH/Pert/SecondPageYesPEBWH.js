@@ -87,6 +87,12 @@ export default class SecondPageYesPEBWH extends React.Component {
       'Evidence of RH strain via ECHO or CT',
       'Elevated troponin',
       'Large PE with contraindication to systemic anticoagulation'
+    ],
+    dataTwo: [
+      ['Expected callback time:', ' 10 min'],
+      ['Will PE Team see patient in ED?', ' YES'],
+      ['Where will most patients be admitted?', ' CCU'],
+
     ]
   }
 
@@ -107,7 +113,7 @@ export default class SecondPageYesPEBWH extends React.Component {
 
         <View style={{
           marginLeft: Dimensions.get('window').width/15,
-          marginRight: Dimensions.get('window').width/15,
+          // marginRight: Dimensions.get('window').width/15,
         }}>
 
 
@@ -125,7 +131,7 @@ export default class SecondPageYesPEBWH extends React.Component {
               <View style={{ flexDirection: 'row' }}>
                   <Text style={styles.text}>1. </Text>
                   <Text style={styles.text}>
-                    Activates Group page "Code Pulmonary Embolism"
+                    Ask business specialist to activate group page "Code PE"
                   </Text>
                   
               </View>
@@ -135,7 +141,7 @@ export default class SecondPageYesPEBWH extends React.Component {
               <View style={{ flexDirection: 'row' }}>
                   <Text style={styles.text}>2. </Text>
                   <Text style={styles.text}>
-                    Goes to Cardiovascular Medicine Consult Attending and Fellow
+                    Page goes to Cardiovascular Medicine Consult Attending and Fellow
                   </Text>
               </View>
             </View>  
@@ -143,15 +149,47 @@ export default class SecondPageYesPEBWH extends React.Component {
 
             <View style={{marginTop: Dimensions.get('window').height/80, marginLeft: Dimensions.get('window').width/18, }}>
               <Text style={styles.text }>
-                -or-
+                -OR-
               </Text>    
             </View>
 
             <View style={{ marginTop: Dimensions.get('window').height/60, marginLeft: Dimensions.get('window').width/18, }}>
               <Text style={styles.text}>
-                Pulmonary Vascular Consult Attending and Fellow AND Cardiac Surgery Fellow
+                Pulmonary Vascular Consult Attending and Fellow
               </Text>
             </View>
+
+            <View style={{marginTop: Dimensions.get('window').height/80, marginLeft: Dimensions.get('window').width/18, }}>
+              <Text style={styles.text }>
+                -AND-
+              </Text>    
+            </View>
+
+            <View style={ styles.bulletPoints }>
+              <View style={{ flexDirection: 'row' }}>
+                  <Text style={styles.text}>3. </Text>
+                  <Text style={styles.text}>
+                  Cardiac Surgery Fellow
+                  </Text>
+              </View>
+            </View>  
+
+
+            <View style={{paddingTop: Dimensions.get('window').height/40 }}>
+                {this.state.dataTwo.map((item) => (
+                    <View key={item} style={ styles.bulletPoints }>
+                      <View style={{ flexDirection: 'row' }}>
+                        <Text style={styles.bulletPoint}>{`\u2022`}</Text>
+                        <Text style={styles.bulletPointText}>
+                          <Text style={{fontWeight: '400'}}>{item[0]}</Text>
+                          <Text style={{fontWeight: 'bold'}}>{item[1]}</Text>
+                        </Text>
+                      </View>
+                    </View>        
+                ))} 
+              </View>
+
+
 
           </View>
       </SafeAreaView>
@@ -224,13 +262,12 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/34,
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {
     fontWeight: '300',
-    fontSize: Dimensions.get('window').height/35,
-    // marginLeft: Dimensions.get('window').width/100,
+    fontSize: Dimensions.get('window').height/38,
+    marginLeft: Dimensions.get('window').width/100,
   },
   bulletPoints: {
     flexDirection: 'row',

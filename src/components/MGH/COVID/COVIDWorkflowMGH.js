@@ -81,7 +81,7 @@ export default class COVIDWorkflowMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#008CB1', '#1192BC', ]}
+            colors={['#02bfdb', '#00c0dc', '#02c1dd']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -95,7 +95,10 @@ export default class COVIDWorkflowMGH extends React.Component {
         <SafeAreaView style={styles.container}>
           <View style={styles.top}>
             <View style={{alignItems: 'center', marginBottom: Dimensions.get('window').height/100, }}>
-              <Text style={styles.title}>COVID-19 Workflow</Text>
+              <Text style={styles.title}>
+                <Text style={{color: 'red'}}>COVID-19 </Text>
+                <Text>Workflow</Text>
+              </Text>
             </View>
               <Divider />
           </View>
@@ -148,7 +151,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     height: '100%',
-    // backgroundColor: 'pink'
+    backgroundColor: 'white'
   },
   top: {
     height: '10%',
@@ -157,7 +160,8 @@ const styles = StyleSheet.create({
   },
   
   title: {
-    // fontFamily: 'Interstate-Bold',
+    fontWeight: 'bold',
+    color: '#2b2b2b',
     fontSize: Dimensions.get('window').height/35, 
   },
   button: {
@@ -198,8 +202,9 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/47,
   },
   customBtnBG: {
-    backgroundColor: "#DCE2EA",
+    backgroundColor: "#e8e8e8",
     width: Dimensions.get('window').width/2.385,
     height: Dimensions.get('window').height/7.36,
+    borderRadius: 5
   },
 })

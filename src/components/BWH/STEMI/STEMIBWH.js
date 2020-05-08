@@ -99,9 +99,9 @@ export default class STEMIBWH extends React.Component {
   state = {
     data: [
       'EMS entry notification for STEMI activation (EM attending can decide to activate Code STEMI from the field based on EMS verbal report alone)',
-      'Symptoms of cardiac ischemia with onset within 12 hours of ED presentation',
+      'Onset of symptoms of ischemia within 12 hours of ED presentation',
       'New ST segment elevations of at least 1mm in at least two contiguous leads',
-      'Alternative diagnoses such as pulmonary embolism or aortic dissection less likely'
+      'No alternative diagnosis being pursued (e.g., aortic dissection, PE)'
     ]
   }
   
@@ -227,7 +227,6 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/32.5,
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPoints: {

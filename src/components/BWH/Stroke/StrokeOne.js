@@ -8,7 +8,7 @@ export default class StrokeOne extends React.Component {
 
   state = {
     data: [
-      ['1)', 'ED resident or attending group page "Stroke Code" (Acute Stroke ED Group 107)'],
+      ['1)', 'ED resident or attending asks business specialist to group page "Stroke Code" (Acute Stroke ED Group 107)'],
       ['2)', 'Order STAT CT Angio Head & Neck']
     ],
   }

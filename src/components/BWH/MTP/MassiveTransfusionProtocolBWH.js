@@ -138,7 +138,7 @@ export default class MassiveTransfusionProtocolBWH extends React.Component {
               <Text style={styles.header}>Process</Text>
               <View style={{marginTop: Dimensions.get('window').height/200, marginLeft: Dimensions.get('window').width/20, marginRight: Dimensions.get('window').width/20,}}>
                 <Text styles={{fontSize: Dimensions.get('window').height/39,}}>
-                  <Text style={{fontSize: Dimensions.get('window').height/39,}}>MD to call x2-7290 and state:</Text>
+                  <Text style={{fontSize: Dimensions.get('window').height/39,}}>MD or RN to call x2-7290 and state:</Text>
                   <Text style={{fontSize: Dimensions.get('window').height/39, fontStyle: 'italic'}}> "We are initiating Massive Transfusion Protocol."</Text>
                 </Text>
               </View>

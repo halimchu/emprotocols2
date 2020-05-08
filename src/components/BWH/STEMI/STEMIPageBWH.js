@@ -121,16 +121,17 @@ export default class STEMIPageBWH extends React.Component {
 
 
         <View style={styles.middle}>
-          <Text style={{fontSize: Dimensions.get('window').height/36}}>EM attending can STAT pages</Text>
-          <Text style={{
-            marginTop: Dimensions.get('window').height/70, 
-            fontSize: Dimensions.get('window').height/36,
-            fontWeight: 'bold',}}>"Code STEMI"</Text>
-          <Text style={{
-            marginTop: Dimensions.get('window').height/70, 
-            fontSize: Dimensions.get('window').height/36}}>to activate the Cath Lab Team</Text>
-        
-        <View style={{ marginTop: Dimensions.get('window').height/50, alignItems: 'center' }}>
+          <Text style={{fontSize: Dimensions.get('window').height/36,}}>
+            EM attending asks business specialist to call the STAT line to activate "Code STEMI" to activate the Cath Lab Team; EM attending name;
+            EM attending name and cell phone call back number must be included in STAT line request
+          </Text>
+
+          <Text style={{marginTop: Dimensions.get('window').height/50, fontSize: Dimensions.get('window').height/36,}}>
+           The On-Call Interventional Cardiology Attending is available 24/7 for the ED Attending to discuss patients with STEMI but meeting exclusion criteria for Code STEMI activation.
+          </Text>
+
+
+        <View style={{ marginTop: Dimensions.get('window').height/25, alignItems: 'center' }}>
 
           
                         <TouchableOpacity
@@ -144,7 +145,7 @@ export default class STEMIPageBWH extends React.Component {
                             width: Dimensions.get('window').width/1.2,
                             shadowColor: 'black',
                             shadowOpacity: 0.8,
-                            shadowOffset : { width: 1, height: 2},
+                            shadowOffset : { width: 0.5, height: 4},
                           }}
                           onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.mwl?APP=PDPERS&FF=PDA&ACTION=SEARCHRES&SRCHNM=14264') }
                           }>

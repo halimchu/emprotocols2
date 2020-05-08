@@ -83,7 +83,7 @@ export default class PostCardiacArrestCare extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0c79b6', '#01a8ce']}
+            colors={['#0795C7', '#079BCB', '#069FCB', '#06A5CF', '#0DA9D1', '#0DADD3', '#0EB2D5', '#02B7D9']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}

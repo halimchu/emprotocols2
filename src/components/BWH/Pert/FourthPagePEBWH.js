@@ -177,7 +177,6 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/34,
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {

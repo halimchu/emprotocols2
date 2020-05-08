@@ -134,25 +134,19 @@ export default class PertNextStepsMGH extends React.Component {
                   </View>
                 </View>        
             ))} 
-          </View>
 
-
-
-
-          <View style={styles.bottom}>
-            <View>
-              <Text style={{color: '#787878',fontSize: Dimensions.get('window').width/22,}}>What is PERT?</Text>
+            <View style={{paddingTop: 30}}>
+              <Text style={{
+                fontWeight: '300',
+                textAlign: 'center',
+                fontSize: Dimensions.get('window').width/19,
+                marginTop: Dimensions.get('window').height/80, 
+                marginLeft: Dimensions.get('window').width/25, 
+                marginRight: Dimensions.get('window').width/10,}}>If concerned about COVID, please discuss with PERT the need for TTE, LENI, & CT.
+              </Text>
             </View>
-
-            <Text style={{
-              color: '#787878',
-              fontSize: Dimensions.get('window').width/22,
-              marginTop: Dimensions.get('window').height/80, 
-              marginLeft: Dimensions.get('window').width/10, 
-              marginRight: Dimensions.get('window').width/10,}}>Pulmonary Embolism Response Team, a multidisciplinary team to help 
-              provide immediate care, including evalution for OR, Cath Lab, and ECMO
-            </Text>
           </View>
+
         
        
       </SafeAreaView>
@@ -180,8 +174,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    // paddingLeft: Dimensions.get('window').width/20,
-    // paddingRight: Dimensions.get('window').width/2,
   },
   top: {
     height: '15%',
@@ -221,18 +213,18 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').width/18,
   },
   bulletPoint: {
-    color: 'gray',
+    // color: 'gray',
     fontSize: Dimensions.get('window').height/40,
-  },
-  bulletPointText: {
-    fontWeight: '300',
-    marginLeft: Dimensions.get('window').width/100,
-    fontSize: Dimensions.get('window').width/19,
   },
   bulletPoints: {
     flexDirection: 'row',
     marginTop: Dimensions.get('window').height/150,
     marginLeft: Dimensions.get('window').width/14,
     marginRight: Dimensions.get('window').width/7,
+  },
+  bulletPointText: {
+    fontWeight: '300',
+    marginLeft: Dimensions.get('window').width/100,
+    fontSize: Dimensions.get('window').width/19,
   },
 })

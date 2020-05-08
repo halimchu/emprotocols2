@@ -5,17 +5,10 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons' 
 
 export default class StrokeTwo extends React.Component {
-  // state = {
-  //   dataFour: [
-  //     '1) ED resident or attending group page "Stroke Code" (Acute Stroke ED Group 107) if patient is eligible for endovascular therapy',
-  //     '2) Order STAT MRI/MRA Head & Neck',
-  //     '3) Discuss with Neuro resident plan for endovascular therapy or not'
-  //   ]
-  // }
 
   state = {
     data: [
-      ['1)', 'ED resident or attending group page "Stroke Code" (Acute Stroke ED Group 107) if patient is eligible for endovascular therapy'],
+      ['1)', 'ED resident or attending asks business specialist to group page "Stroke Code" (Acute Stroke ED Group 107) if patient is eligible for endovascular therapy'],
       ['2)', 'Order STAT MRI/MRA Head & Neck'],
       ['3)', 'Discuss with Neuro resident plan for endovascular therapy or not'],
 

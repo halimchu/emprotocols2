@@ -98,7 +98,7 @@ export default class ADBWH extends React.Component {
       <SafeAreaView style={styles.container}>
 
             <View style={styles.top}>
-              <Text style={styles.title}>Aortic Dissection</Text>
+              <Text style={styles.title}>Aortic Injury</Text>
               <View style={{marginTop: Dimensions.get('window').height/64, }}>
               <View style={{alignItems: 'center'}}>
                   <View style={{ flexDirection: 'row'}}>
@@ -138,9 +138,20 @@ export default class ADBWH extends React.Component {
                 marginTop: Dimensions.get('window').height/50, 
                 marginLeft: Dimensions.get('window').width/100,
                 marginBottom: Dimensions.get('window').height/70,
-                paddingRight: 50,  }}>
-                <Text style={styles.headerThree}>If YES, then ED Alpha Attending activates "Acute Aortic Syndrome" group pager (Group 228) including patient location, ETA, and callback number</Text>
+               }}>
+                <Text style={styles.headerThree}>
+                  <Text style={{fontWeight: 'bold'}}>For new diagnosis in ED: </Text>
+                  ED attending asks business specialist to contact page 
+                  operator to activate "Acute Aortic Syndrome" Team Pager (Group 228) and provide the patient name, 
+                  MRN, patient location, activating clinician, and callback number.
+                </Text>
               </View>
+
+              <Text style={styles.headerThree}>
+                <Text style={{fontWeight: 'bold'}}>Note: </Text>
+                in cases with a high clinical suspicion for aortic injury experiencing unusual 
+                delay in obtaining confirmatory imaging, please default to activating the AAS team pager.
+              </Text>
 
 
 

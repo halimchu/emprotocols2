@@ -173,13 +173,10 @@ export default class RICUBWH extends React.Component {
           }}>
             <Text style={{fontSize: Dimensions.get('window').height/37, textAlign: 'center'}}>  
                     <Text>
-                      If concern for 
+                      If anticipate 
                     </Text>
-                    <Text style={{fontWeight: 'bold'}}> difficult emergent airway,</Text>
-                    <Text> state:</Text>
-                    <Text style={{
-                      fontStyle: 'italic',  
-                    }}> "Request anesthesia airway team be activated for [ED location]."</Text>
+                    <Text style={{fontWeight: 'bold'}}> difficult intubation,</Text>
+                    <Text> ask ED business specialist to call the STAT line to activate the Anesthesia Airway Team.</Text>
             </Text>
           </View>
 
@@ -192,13 +189,10 @@ export default class RICUBWH extends React.Component {
           }}>
             <Text style={{fontSize: Dimensions.get('window').height/37, textAlign: 'center'}}>
                       <Text>
-                        If concern for 
+                        If anticipate
                       </Text>
                       <Text style={{fontWeight: 'bold'}}> surgical airway (cricothyrotomy),</Text>
-                      <Text> state: </Text>
-                      <Text style={{
-                        fontStyle: 'italic',
-                      }}>"Request surgical emergency airway team be activated for [ED location]."</Text>
+                      <Text> ask ED business specialist to call the STAT line to activate the Surgical Emergency Airway Team.</Text>
             </Text>
           </View>
 

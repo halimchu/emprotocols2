@@ -81,7 +81,7 @@ export default class COVIDDispoMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#008CB1', '#1192BC', ]}
+            colors={['#02bfdb', '#00c0dc', '#02c1dd' ]}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -115,12 +115,16 @@ export default class COVIDDispoMGH extends React.Component {
         <SafeAreaView style={styles.container}>
           <View style={styles.top}>
             <View style={{alignItems: 'center', marginBottom: Dimensions.get('window').height/100, }}>
-              <Text style={styles.title}>COVID-19 Dispo</Text>
+            <Text style={styles.title}>
+                <Text style={{color: 'red'}}>COVID-19 </Text>
+                <Text>Dispo</Text>
+              </Text>
             </View>
               <Divider />
           </View>
   
-  
+        <View style={styles.middle}>
+
           <View style={{ flexDirection: 'row', flexWrap: 'wrap',}}>
                 <View style={{ marginLeft: Dimensions.get('window').width/13, }}>
                           <TouchableOpacity
@@ -167,7 +171,7 @@ export default class COVIDDispoMGH extends React.Component {
                           <TouchableOpacity
                             style={styles.customBtnBG} 
                             onPress={ () => { Linking.openURL('https://www.dropbox.com/s/7vpsdwj6vlkxoh6/DispoGuide_MGH.pdf?dl=0')}}>
-                            <Text style={styles.customBtnTextFirstLine}>Dispo Guide for Ambulatory ED Presentation</Text>
+                            <Text style={styles.customBtnTextThreeLines}>Dispo Guide for Ambulatory ED Presentation</Text>
                           
                           </TouchableOpacity>
                 </View>
@@ -177,6 +181,7 @@ export default class COVIDDispoMGH extends React.Component {
             <View style={{backgroundColor: '#f0f0f0',}}>
                 {!this.state.buttonHidden ? this.showInfo() : null}
             </View>
+  </View>
 
 
 
@@ -192,16 +197,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     height: '100%',
-    // backgroundColor: 'pink'
+    backgroundColor: 'white', 
   },
   top: {
     height: '10%',
     justifyContent: 'center',
     // backgroundColor: 'yellow'
   },
+  middle: {
+    height: '90%',
+    // justifyContent: 'center'
+    // backgroundColor: 'pink',
+  },
   
   title: {
-    // fontFamily: 'Interstate-Bold',
+    fontWeight: 'bold',
+    color: '#2b2b2b',
     fontSize: Dimensions.get('window').height/35, 
   },
   button: {
@@ -241,8 +252,17 @@ const styles = StyleSheet.create({
     textAlignVertical: "center",
     fontSize: Dimensions.get('window').height/47,
   },
+  customBtnTextThreeLines: {
+    fontWeight: '600',
+    color: "black",
+    textAlign: 'center',
+    textAlignVertical: "center",
+    fontSize: Dimensions.get('window').height/47,
+    paddingTop: Dimensions.get('window').height/35,
+  },
   customBtnBG: {
-    backgroundColor: "#DCE2EA",
+    borderRadius: 5,
+    backgroundColor: "#e8e8e8",
     width: Dimensions.get('window').width/2.385,
     height: Dimensions.get('window').height/7.36,
   },

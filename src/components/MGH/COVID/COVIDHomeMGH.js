@@ -105,7 +105,7 @@ export default class COVIDHomeMGH extends React.Component {
         <SafeAreaView style={styles.container}>
 
             <Image
-              source={require('../../../../assets/1125x400_3x_covid.png')}
+              source={require('../../../../assets/MGH1125x400_3x_covid.png')}
               style={[ this.iPhonesUpTo8() ? styles.imageiPhonesUpTo8 : styles.imageiPhonesAfter8]}
             />
 

@@ -107,7 +107,7 @@ export default class StrokeBWH extends React.Component {
       'Facial Droop',
       'Arm or Leg Weakness',
       'Speech Difficulties',
-      'Fingerstick Glucose >50 or <400'
+      'AND Fingerstick Glucose >50 or <400'
     ],
 
 
@@ -230,7 +230,6 @@ const styles = StyleSheet.create({
     marginTop: Dimensions.get('window').height/120,
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {

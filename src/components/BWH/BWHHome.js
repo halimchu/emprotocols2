@@ -62,7 +62,7 @@ export default class BWHHome extends React.Component {
           type='clear'
         />
 
-        <Button 
+        <Button  
           icon={
             <View style={{ marginRight: Dimensions.get('window').width/75 }}>
               <Icon name="md-home" size={Dimensions.get('window').height/26} color="white" />
@@ -135,7 +135,7 @@ export default class BWHHome extends React.Component {
                                 style={styles.customBtnBG} 
                                 onPress={() => this.props.navigation.navigate('ADBWH')}>
                                 <Text style={styles.customBtnTextFirstLine}>Aortic</Text>
-                                <Text style={styles.customBtnTextSecondLine}>Dissection</Text>
+                                <Text style={styles.customBtnTextSecondLine}>Injury</Text>
                               </TouchableOpacity>
                     </View> 
                     <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>

@@ -81,7 +81,13 @@ export default class ThirdPageYESPEBWH extends React.Component {
   }
   
   
-
+  state = {
+    data: [
+      ['Expected callback time:', ' 10 min'],
+      ['Will PE Team see patient in ED?', ' NO (seen after admission)'],
+      ['Where will most patients be admitted?', ' B-Team (Cardiology) or Oncology'],
+    ]
+  }
 
 
 
@@ -110,57 +116,40 @@ export default class ThirdPageYESPEBWH extends React.Component {
 
 
         <View style={styles.middle}>
-          <View style={{alignItems: 'center'}}>
-            <Text style={styles.text}>
-              Have attending or resident/PA group page "Pulmonary Embolism Consult" (including patient location and callback #) which goes to: 
-            </Text>
-            {/* <Text style={styles.text}>"Pulmonary Embolism Consult"</Text> */}
+          <Text style={styles.text}>ED Attending:</Text>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={styles.text}>1) </Text>
+            <Text style={styles.text}>Ask business specialist to activate group page "PE Consult"</Text>
           </View>
 
-          <View style={{alignItems: 'center', marginTop: Dimensions.get('window').height/35,}}>
-            <Text style={styles.text}>
-              {/* which goes to:  */}
-            </Text>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={styles.text}>2) </Text>
+            <Text style={styles.text}>Page goes to Cardiovascular Medicine Consult Attending and Fellow</Text>
           </View>
 
-
-
-          <View style={{
-              alignItems: 'center', marginTop: Dimensions.get('window').height/35 }}>
-            <Text style={styles.text}>
-              Cardiovascular medicine consult
-            </Text>
-            <View style={{alignItems: 'center'}}>
-              <Text style={styles.text}>
-                attending and fellow
-              </Text>
-            </View>
+          <View style={{marginLeft: Dimensions.get('window').width/15,}}>
+            <Text style={styles.text}>-OR-</Text>
+            <Text style={styles.text}>Pulmonary Vascular Consult Attending and Fellow</Text>
           </View>
 
 
 
-
-
-
-
-          <View style={{alignItems: 'center', marginTop: Dimensions.get('window').height/35,}}>
-            <Text style={styles.text}>
-              -or-
-            </Text>
-          </View>
-
-          <View style={{alignItems: 'center', marginTop: Dimensions.get('window').height/35,}}>
-            <Text style={styles.text}>
-              Pulmonary vascular consult
-            </Text>
-            <View style={{alignItems: 'center'}}>
-              <Text style={styles.text}>
-                attending and fellow
-              </Text>
-            </View>
-          </View>
-
+            <View style={{paddingTop: Dimensions.get('window').height/40 }}>
+                {this.state.data.map((item) => (
+                    <View key={item} style={ styles.bulletPoints }>
+                      <View style={{ flexDirection: 'row' }}>
+                        <Text style={styles.bulletPoint}>{`\u2022`}</Text>
+                        <Text style={styles.bulletPointText}>
+                          <Text style={{fontWeight: '400'}}>{item[0]}</Text>
+                          <Text style={{fontWeight: 'bold'}}>{item[1]}</Text>
+                        </Text>
+                      </View>
+                    </View>        
+                ))} 
+              </View>
         </View>
+
+
 
 
 
@@ -258,5 +247,18 @@ const styles = StyleSheet.create({
     shadowColor: 'black',
     shadowOpacity: 0.5,
     shadowOffset : { width: 1, height: 1},
+  },
+  bulletPointText: {
+    fontWeight: '300',
+    marginLeft: Dimensions.get('window').width/80,
+    fontSize: Dimensions.get('window').height/38,
+  },
+  bulletPoints: {
+    marginTop: Dimensions.get('window').height/150,
+    marginLeft: Dimensions.get('window').width/25,
+    marginRight: Dimensions.get('window').width/10,
+  },
+  bulletPoint: {
+    fontSize: Dimensions.get('window').height/40,
   },
 })

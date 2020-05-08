@@ -82,9 +82,10 @@ export default class FirstPagePE extends React.Component {
   
   state = {
     data: [
-      'Sustained hypotension with SBP <90 mmHG x 15 minutes or longer, or requiring pressors',
-      'Cardiac arrest',
-      'Persistent bradycardia, syncope, or respiratory failure'
+      'Sustained hypotension (systolic blood pressure <90 mmHg for ≥15 min or requiring vasopressor support)',
+      'Not due to a cause other than PE (arrhythmia, hypovolemia, sepsis, or left ventricular dysfunction)',
+      'Pulselessness (cardiac arrest)',
+      'Persistent profound bradycardia, syncope, or respiratory failure'
     ]
   }
 
@@ -218,7 +219,6 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/34,
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {

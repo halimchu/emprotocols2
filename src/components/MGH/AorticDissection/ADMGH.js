@@ -164,7 +164,7 @@ export default class ADMGH extends React.Component {
           <TouchableOpacity
             style={styles.customBtnBG} 
             onPress={() => this.props.navigation.navigate('ADInitialStepsMGH')}>
-            <Text style={styles.customBtnText}>Next</Text>
+            <Text style={styles.customBtnText}>Next Steps</Text>
           </TouchableOpacity>
         </SafeAreaView>
       </View>

@@ -76,8 +76,7 @@ export default class Pert extends React.Component {
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
         />
-      ),   
-      // headerStyle: {backgroundColor: '#709CD0'},      
+      ),       
     }
   }
   
@@ -262,15 +261,12 @@ const styles = StyleSheet.create({
   
   header: {
     fontWeight: '600',
-    color: '#515254',
     fontSize: Dimensions.get('window').width/18,
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPoints: {
-    // flexDirection: 'row',
     marginTop: Dimensions.get('window').height/150,
     marginLeft: Dimensions.get('window').width/10,
     marginRight: Dimensions.get('window').width/10,
@@ -278,7 +274,6 @@ const styles = StyleSheet.create({
   bulletPointText: {
     fontWeight: '300',
     marginLeft: Dimensions.get('window').width/80,
-    // fontSize: Dimensions.get('window').height/38,
     fontSize: Dimensions.get('window').width/19,
   },
   customBtnText: {

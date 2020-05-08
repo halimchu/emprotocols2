@@ -264,7 +264,7 @@ export default class TraumaBWH extends React.Component {
                           toggle={this.onPressCodeTraumaHidden} 
                           hidden = {this.state.codeTraumaHidden}
                           component={<CodeTraumaBWH />}
-                          buttonTitle='Code Trauma'
+                          buttonTitle='Code Trauma Criteria'
                         />
                       </View>
  
@@ -277,7 +277,7 @@ export default class TraumaBWH extends React.Component {
                           toggle={this.onPressCodeAlphaHidden} 
                           hiddenParent = {this.state.codeAlphaHidden}
                           component={<CodeAlphaBWH />} 
-                          buttonTitle='Code Alpha'
+                          buttonTitle='Code Alpha Criteria'
                         />
                       </View>
 
@@ -289,7 +289,7 @@ export default class TraumaBWH extends React.Component {
                           toggle={this.onPressTraumaConsultHidden} 
                           hidden = {this.state.traumaConsultHidden}
                           component={<TraumaConsultBWH />}
-                          buttonTitle='Trauma Consult'
+                          buttonTitle='Trauma Consult Criteria'
                         />
                       </View>
 
@@ -300,7 +300,7 @@ export default class TraumaBWH extends React.Component {
                           toggle={this.onPressCodeBurnHidden} 
                           hidden = {this.state.codeBurnHidden}
                           component={<CodeBurnBWH />}
-                          buttonTitle='Code Burn'
+                          buttonTitle='Code Burn Criteria'
                         />
                       </View>
                   </View>

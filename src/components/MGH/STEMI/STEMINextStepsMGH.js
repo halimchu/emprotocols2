@@ -142,7 +142,7 @@ export default class STEMINextStepsMGH extends React.Component {
         <TouchableOpacity onPress={() => {Linking.openURL('https://www.dropbox.com/s/s2dvb27gfo2pcfu/STEMIWorkflow_MGH.pdf?dl=0')}}>
                 <LinearGradient 
                   style={styles.covidButton}
-                  colors={['#9A0100', '#E7522E']}
+                  colors={['#f7971d', '#c94108']}
                   start={{x: 0, y: 0}}
                   end={{x: 1, y: 0}}
                 >
@@ -203,6 +203,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    backgroundColor: 'white'
   },
   title: {
     fontWeight: 'bold',
@@ -218,7 +219,6 @@ const styles = StyleSheet.create({
     marginRight: Dimensions.get('window').width/15,
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {

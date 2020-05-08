@@ -186,7 +186,8 @@ export default class StrokeMGH extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   top: {
     height: '10%',
@@ -211,7 +212,6 @@ const styles = StyleSheet.create({
     marginTop: Dimensions.get('window').height/120,
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {

@@ -82,9 +82,9 @@ export default class SecondPageNoPEBWH extends React.Component {
   
   state = {
     data: [
-      'Hemodynamically normal',
-      'Objective evidence of RV dysfunction on TTE or CT-PE showing RV enlargement (>0.9:1 RV to LV ratio)',
-      'Elevated troponin or NT-proBNP'
+      'Acute PE with normotensive status',
+      'Objective evidence of right ventricular (RV) dysfunction by transthoracic echocardiography (TTE) or RV enlargement by CT angiography (>0.9:1 RV to LV ratio)',
+      'Increased levels in biomarkers of myocardial injury (e.g. troponin T)'
     ]
   }
 
@@ -225,7 +225,6 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height/600
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {

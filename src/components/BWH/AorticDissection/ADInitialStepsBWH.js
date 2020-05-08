@@ -161,7 +161,7 @@ export default class ADInitialStepsBWH extends React.Component {
       <SafeAreaView style={styles.container}>
 
       <View style={styles.top}>
-        <Text style={styles.title}>Aortic Dissection</Text>
+        <Text style={styles.title}>Aortic Injury</Text>
         <View style={{marginTop: Dimensions.get('window').height/64, }}>
             <View style={{alignItems: 'center'}}>
                   <View style={{ flexDirection: 'row'}}>

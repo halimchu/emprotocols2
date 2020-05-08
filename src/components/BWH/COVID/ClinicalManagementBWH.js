@@ -81,7 +81,7 @@ export default class ClinicalManagementBWH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-          colors={['#0440A7', '#0F82B8']}
+          colors={['#146EB5', '#1D74B7', '#277ABB']}
           style={{ flex: 1 }}
           start={{x: 0, y: 0}}
           end={{x: 1, y: 0}}
@@ -98,8 +98,8 @@ export default class ClinicalManagementBWH extends React.Component {
            
               <Text style={styles.title}>
                 <Text style={{color: 'red'}}>COVID-19 </Text>
+                <Text>Clinical Management</Text>
               </Text>
-                <Text style={styles.title}>Clinical Management</Text>
             </View>
               <Divider />
           </View>
@@ -178,7 +178,8 @@ const styles = StyleSheet.create({
   },
   
   title: {
-    // fontFamily: 'Interstate-Bold',
+    fontWeight: 'bold',
+    color: '#2b2b2b',
     fontSize: Dimensions.get('window').height/35, 
   },
   button: {

@@ -82,7 +82,7 @@ export default class ThirdPageNoPEBWH extends React.Component {
   
   state = {
     data: [
-      'Patient doesn’t meet criteria for ‘Code Pulmonary Embolism’ or consultation at this time.',
+      'Patient doesn’t meet criteria for ‘Code PE’ or consultation at this time.',
       'Treat per clinical judgment and consider CT PE imaging'
     ]
   }
@@ -206,7 +206,6 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height/600
   },
   bulletPoint: {
-    color: 'gray',
     fontSize: Dimensions.get('window').height/40,
   },
   bulletPointText: {
