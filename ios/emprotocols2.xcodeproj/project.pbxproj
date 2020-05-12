@@ -17,6 +17,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* emprotocols2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* emprotocols2Tests.m */; };
 		6B30D05A2026005B51681DE0 /* libPods-emprotocols2-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A1BF902837E89B41BC07F4 /* libPods-emprotocols2-tvOSTests.a */; };
 		831148AC6794ECB1F80CEE44 /* libPods-emprotocols2-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3030E78639A6634F68990AE /* libPods-emprotocols2-tvOS.a */; };
+		8A66EC4B2469DB8B0024FCE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A66EC482469DB8B0024FCE8 /* GoogleService-Info.plist */; };
 		8A6BD0D82457C2BB00A1D513 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6BD0D72457C2BB00A1D513 /* libRNVectorIcons.a */; };
 		8A96AFAA2458D0EF00B33D37 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A96AFA92458D0EF00B33D37 /* LaunchScreen.xib */; };
 		D45D5A6EBE6E27BF534638B4 /* libPods-emprotocols2-emprotocols2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 294A24C1606A10BA81797F75 /* libPods-emprotocols2-emprotocols2Tests.a */; };
@@ -74,6 +75,7 @@
 		627EB8BF93F3C00A006A2BAB /* Pods-emprotocols2-emprotocols2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emprotocols2-emprotocols2Tests.debug.xcconfig"; path = "Target Support Files/Pods-emprotocols2-emprotocols2Tests/Pods-emprotocols2-emprotocols2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6A7DD34A75007A42D6DCC536 /* Pods-emprotocols2-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emprotocols2-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-emprotocols2-tvOSTests/Pods-emprotocols2-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		6E421B3BCCF4F15ED0D58CF3 /* Pods-emprotocols2-emprotocols2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emprotocols2-emprotocols2Tests.release.xcconfig"; path = "Target Support Files/Pods-emprotocols2-emprotocols2Tests/Pods-emprotocols2-emprotocols2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		8A66EC482469DB8B0024FCE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Google Info plist/EMP/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A6BD0CE2457C2A100A1D513 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		8A6BD0D72457C2BB00A1D513 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A6BD0D92457C2E900A1D513 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8A66EC482469DB8B0024FCE8 /* GoogleService-Info.plist */,
 				8A6BD0D92457C2E900A1D513 /* Ionicons.ttf */,
 				8A6BD0DD2457C74600A1D513 /* MaterialIcons.ttf */,
 				8A6BD0E12457C75200A1D513 /* FontAwesome5_Solid.ttf */,
@@ -266,6 +269,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				6F7A57805907DE3DE51E0C6C /* [CP] Copy Pods Resources */,
+				8A5CD98B246ADDA9000DD0CC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -400,6 +404,7 @@
 			files = (
 				8A96AFAA2458D0EF00B33D37 /* LaunchScreen.xib in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8A66EC4B2469DB8B0024FCE8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +637,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8A5CD98B246ADDA9000DD0CC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;

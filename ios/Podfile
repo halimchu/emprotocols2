@@ -77,6 +77,9 @@ target 'emprotocols2' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Performance'
 
   target 'emprotocols2Tests' do
     inherit! :complete

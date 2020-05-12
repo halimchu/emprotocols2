@@ -119,7 +119,7 @@ export default class COVIDHomeBWH extends React.Component {
                 <View style={{marginLeft: Dimensions.get('window').width/13 }}>
                           <TouchableOpacity
                             style={styles.customBtnBG} 
-                            onPress={ () => { Linking.openURL('https://pulse.partners.org/hub/departments/emergency_preparedness/coronavirus/covid19_testing_criteria')}} >
+                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/i09flhu4660p20y/TestingCriteria_BWH.pdf?dl=0')}} >
                             <Text style={styles.customBtnTextFirstLine}>Testing</Text>
                             <Text style={styles.customBtnTextSecondLine}>Criteria</Text>
                           </TouchableOpacity>
@@ -178,7 +178,7 @@ export default class COVIDHomeBWH extends React.Component {
             <View style={{ marginLeft: 1.5, marginTop: 1.5 }}>
                 <TouchableOpacity
                       style={styles.customBtnBG2}
-                      onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.swl?APP=PDPERS&FF=PDA&ACTION=FROMDESKTOP&DACTION=PAGE&DTID=90783&DSRCHNM=')}}>
+                      onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.swl?APP=PDPERS&FF=PDA&ACTION=SEARCHRES&SRCHNM=42200')}}>
                       <View style={{flexDirection: 'row',marginLeft: Dimensions.get('window').width/40,  marginTop: Dimensions.get('window').height/30,}}>
                           <FontAwesome5Icons name="pager" size={22} color="black" />
                           <Text style={styles.customBtnTextSingleLinePager}> Palliative Care</Text>

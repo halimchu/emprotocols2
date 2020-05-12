@@ -1,16 +1,8 @@
 import React from 'react'
 import { TouchableOpacity, Dimensions, View, Text, StyleSheet } from 'react-native'
 
-export default class Component extends React.Component {
+export default class ComponentFive extends React.Component {
 
-  // ifPresent = () => {
-  //   if (this.props.buttonTitle === 'Code Alpha' && !this.props.hidden) {
-  //     this.props.goToNextComponent = null
-  //     // return null
-  //   } else {
-  //     this.props.goToNextComponent()
-  //   }
-  // }
 
   ifPresent = () => {
     if (this.props.buttonTitle === 'Code Alpha') {
@@ -38,7 +30,6 @@ export default class Component extends React.Component {
         </View>
 
         {!this.props.hidden ? this.props.component : null} 
-        {/* {!this.props.hidden ? this.props.goToNextComponent() : null} */}
         {!this.props.hidden ? this.ifPresent() : null}
 
       </View>

@@ -110,7 +110,8 @@ export default class MTPNextStepsMGH extends React.Component {
     data: [
       '1. If indicated, order 1g TXA followed by another gram to be given over 8 hours',
       '2. Give 2 grams of Ca++ up front',
-      '3. Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals'
+      '3. Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals',
+      '4. One whole blood unit has a volume of approximately 500 mL'
     ]
   }
   
@@ -150,6 +151,14 @@ export default class MTPNextStepsMGH extends React.Component {
           }}>
               <Text style={styles.text}>3) </Text>
               <Text style={styles.text}>Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals</Text>
+          </View>
+
+          <View style={{
+            flexDirection: 'row',
+            marginTop: Dimensions.get('window').width/20
+          }}>
+              <Text style={styles.text}>4) </Text>
+              <Text style={styles.text}>One whole blood unit has a volume of approximately 500 mL</Text>
           </View>
         </View>
 

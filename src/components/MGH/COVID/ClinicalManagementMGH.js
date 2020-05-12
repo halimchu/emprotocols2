@@ -122,7 +122,7 @@ export default class ClinicalManagementMGH extends React.Component {
                 <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5 }}>
                           <TouchableOpacity
                             style={styles.customBtnBG} 
-                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/9rxdcm3pr03vxgq/VentManagement_BOTH.pdf?dl=0')}}>
+                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/cj9ffep1i4l7lvd/VentManagement_MGH.pdf?dl=0')}}>
                             <Text style={styles.customBtnTextFirstLine}>Vent</Text>
                             <Text style={styles.customBtnTextSecondLine}>Management</Text>
                           </TouchableOpacity>
@@ -139,7 +139,7 @@ export default class ClinicalManagementMGH extends React.Component {
                 <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
                           <TouchableOpacity
                             style={styles.customBtnBG} 
-                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/3jga5atcqzryazr/ECMO_BOTH.pdf?dl=0')}}>
+                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/o6qowieeqkl0zvp/ECMO_MGH.pdf?dl=0')}}>
                             <Text style={styles.customBtnTextSingleLine}>ECMO</Text>
                           </TouchableOpacity>
                 </View>

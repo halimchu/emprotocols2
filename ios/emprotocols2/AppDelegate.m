@@ -3,6 +3,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <Firebase.h>
 
 #if DEBUG
 #import <FlipperKit/FlipperClient.h>
@@ -47,6 +48,8 @@ static void InitializeFlipper(UIApplication *application) {
   UIView* launchScreenView = [[[NSBundle mainBundle] loadNibNamed:@"LaunchScreen" owner:self options:nil] objectAtIndex:0];
   launchScreenView.frame = self.window.bounds;
   rootView.loadingView = launchScreenView;
+  
+  [FIRApp configure];
   
   return YES;
 }

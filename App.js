@@ -36,7 +36,7 @@ const App: () => React$Node = () => {
       {/* <Icon name="ios-arrow-back" size={30} color="black" /> */}
       <Navigator />
     </NavigationContainer>
-    
+     
 
   );
 };

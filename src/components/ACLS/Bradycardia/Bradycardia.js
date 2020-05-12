@@ -2,7 +2,7 @@ import React from 'react'
 import { Image, Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons' 
 import { Button, Divider } from 'react-native-elements'
-import Component from './../Component'
+import ComponentFive from '../../ComponentFive'
 import DosesDetails from './DosesDetails'
 import LinearGradient from 'react-native-linear-gradient'
 
@@ -199,6 +199,12 @@ export default class BradyCardia extends React.Component {
       />
     )
   }
+
+
+  scrollToTop = () => {
+    this.scroller.scrollTo({x: 0, y: 0, animated: true})
+  }
+
   
   render() { 
 
@@ -213,8 +219,8 @@ export default class BradyCardia extends React.Component {
           <View styles={styles.top}>
             <Text style={styles.titleFirstLine}>Bradycardia with a Pulse</Text>
             <Divider style={styles.divider} />
-            <Text>{Dimensions.get('window').height}</Text>
-            <Text>{Dimensions.get('window').width}</Text>
+            {/* <Text>{Dimensions.get('window').height}</Text>
+            <Text>{Dimensions.get('window').width}</Text> */}
           </View>
               
           <View onLayout={this.measureImageView}>
@@ -229,19 +235,20 @@ export default class BradyCardia extends React.Component {
                 : 
                 
                 this.IPhoneNotYet()
-            
+              
             }  
           </View>
 
           <View style={{marginBottom: Dimensions.get('window').height/80}}></View>
 
           <View onLayout={this.measureDosesDetailsView}>
-            <Component
+            <ComponentFive
               goToNextComponent={this.goToEnd} 
               toggle={this.onPressDosesDetailsHidden} 
               hidden = {this.state.dosesDetailsHidden}
               component={<DosesDetails />}
               buttonTitle='Doses/Details'
+              scrollToTop={this.scrollToTop}
             />
           </View>
         </ScrollView>

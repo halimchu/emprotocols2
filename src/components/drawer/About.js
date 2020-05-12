@@ -91,9 +91,29 @@ export default class About extends React.Component {
             <Text style={styles.text}>Halim Chu</Text>
             <Text style={styles.text}>Yonatan Keschner, MD</Text>
             <Text style={styles.text}>Lucinda Lai, MD</Text>
-            <Text style={styles.text}>Paul Biddinger, MD, FACEP</Text>
-            <Text style={styles.text}>Joshua Baugh, MD, MPP</Text>
-            
+
+
+            <Text style={styles.bold}>MGH Faculty Consultants:</Text>
+            <Text style={styles.text}>
+              Joshua Baugh, MD, MPP; 
+              Theodore Benzer, MD, PhD; 
+              Paul Biddinger, MD, FACEP; 
+              Lauren Black, RN;
+              Ali Raja, MD, MBA, MPH;
+              Jonathan Sonis, MD, MHCM;
+              Benjamin White, MD;
+              Brian Yun, MD, MBA, MPH
+            </Text>
+
+
+
+
+            <Text style={styles.bold}>BWH Faculty Consultants:</Text>
+            <Text style={styles.text}>
+              Christopher Baugh, MD, MBA; 
+              Paul Chen, MD, MBA
+            </Text>
+
 
 
 

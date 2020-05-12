@@ -2,9 +2,8 @@ import React from 'react'
 import { ScrollView, Linking, Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
 import { Button, Divider } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient'
-import Icon from 'react-native-vector-icons/Ionicons' 
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons' 
-import Component from '../../Component'
+import Icon from 'react-native-vector-icons/Ionicons'  
+import ComponentFour from '../../ComponentFour'
 import TraumaSTATMGH from './TraumaSTATMGH'
 import TraumaAlertMGH from './TraumaAlertMGH'
 import TraumaticHeadInjuriesMGH from './TraumaticHeadInjuriesMGH'
@@ -157,14 +156,7 @@ export default class TraumaMGH extends React.Component {
     const added = 0
     this.scroller.scrollTo({x: 0, y: added, animated: true});
   }
-  // goToTopOfTraumaAlert = () => {
-  //   const added = this.state.titleView + 45
-  //   this.scroller.scrollTo({x: 0, y: added, animated: true});
-  // }
-  // goToTopOfTraumaticHeadInjuries = () => {
-  //   const added = this.state.titleView + this.state.traumaSTATView + this.state. traumaAlertView + 40.5
-  //   this.scroller.scrollTo({x: 0, y: added, animated: true});
-  // }
+
 
 
   onContentSizeChange = (contentWidth, contentHeight) => {
@@ -218,7 +210,7 @@ export default class TraumaMGH extends React.Component {
 
 
           <View onLayout={this.measureTraumaSTATView}>
-            <Component 
+            <ComponentFour
               goToNextComponent={this.goToTop} 
               toggle={this.onPressTraumaSTATHidden} 
               hidden = {this.state.traumaSTATHidden}
@@ -228,7 +220,7 @@ export default class TraumaMGH extends React.Component {
           </View>
 
           <View onLayout={this.measureTraumaAlertView}>
-            <Component 
+            <ComponentFour
               goToNextComponent={this.goToTop} 
               toggle={this.onPressTraumaAlertHidden} 
               hidden = {this.state.traumaAlertHidden}
@@ -238,14 +230,21 @@ export default class TraumaMGH extends React.Component {
           </View>
 
           <View onLayout={this.measureTraumaticHeadInjuriesView}>
-            <Component 
-              // goToNextComponent={this.goToTopOfTraumaticHeadInjuries} 
+            <ComponentFour
               goToNextComponent={this.goToTop} 
               toggle={this.onPressTraumaHeadInjuriesHidden} 
               hidden = {this.state.traumaticHeadInjuriesHidden}
               component={<TraumaticHeadInjuriesMGH />}
               buttonTitle='Traumatic Head Injuries'
             />
+          </View>
+
+          <View style={{alignItems: 'center', marginTop: 30}}>
+            <Text style={{
+              textAlign: 'center', 
+              fontSize: Dimensions.get('window').height/44,
+              fontStyle: 'italic',
+              color: '#595959'}}>***Pediatric trauma is {'<'}18 years of age***</Text>
           </View>
           
 

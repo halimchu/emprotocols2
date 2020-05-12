@@ -81,7 +81,7 @@ export default class ADInitialStepsBWH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#0440A7', '#0F82B8']}
+            colors={['#146EB5', '#1D74B7', '#277ABB']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -90,7 +90,7 @@ export default class ADInitialStepsBWH extends React.Component {
     }
   }
 
-
+ 
   state = {
     initialSteps: [
       'Place defib pads on patient',

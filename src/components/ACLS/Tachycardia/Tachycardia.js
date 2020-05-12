@@ -3,7 +3,7 @@ import { Image, Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity
 import Icon from 'react-native-vector-icons/Ionicons' 
 import { ThemeProvider, Button, Divider } from 'react-native-elements'
 import DosesDetails from './DosesDetails'
-import Component from './../Component'
+import ComponentFive from '../../ComponentFive'
 import LinearGradient from 'react-native-linear-gradient'
 
 
@@ -216,6 +216,11 @@ export default class Tachycardia extends React.Component {
       />
     )
   }
+
+
+  scrollToTop = () => {
+    this.scroller.scrollTo({x: 0, y: 0, animated: true})
+  }
   
   render() { 
     return (  
@@ -253,12 +258,13 @@ export default class Tachycardia extends React.Component {
           <View style={{marginBottom: Dimensions.get('window').height/80}}></View>
 
             <View onLayout={this.measureSynchronizedCardioversionView}>
-              <Component
+              <ComponentFive
                 goToNextComponent={this.goToComponentTwo} 
                 toggle={this.onPressSynchronizedCardioversionHidden} 
                 hidden = {this.state.synchronizedCardioversionHidden}
                 component={<DosesDetails />}
                 buttonTitle='Doses/Details'
+                scrollToTop={this.scrollToTop}
               />
             </View>
 

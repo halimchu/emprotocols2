@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import LinearGradient from 'react-native-linear-gradient'
 import { Button, Divider } from 'react-native-elements'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import Component from '../../Component'
+import ComponentFour from '../../ComponentFour'
 import SurgicalAirway from './SurgicalAirway'
 
 export default class RICUMGH extends React.Component {

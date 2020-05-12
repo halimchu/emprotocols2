@@ -1,10 +1,10 @@
 import { createStackNavigator } from 'react-navigation-stack'
-import About from '../src/components/drawer/About'
+import PrivacyPolicy from '../src/components/drawer/PrivacyPolicy'
 
 
-const AboutStack = createStackNavigator({
-  About: { screen: About },
+const PrivacyPolicyStack = createStackNavigator({
+ PrivacyPolicy: { screen:PrivacyPolicy },
 })
 
 
-export default AboutStack
+export default PrivacyPolicyStack

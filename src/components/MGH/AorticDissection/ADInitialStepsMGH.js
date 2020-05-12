@@ -81,7 +81,7 @@ export default class ADInitialStepsMGH extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#008CB1', '#1192BC', ]}
+            colors={['#02bfdb', '#00c0dc', '#02c1dd']}
             style={{ flex: 1 }}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}

@@ -110,27 +110,21 @@ export default class MTPMGH extends React.Component {
         paddingRight: Dimensions.get('window').width/20,
       }}>
 
-        <View style>
-          <Text style={{fontSize: Dimensions.get('window').width/23, fontWeight: '300' }}>
-        
-            <Text>
-                After the first trauma pack, you must pick up the
-                <Text> </Text>
-                <MaterialIcons name="phone" size={20} color="red" /> 
-                  <Text style={{fontWeight: 'bold', color: 'red'}}>RED PHONE</Text>
-                <MaterialIcons name="phone" size={20} color="red" /> 
-                <Text> </Text>
-                and individually request how many units
-                of each blood product you want at the intervals you want it, 
-                via paper form or Prepare/Transfuse order in EPIC.
+        <View>
+            <Text style={{marginTop: 5, fontSize: Dimensions.get('window').width/19, fontWeight: '300' }}>
+                You must notify the coordinator that we need “additional emergency release of blood products.” 
             </Text>
-          </Text>
+
+            <Text style={{marginTop: 10, fontSize: Dimensions.get('window').width/19, fontWeight: '300' }}> 
+              You must then pick up any wall phone in Acute and use the speed dial button to call 
+              the blood bank to give a verbal order.
+            </Text>
         </View>
 
 
       
         <View style={{ marginTop: Dimensions.get('window').height/40}}>
-          <Text style={{fontWeight: '300', fontSize: Dimensions.get('window').width/23}}>MGH recommends transfusing 1:2 (FFP : PRBC) ratio and platelets transfusion per labs.</Text>
+          
         </View>
       </View>   
     )

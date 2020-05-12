@@ -140,7 +140,7 @@ export default class STEMIBWH extends React.Component {
       'No alternative diagnosis being pursued (e.g., aortic dissection, PE)'
     ],
     dataTwo: [
-      ['1.', 'Creatinine >3.0 mg/dl or ESRD on dialysis (if known, not to delayactivation for initial lab results)'],
+      ['1.', 'Creatinine >3.0 mg/dl or ESRD on dialysis (if known, not to delay activation for initial lab results)'],
       ['2.', 'Dementia or other altered mental status'],
       ['3.', 'Cardiogenic shock'],
       ['4.', 'Post cardiac arrest'],
@@ -176,35 +176,6 @@ export default class STEMIBWH extends React.Component {
 
 
   showNextStepsButton () {
-
-    // iphones not listed yet 
-    if (this.state.pressed === false && !this.iPhones414x736And375x812() || this.iPhones375x667() || this.iPhones414x896()) {
-      return (
-          <View style={{alignItems: 'center',  }}>
-              <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/14,}}>
-                <TouchableOpacity
-                  style={styles.customBtnBG} 
-                  onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
-                  <Text style={styles.customBtnText}>Next Steps</Text>
-                </TouchableOpacity>
-            </View>
-          </View>  
-      )
-    } else if (this.state.pressed === true && !this.iPhones414x736And375x812() || this.iPhones375x667() || this.iPhones414x896()) {
-      return (
-        <View style={{alignItems: 'center',  }}>
-            <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200}}>
-              <TouchableOpacity
-                style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
-                <Text style={styles.customBtnText}>Next Steps</Text>
-              </TouchableOpacity>
-          </View>
-        </View>  
-      )
-    }
-
-
 
     // iphones 6Plus, 6sPlus, 7Plus, 8Plus 414x736 
     // iphones X, Xs, 11Pro                375x812
@@ -281,7 +252,7 @@ export default class STEMIBWH extends React.Component {
     } else if (this.state.pressed === true && this.iPhones414x896()) {
       return (
         <View style={{alignItems: 'center',  }}>
-            <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, }}>
+            <View style={{ alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200,marginTop: Dimensions.get('window').height/50}}>
               <TouchableOpacity
                 style={styles.customBtnBG} 
                 onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
@@ -291,6 +262,34 @@ export default class STEMIBWH extends React.Component {
         </View>  
       )
     }
+
+    // iphones not listed yet 
+    if (this.state.pressed === false && !this.iPhones414x736And375x812() || !this.iPhones375x667() || !this.iPhones414x896()) {
+      return (
+          <View style={{alignItems: 'center',  }}>
+              <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/14,}}>
+                <TouchableOpacity
+                  style={styles.customBtnBG} 
+                  onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
+                  <Text style={styles.customBtnText}>Next Steps</Text>
+                </TouchableOpacity>
+            </View>
+          </View>  
+      )
+    } else if (this.state.pressed === true && !this.iPhones414x736And375x812() || !this.iPhones375x667() || !this.iPhones414x896()) {
+      return (
+        <View style={{alignItems: 'center',  }}>
+            <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200}}>
+              <TouchableOpacity
+                style={styles.customBtnBG} 
+                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
+                <Text style={styles.customBtnText}>Next Steps</Text>
+              </TouchableOpacity>
+          </View>
+        </View>  
+      )
+    }
+
   }
 
   

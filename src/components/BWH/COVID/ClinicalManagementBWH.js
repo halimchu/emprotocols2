@@ -124,7 +124,7 @@ export default class ClinicalManagementBWH extends React.Component {
                 <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5 }}>
                           <TouchableOpacity
                             style={styles.customBtnBG} 
-                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/9rxdcm3pr03vxgq/VentManagement_BOTH.pdf?dl=0')}}>
+                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/051m15hbvxupwat/VentManagement_BWH.pdf?dl=0')}}>
                             <Text style={styles.customBtnTextFirstLine}>Vent</Text>
                             <Text style={styles.customBtnTextSecondLine}>Management</Text>
                           </TouchableOpacity>
@@ -141,7 +141,7 @@ export default class ClinicalManagementBWH extends React.Component {
                 <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
                           <TouchableOpacity
                             style={styles.customBtnBG} 
-                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/3jga5atcqzryazr/ECMO_BOTH.pdf?dl=0')}}>
+                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/7j5c2rm8bejj3fa/ECMO_BWH.pdf?dl=0')}}>
                             <Text style={styles.customBtnTextSingleLine}>ECMO</Text>
                           </TouchableOpacity>
                 </View>

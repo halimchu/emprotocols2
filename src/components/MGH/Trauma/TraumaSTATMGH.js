@@ -19,7 +19,7 @@ export default class TraumaSTATMGH extends React.Component {
       'BVM ventilation'
     ],
     dataThree: [
-      'SBP < 90 in adults, children age ≥10',
+      'SBP <90 in adults, children age ≥10',
       'SBP <70 + (2 x Age) in children age <10',
       'Transfer patients receiving blood to maintain VS'
     ],
@@ -36,6 +36,24 @@ export default class TraumaSTATMGH extends React.Component {
   render() { 
     return (  
       <View style={styles.container}>
+
+        <View style={{marginLeft: Dimensions.get('window').width/200,  }}>
+          <Text style={styles.header}>Neuro</Text>
+        </View>
+
+
+            <View style={{marginRight: Dimensions.get('window').width/12 }}>
+                  <View style={ styles.bulletPoints }>
+                    <View style={{ flexDirection: 'row' }}>
+                      <Text style={styles.bulletPoint}>{`\u2022`}</Text>
+                      <Text style={styles.bulletPointText}>GCS ≤8</Text>
+                    </View>
+                  </View>        
+                
+            </View>
+
+
+
             <View style={{marginLeft: Dimensions.get('window').width/200,  }}>
               <Text style={styles.header}>Airway</Text>
             </View>

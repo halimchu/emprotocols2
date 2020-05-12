@@ -123,7 +123,7 @@ export default class ADBWH extends React.Component {
           marginRight: Dimensions.get('window').width/20, 
           marginLeft: Dimensions.get('window').width/15 }}>
           <Text style={styles.bulletPoint}>{`\u2022`}</Text>
-          <Text style={{ fontSize: Dimensions.get('window').height/37, }}>Attendings: cardiac surgery, vascular surgery, CCU, vascular medicine consult, CCU nurse-in-charge</Text>
+          <Text style={{ fontSize: Dimensions.get('window').height/41, }}>Attendings: cardiac surgery, vascular surgery, CCU, vascular medicine consult, CCU nurse-in-charge</Text>
         </View>
       </View>
     
@@ -192,7 +192,7 @@ export default class ADBWH extends React.Component {
       return true
     }
   }
-
+ 
 
   showNextStepsButton () {
     // iphones not listed yet 
@@ -202,7 +202,7 @@ export default class ADBWH extends React.Component {
               <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200,}}>
                 <TouchableOpacity
                   style={styles.customBtnBG} 
-                  onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
+                  onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
                   <Text style={styles.customBtnText}>Next Steps</Text>
                 </TouchableOpacity>
             </View>
@@ -214,7 +214,7 @@ export default class ADBWH extends React.Component {
             <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200}}>
               <TouchableOpacity
                 style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
+                onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
                 <Text style={styles.customBtnText}>Next Steps</Text>
               </TouchableOpacity>
           </View>
@@ -231,7 +231,7 @@ export default class ADBWH extends React.Component {
               <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/7.7,}}>
                 <TouchableOpacity
                   style={styles.customBtnBG} 
-                  onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
+                  onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
                   <Text style={styles.customBtnText}>Next Steps</Text>
                 </TouchableOpacity>
             </View>
@@ -243,7 +243,7 @@ export default class ADBWH extends React.Component {
             <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200}}>
               <TouchableOpacity
                 style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
+                onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
                 <Text style={styles.customBtnText}>Next Steps</Text>
               </TouchableOpacity>
           </View>
@@ -260,7 +260,7 @@ export default class ADBWH extends React.Component {
             <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/8.3,}}>
               <TouchableOpacity
                 style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
+                onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
                 <Text style={styles.customBtnText}>Next Steps</Text>
               </TouchableOpacity>
           </View>
@@ -272,7 +272,7 @@ export default class ADBWH extends React.Component {
             <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200}}>
               <TouchableOpacity
                 style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
+                onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
                 <Text style={styles.customBtnText}>Next Steps</Text>
               </TouchableOpacity>
           </View>
@@ -288,7 +288,7 @@ export default class ADBWH extends React.Component {
               <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200,}}>
                 <TouchableOpacity
                   style={styles.customBtnBG} 
-                  onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
+                  onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
                   <Text style={styles.customBtnText}>Next Steps</Text>
                 </TouchableOpacity>
             </View>
@@ -300,7 +300,7 @@ export default class ADBWH extends React.Component {
             <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200}}>
               <TouchableOpacity
                 style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
+                onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
                 <Text style={styles.customBtnText}>Next Steps</Text>
               </TouchableOpacity>
           </View>
@@ -318,7 +318,7 @@ export default class ADBWH extends React.Component {
             <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/200}}>
               <TouchableOpacity
                 style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
+                onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
                 <Text style={styles.customBtnText}>Next Steps</Text>
               </TouchableOpacity>
           </View>
@@ -330,7 +330,7 @@ export default class ADBWH extends React.Component {
             <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, }}>
               <TouchableOpacity
                 style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
+                onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
                 <Text style={styles.customBtnText}>Next Steps</Text>
               </TouchableOpacity>
           </View>
@@ -350,7 +350,7 @@ export default class ADBWH extends React.Component {
       <SafeAreaView style={styles.container}>
       <ScrollView 
         ref={(scroller) => {this.scroller = scroller}}
-      >
+      >  
 
 
        
@@ -433,18 +433,6 @@ export default class ADBWH extends React.Component {
 
    
               {this.showNextStepsButton()}
-              {/* <View style={{ alignItems: 'center', }}>
-                <TouchableOpacity
-                  style={styles.customBtnBG} 
-                  onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
-                  <Text style={styles.customBtnText}>Next Steps</Text>
-                </TouchableOpacity>
-              </View> */}
-
-              
-              {/* <View>
-                <Text style={{color: 'white'}}> asdf</Text>
-              </View> */}
             
            
       </ScrollView>

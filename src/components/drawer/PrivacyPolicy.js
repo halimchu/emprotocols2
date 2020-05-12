@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react' 
 import { Linking, Image, Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons' 
 import { Button, Divider } from 'react-native-elements'
@@ -24,7 +24,7 @@ export default class PrivacyPolicy extends React.Component {
     headerTitle = (
       <View>
         <Text style={{ 
-          fontSize: Dimensions.get('window').height/43, 
+          fontSize: Dimensions.get('window').height/43,
           marginTop: Dimensions.get('window').height/200, 
           color: 'white', fontWeight: 'bold', 
           textAlign: 'center'}}>EMP</Text>
@@ -97,11 +97,11 @@ export default class PrivacyPolicy extends React.Component {
                   <Text style={styles.bold}>Use of Third Party Services; Information Collected Though Interaction with the Application</Text>
                   <Text style={styles.text}>We may use analytics and other services and tools services developed internally or provided by third parties to collect certain information relating to your use of EMP.  We and our service providers may also from time to time use the application and other technologies contained within the application to receive and store certain types of information whenever you interact with the application through your mobile device. We do not retain or collect any personal information entered by users of the EMP application. All other information entered into the EMP application is stored locally on the mobile device that you use to access EMP.</Text>
                   <Text style={styles.bold}>How We Use This Information</Text>
-                  <Text style={styles.text}>MGH and BWH uses the information you provide to manage and operate EMP and provide the EMP service to you and to improve our application and the services and content we offer.</Text>
+                  <Text style={styles.text}>MGH and BWH use the information you provide to manage and operate EMP and provide the EMP service to you and to improve our application and the services and content we offer.</Text>
                   
                   
                   <Text style={styles.bold}>Data Security</Text>
-                  <Text style={styles.text}>MGH and BWH seeks to prevent unauthorized access to your personal information by use of security technologies to protect the integrity and privacy of any personal information you provide. Although we endeavor to protect your personal information, MGH and BWH cannot and does not warrant the security of any information you transmit to us through online applications, and you do so at your own risk. Depending on the nature of the inquiry, your communication could be discarded or archived. If you wish, you can contact us instead by telephone at the numbers provided throughout our site.</Text>
+                  <Text style={styles.text}>MGH and BWH seek to prevent unauthorized access to your personal information by use of security technologies to protect the integrity and privacy of any personal information you provide. Although we endeavor to protect your personal information, MGH and BWH cannot and do not warrant the security of any information you transmit to us through online applications, and you do so at your own risk. Depending on the nature of the inquiry, your communication could be discarded or archived. If you wish, you can contact us instead by telephone at the numbers provided throughout our site.</Text>
                   
                   
                   <Text style={styles.bold}>Users in the European Economic Area (EEA) and Switzerland</Text>
@@ -116,7 +116,7 @@ export default class PrivacyPolicy extends React.Component {
                   
                   <Text style={styles.bold}>Changes to This Policy</Text>
                   <Text>
-                    <Text style={styles.text}>MGH and BWH reserves the right to change or update this Application Privacy Policy from time to time without notice, so please review it periodically to keep informed of any changes. If you have questions or comments regarding this Application Privacy Policy or about how we collect, use or protect your personal information, please contact us through our website. Your communications with the EMP team may be recorded for quality assurance purposes. For a list of MGH and BWH registered copyrights and how to report copyright infringement, please visit </Text>
+                    <Text style={styles.text}>MGH and BWH reserve the right to change or update this Application Privacy Policy from time to time without notice, so please review it periodically to keep informed of any changes. If you have questions or comments regarding this Application Privacy Policy or about how we collect, use or protect your personal information, please contact us through our website. Your communications with the EMP team may be recorded for quality assurance purposes. For a list of MGH and BWH registered copyrights and how to report copyright infringement, please visit </Text>
                     <Text style={styles.textLink}
                         onPress={() => Linking.openURL('https://www.massgeneral.org/notices/privacy/copyright.aspx')}>
                         https://www.massgeneral.org/notices/privacy/copyright.aspx

@@ -122,7 +122,7 @@ export default class STEMIPageBWH extends React.Component {
 
         <View style={styles.middle}>
           <Text style={{fontWeight: '400',fontSize: Dimensions.get('window').height/40,}}>
-            EM attending asks business specialist to call the STAT line to activate "Code STEMI" to activate the Cath Lab Team; EM attending name;
+            EM attending asks business specialist to call the STAT line to activate "Code STEMI" to activate the Cath Lab Team;
             EM attending name and cell phone call back number must be included in STAT line request
           </Text>
 

@@ -9,7 +9,7 @@ export default class StrokeTwo extends React.Component {
   state = {
     data: [
       ['1)', 'ED resident or attending asks business specialist to group page "Stroke Code" (Acute Stroke ED Group 107) if patient is eligible for endovascular therapy'],
-      ['2)', 'Order STAT MRI/MRA Head & Neck'],
+      ['2)', 'Discuss with Neuro resident what type of imaging to order: STAT CTA Head & Neck or MRI/MRA Head & Neck'],
       ['3)', 'Discuss with Neuro resident plan for endovascular therapy or not'],
 
     ],
@@ -20,7 +20,7 @@ export default class StrokeTwo extends React.Component {
     return (  
       <View>
 
-        <View style={{marginLeft: Dimensions.get('window').width/30, marginRight: Dimensions.get('window').width/25 }}>
+        <View style={{marginLeft: Dimensions.get('window').width/30, marginRight: Dimensions.get('window').width/10 }}>
           {this.state.data.map((item) => (
             <View key={item} style={ styles.bulletPoints }> 
               <View style={{  flexDirection: 'row'}}>

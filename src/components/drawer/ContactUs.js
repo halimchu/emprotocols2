@@ -27,7 +27,7 @@ export default class ContactUs extends React.Component {
           fontSize: Dimensions.get('window').height/43, 
           marginTop: Dimensions.get('window').height/200, 
           color: 'white', fontWeight: 'bold', 
-          textAlign: 'center'}}>MGH STAT</Text>
+          textAlign: 'center'}}>EMP</Text>
       </View>
     )
       
@@ -61,8 +61,10 @@ export default class ContactUs extends React.Component {
       headerTitle,
       headerBackground: (
         <LinearGradient
-            colors={['#23A7C2', '#2D7C93',]}
+            colors={['#0B58AC', '#0F93BD']}
             style={{ flex: 1 }}
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 0}}
         />
       ),   
     }

@@ -7,11 +7,9 @@ import CodeTraumaBWH from './CodeTraumaBWH'
 import CodeAlphaBWH from './CodeAlphaBWH'
 import CodeBurnBWH from './CodeBurnBWH'
 import LinearGradient from 'react-native-linear-gradient'
-import Component from '../../Component'
-// import ComponentTwo from '../../ComponentTwo'
+import ComponentFour from '../../ComponentFour'
 import ComponentThree from '../../ComponentThree'
 import TraumaConsultBWH from './TraumaConsultBWH'
-import CodeTraumaCriteriaBWH from './CodeTraumaCriteriaBWH'
 
 
 
@@ -259,7 +257,7 @@ export default class TraumaBWH extends React.Component {
                   <View style={{ alignItems: 'center', marginTop: 2 }}>
                       {/* <View onLayout={this.measureCodeTraumaButtonHeight}> */}
                       <View onLayout={this.measureCodeTraumaContent}>
-                        <Component 
+                        <ComponentFour
                           goToNextComponent={this.goToTop} 
                           toggle={this.onPressCodeTraumaHidden} 
                           hidden = {this.state.codeTraumaHidden}
@@ -272,7 +270,6 @@ export default class TraumaBWH extends React.Component {
                       {/* #2 */}
                       <View onLayout={this.measureTraumaticConsultContent}>
                         <ComponentThree
-                          // containsChildComponent='yes'
                           goToNextComponent={this.goToTopTwo} 
                           toggle={this.onPressCodeAlphaHidden} 
                           hiddenParent = {this.state.codeAlphaHidden}
@@ -284,7 +281,7 @@ export default class TraumaBWH extends React.Component {
 
                       {/* #3 */}
                       <View>
-                        <Component 
+                        <ComponentFour
                           goToNextComponent={this.goToTop} 
                           toggle={this.onPressTraumaConsultHidden} 
                           hidden = {this.state.traumaConsultHidden}
@@ -295,7 +292,7 @@ export default class TraumaBWH extends React.Component {
 
                       {/* #4 */}
                       <View>
-                        <Component 
+                        <ComponentFour 
                           goToNextComponent={this.goToTop} 
                           toggle={this.onPressCodeBurnHidden} 
                           hidden = {this.state.codeBurnHidden}
