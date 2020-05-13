@@ -99,11 +99,13 @@ export default class STEMILastBWH extends React.Component {
   state = {
     data: [
       'IV access',
+      'Serial VS',
       'ASA 325 mg (unless already given by EMS)',
       'Unfractionated heparin weight adjusted to a max dose of 5000 units bolused IV',
-      'Consider 2b/3a inhibitor',
       'Labs including BMP, CBC, PT/PTT, Troponin, Type & Screen',
-      'Place defibrillator pads'
+      'Supplemental O2, only if sats less than 93% or if patient having sensations of SOB',
+      'Place defibrillator pads if indicated',
+      'Consider 2b/3a inhibitor in discussion with cardiology',
     ]
   }
   
@@ -128,7 +130,7 @@ export default class STEMILastBWH extends React.Component {
 
 
         <View style={styles.middle}>
-            <View style={ styles.bulletPoints }>
+            {/* <View style={ styles.bulletPoints }>
               <View style={{ flexDirection: 'row' }}>
                   <Text style={styles.bulletPoint}>{`\u2022`}</Text>
                   <Text style={{ marginLeft: Dimensions.get('window').width/100}}>
@@ -140,7 +142,7 @@ export default class STEMILastBWH extends React.Component {
                     </Text>
                   </Text>
               </View>
-            </View>    
+            </View>     */}
 
 
               
@@ -197,9 +199,8 @@ const styles = StyleSheet.create({
     // backgroundColor: 'yellow'
   },
   middle: {
-    height: '45%',
-    justifyContent: 'center',
-    marginTop: Dimensions.get('window').height/40,
+    height: '90%',
+    marginTop: Dimensions.get('window').height/30,
     // backgroundColor: '#F7F7F7',
 
   },

@@ -187,14 +187,7 @@ export default class MTPMGH extends React.Component {
 
 
 
-              {/* <View style={{ marginTop: Dimensions.get('window').height/40 }}>
-                      <ComponentTwo 
-                        toggle={this.onPressNeedBloodHidden} 
-                        hidden = {this.state.needBloodHidden}
-                        component={<MTPNeedMoreBlood />}
-                        buttonTitle='Need More Blood?'
-                      />
-              </View>      */}
+   
           </View>
 
 

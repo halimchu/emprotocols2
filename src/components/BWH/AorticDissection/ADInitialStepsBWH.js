@@ -164,7 +164,7 @@ export default class ADInitialStepsBWH extends React.Component {
 
 
             <View style={styles.top}>
-              <Text style={styles.title}>Aortic Injury</Text>
+              <Text style={styles.title}>Acute Aortic Syndrome</Text>
               <View style={{marginTop: Dimensions.get('window').height/64, }}>
                   <View style={{alignItems: 'center'}}>
                         <View style={{ flexDirection: 'row'}}>

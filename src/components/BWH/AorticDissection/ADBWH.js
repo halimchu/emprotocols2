@@ -195,40 +195,12 @@ export default class ADBWH extends React.Component {
  
 
   showNextStepsButton () {
-    // iphones not listed yet 
-    if (this.state.pressed === false && !this.iPhones414x736() || !this.iPhones414x896() || !this.iPhones375x667() || !this.iPhones375x812()) {
-      return (
-          <View style={{alignItems: 'center',  }}>
-              <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200,}}>
-                <TouchableOpacity
-                  style={styles.customBtnBG} 
-                  onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
-                  <Text style={styles.customBtnText}>Next Steps</Text>
-                </TouchableOpacity>
-            </View>
-          </View>  
-      )
-    } else if (this.state.pressed === true && !this.iPhones414x736() || !this.iPhones414x896() || !this.iPhones375x667() || !this.iPhones375x812()) {
-      return (
-        <View style={{alignItems: 'center',  }}>
-            <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200}}>
-              <TouchableOpacity
-                style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
-                <Text style={styles.customBtnText}>Next Steps</Text>
-              </TouchableOpacity>
-          </View>
-        </View>  
-      )
-    }
-
-
 
     // iphones 6Plus, 6sPlus, 7Plus, 8Plus 414x736 
     if (this.state.pressed === false && this.iPhones414x736()) {
       return (
           <View style={{alignItems: 'center',  }}>
-              <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/7.7,}}>
+              <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/7.5,}}>
                 <TouchableOpacity
                   style={styles.customBtnBG} 
                   onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
@@ -247,6 +219,7 @@ export default class ADBWH extends React.Component {
                 <Text style={styles.customBtnText}>Next Steps</Text>
               </TouchableOpacity>
           </View>
+          <Text style={{color: 'white'}}>A</Text>
         </View>  
       )
     }
@@ -257,7 +230,7 @@ export default class ADBWH extends React.Component {
     if (this.state.pressed === false && this.iPhones375x667()) {
       return (
         <View style={{alignItems: 'center',  }}>
-            <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/8.3,}}>
+            <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/8,}}>
               <TouchableOpacity
                 style={styles.customBtnBG} 
                 onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
@@ -276,6 +249,7 @@ export default class ADBWH extends React.Component {
                 <Text style={styles.customBtnText}>Next Steps</Text>
               </TouchableOpacity>
           </View>
+          <Text style={{color: 'white'}}>A</Text>
         </View>  
       )
     }
@@ -337,6 +311,36 @@ export default class ADBWH extends React.Component {
         </View>  
       )
     }
+
+
+        // iphones not listed yet 
+        if (this.state.pressed === false && !this.iPhones414x736() || !this.iPhones414x896() || !this.iPhones375x667() || !this.iPhones375x812()) {
+          return (
+              <View style={{alignItems: 'center',  }}>
+                  <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200,}}>
+                    <TouchableOpacity
+                      style={styles.customBtnBG} 
+                      onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
+                      <Text style={styles.customBtnText}>Next Steps</Text>
+                    </TouchableOpacity>
+                </View>
+              </View>  
+          )
+        } else if (this.state.pressed === true && !this.iPhones414x736() || !this.iPhones414x896() || !this.iPhones375x667() || !this.iPhones375x812()) {
+          return (
+            <View style={{alignItems: 'center',  }}>
+                <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200}}>
+                  <TouchableOpacity
+                    style={styles.customBtnBG} 
+                    onPress={() => this.props.navigation.navigate('ADInitialStepsBWH')}>
+                    <Text style={styles.customBtnText}>Next Steps</Text>
+                  </TouchableOpacity>
+              </View>
+            </View>  
+          )
+        }
+
+
   }
 
 
@@ -355,7 +359,7 @@ export default class ADBWH extends React.Component {
 
        
 
-              <Text style={styles.title}>Aortic Injury</Text>
+              <Text style={styles.title}>Acute Aortic Syndrome</Text>
               <View style={{marginTop: Dimensions.get('window').height/64, }}>
               <View style={{alignItems: 'center'}}>
                   <View style={{ flexDirection: 'row'}}>
@@ -366,6 +370,9 @@ export default class ADBWH extends React.Component {
                   </View>
             </View>
               </View>
+
+              {/* <Text>{Dimensions.get('window').height}</Text>
+              <Text>{Dimensions.get('window').width}</Text> */}
 
 
 

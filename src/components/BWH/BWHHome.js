@@ -126,7 +126,7 @@ export default class BWHHome extends React.Component {
                     <View style={{ marginLeft: Dimensions.get('window').width/13, }}>
                               <TouchableOpacity
                                 style={styles.customBtnBG} 
-                                onPress={() => this.props.navigation.navigate('ACLSHome')}>
+                                onPress={() => this.props.navigation.navigate('ACLSHomeBWH')}>
                                 <Text style={styles.customBtnTextSingleLine}>ACLS</Text>
                               </TouchableOpacity>
                     </View>
@@ -134,8 +134,8 @@ export default class BWHHome extends React.Component {
                               <TouchableOpacity
                                 style={styles.customBtnBG} 
                                 onPress={() => this.props.navigation.navigate('ADBWH')}>
-                                <Text style={styles.customBtnTextFirstLine}>Aortic</Text>
-                                <Text style={styles.customBtnTextSecondLine}>Injury</Text>
+                                <Text style={styles.customBtnTextFirstLine}>Acute Aortic</Text>
+                                <Text style={styles.customBtnTextSecondLine}>Syndrome</Text>
                               </TouchableOpacity>
                     </View> 
                     <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>

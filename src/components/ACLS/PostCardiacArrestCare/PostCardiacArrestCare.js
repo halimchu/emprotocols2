@@ -206,6 +206,10 @@ export default class PostCardiacArrestCare extends React.Component {
     )
   }
 
+  scrollToTop = () => {
+    this.scroller.scrollTo({x: 0, y: 0, animated: true})
+  }
+
   
   render() { 
     return (  
@@ -252,6 +256,7 @@ export default class PostCardiacArrestCare extends React.Component {
                   component={<CardiacArrestReversibleCauses />}
                   buttonTitle='Reversible Causes'
                 />
+              
               </View>
           </View>
 

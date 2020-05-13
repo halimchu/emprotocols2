@@ -3,17 +3,17 @@ import { Image, Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity
 import Icon from 'react-native-vector-icons/Ionicons' 
 import { Button, Divider } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient'
-import CardiacArrestReversibleCauses from '../CardiacArrest/cardiacArrestReversibleCauses'
-import CardiacArrestShockEnergy from '../CardiacArrest/cardiacArrestShockEnergy'
-import CardiacArrestDrugTherapy from './cardiacArrestDrugTherapy'
-import CardiacArrestROSC from './cardiacArrestROSC'
-import CardiacArrestCPR from './cardiacArrestCPR'
-import CardiacArrestAdvancedAirwayCOVID from './COVID/cardiacArrestAdvancedAirwayCOVID'
-import Component from '../Component'
-import Timer from './Timer'
+import CardiacArrestReversibleCauses from '../cardiacArrestReversibleCauses'
+import CardiacArrestShockEnergy from '../cardiacArrestShockEnergy'
+import CardiacArrestDrugTherapy from '../cardiacArrestDrugTherapy'
+import CardiacArrestROSC from '../cardiacArrestROSC'
+import CardiacArrestCPR from '../cardiacArrestCPR'
+import CardiacArrestAdvancedAirwayCOVID from '../cardiacArrestAdvancedAirwayCOVID'
+import Component from '../../Component'
+import Timer from '../Timer'
 
 
-export default class CardiacArrestCOVID extends React.Component {
+export default class CardiacArrestCOVIDMGH extends React.Component {
   static navigationOptions = ({ navigation }) => {
     let headerLeft = ( 
       <View style={{ flexDirection: 'row' }}>
@@ -289,7 +289,7 @@ export default class CardiacArrestCOVID extends React.Component {
     if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 896) {
       return (
         <Image
-          source={require('../../../../assets/CardiacArrestCOVID3000x2500.png')}
+          source={require('../../../../../assets/CardiacArrestCOVID3000x2500.png')}
           style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.03}}
         />
       )
@@ -300,7 +300,7 @@ export default class CardiacArrestCOVID extends React.Component {
     if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 812) {
       return (
         <Image
-          source={require('../../../../assets/CardiacArrestCOVID3000x2500.png')}
+          source={require('../../../../../assets/CardiacArrestCOVID3000x2500.png')}
           style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.03}}
         />
       )
@@ -311,7 +311,7 @@ export default class CardiacArrestCOVID extends React.Component {
     if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736) {
       return (
         <Image
-          source={require('../../../../assets/CardiacArrestCOVID3000x2500.png')}
+          source={require('../../../../../assets/CardiacArrestCOVID3000x2500.png')}
           style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/.85 }}
         />
       )
@@ -322,7 +322,7 @@ export default class CardiacArrestCOVID extends React.Component {
     if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667) {
       return (
         <Image
-          source={require('../../../../assets/CardiacArrestCOVID3000x2500.png')}
+          source={require('../../../../../assets/CardiacArrestCOVID3000x2500.png')}
           style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/.85 }}
         />
       )
@@ -333,7 +333,7 @@ export default class CardiacArrestCOVID extends React.Component {
     if (Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568) {
       return (
         <Image
-          source={require('../../../../assets/CardiacArrestCOVID3000x2500.png')}
+          source={require('../../../../../assets/CardiacArrestCOVID3000x2500.png')}
           style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/.85 }}
         />
       )
@@ -343,7 +343,7 @@ export default class CardiacArrestCOVID extends React.Component {
   IPhoneNotYet () {
     return (
       <Image
-        source={require('../../../../assets/CardiacArrestCOVID3000x2500.png')}
+        source={require('../../../../../assets/CardiacArrestCOVID3000x2500.png')}
         style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.03}}
       />
     )
@@ -438,6 +438,14 @@ export default class CardiacArrestCOVID extends React.Component {
             <Text> or</Text>
             <Text style={{fontWeight: 'bold'}}> 11</Text> 
           </Text>
+        </View>
+
+        <View style={{alignItems: 'center'}}>
+          <TouchableOpacity
+            style={styles.customBtnBG3} 
+            onPress={() => this.props.navigation.navigate('ECMOOne')}>
+            <Text style={styles.customBtnText2}>Consider ECMO</Text>
+          </TouchableOpacity>
         </View>
             
 

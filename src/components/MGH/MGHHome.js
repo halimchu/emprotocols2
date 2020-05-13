@@ -122,7 +122,7 @@ export default class MGHHome extends React.Component {
               <View style={{ marginLeft: Dimensions.get('window').width/13, }}>
                         <TouchableOpacity
                           style={styles.customBtnBG} 
-                          onPress={() => this.props.navigation.navigate('ACLSHome')}>
+                          onPress={() => this.props.navigation.navigate('ACLSHomeMGH')}>
                           <Text style={styles.customBtnTextSingleLine}>ACLS</Text>
                         </TouchableOpacity>
               </View>

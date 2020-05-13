@@ -109,7 +109,8 @@ export default class ClinicalManagementMGH extends React.Component {
                           <TouchableOpacity
                             style={styles.customBtnBG} 
                             onPress={ () => { Linking.openURL('https://www.dropbox.com/s/y2gpj9hlpnuyn74/Intubation%26SedationRx_BOTH.pdf?dl=0')}} >
-                            <Text style={styles.customBtnTextFirstLine}>Intubation & Sedation Rx</Text>
+                            <Text style={styles.customBtnTextFirstLine}>Intubation &</Text>
+                            <Text style={styles.customBtnTextSecondLine}>Sedation Rx</Text>
                           </TouchableOpacity>
                 </View>
                 <View style={{marginLeft: 1.5}}>

@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import LinearGradient from 'react-native-linear-gradient'
 import { Divider } from 'react-native-elements'
 
-export default class ACLSHome extends React.Component {
+export default class ACLSHomeMGH extends React.Component {
   static navigationOptions = ({ navigation }) => {
     let headerLeft = ( 
       <View style={{ flexDirection: 'row' }}>
@@ -47,7 +47,7 @@ export default class ACLSHome extends React.Component {
           fontSize: Dimensions.get('window').height/43, 
           marginTop: Dimensions.get('window').height/200, 
           color: 'white', fontWeight: 'bold', 
-          textAlign: 'center'}}></Text>
+          textAlign: 'center'}}>MGH</Text>
       </View>
     )
       
@@ -113,58 +113,13 @@ export default class ACLSHome extends React.Component {
               style={[ this.iPhonesUpTo8() ? styles.imageiPhonesUpTo8 : styles.imageiPhonesAfter8]}
           />
 
-        {/* <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center'}}>
-
-
-                <View style={{ }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('CardiacArrestCOVID')}>
-                            <Text style={styles.customBtnTextFirstLine}>Cardiac Arrest</Text>
-                            <Text style={styles.customBtnTextSecondLineCOVID}>COVID-19</Text>
-                          </TouchableOpacity>    
-                </View>
-                <View style={{ marginLeft: 1.5 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('CardiacArrest')}>
-                            <Text style={styles.customBtnTextFirstLine}>Cardiac</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Arrest</Text>
-                          </TouchableOpacity>        
-                </View>
-                <View style={{ marginTop: 2 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('Bradycardia')}>
-                            <Text style={styles.customBtnTextSingleLine}>Bradycardia</Text>
-                          </TouchableOpacity>        
-                </View>
-                <View style={{ marginLeft: 1.5, marginTop: 2 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('Tachycardia')}>
-                            <Text style={styles.customBtnTextSingleLine}>Tachycardia</Text>
-                          </TouchableOpacity>  
-                </View>
-                <View style={{  marginTop: 2 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('PostCardiacArrestCare')}>
-                            <Text style={styles.customBtnTextFirstLine}>Post Cardiac</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Arrest Care</Text>
-                          </TouchableOpacity>
-                          
-                </View>
-              </View> */}
-
-
           <View style={{alignItems: 'center', marginTop: Dimensions.get('window').height/30}}>
 
 
             <View style={styles.margin}>
                       <TouchableOpacity
                         style={styles.customBtnBG} 
-                        onPress={() => this.props.navigation.navigate('CardiacArrestCOVID')}>
+                        onPress={() => this.props.navigation.navigate('CardiacArrestCOVIDMGH')}>
                         <Text style={styles.customBtnTextFirstLine}>Cardiac Arrest</Text>
                         <Text style={styles.customBtnTextSecondLineCOVID}>COVID-19</Text>
                       </TouchableOpacity>    
@@ -172,7 +127,7 @@ export default class ACLSHome extends React.Component {
             <View style={styles.margin}>
                       <TouchableOpacity
                         style={styles.customBtnBG} 
-                        onPress={() => this.props.navigation.navigate('CardiacArrest')}>
+                        onPress={() => this.props.navigation.navigate('CardiacArrestMGH')}>
                         <Text style={styles.customBtnTextFirstLine}>Cardiac</Text>
                         <Text style={styles.customBtnTextSecondLine}>Arrest</Text>
                       </TouchableOpacity>        

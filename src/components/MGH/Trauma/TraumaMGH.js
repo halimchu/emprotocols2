@@ -4,6 +4,7 @@ import { Button, Divider } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient'
 import Icon from 'react-native-vector-icons/Ionicons'  
 import ComponentFour from '../../ComponentFour'
+import ComponentFive from '../../ComponentFive'
 import TraumaSTATMGH from './TraumaSTATMGH'
 import TraumaAlertMGH from './TraumaAlertMGH'
 import TraumaticHeadInjuriesMGH from './TraumaticHeadInjuriesMGH'
@@ -153,14 +154,18 @@ export default class TraumaMGH extends React.Component {
 
 
   goToTop = () => {
-    const added = 0
-    this.scroller.scrollTo({x: 0, y: added, animated: true});
+    this.scroller.scrollTo({x: 0, y: 0, animated: true});
   }
 
 
 
   onContentSizeChange = (contentWidth, contentHeight) => {
     this.setState({ screenHeight: contentHeight })
+  }
+
+
+  scrollToTop = () => {
+    this.scroller.scrollTo({x: 0, y: 0, animated: true})
   }
   
 
@@ -210,32 +215,35 @@ export default class TraumaMGH extends React.Component {
 
 
           <View onLayout={this.measureTraumaSTATView}>
-            <ComponentFour
+            <ComponentFive
               goToNextComponent={this.goToTop} 
               toggle={this.onPressTraumaSTATHidden} 
               hidden = {this.state.traumaSTATHidden}
               component={<TraumaSTATMGH />}
               buttonTitle='Trauma STAT'
+              scrollToTop={this.scrollToTop}
             />
           </View>
 
           <View onLayout={this.measureTraumaAlertView}>
-            <ComponentFour
+            <ComponentFive
               goToNextComponent={this.goToTop} 
               toggle={this.onPressTraumaAlertHidden} 
               hidden = {this.state.traumaAlertHidden}
               component={<TraumaAlertMGH />}
               buttonTitle='Trauma Alert'
+              scrollToTop={this.scrollToTop}
             />
           </View>
 
           <View onLayout={this.measureTraumaticHeadInjuriesView}>
-            <ComponentFour
+            <ComponentFive
               goToNextComponent={this.goToTop} 
               toggle={this.onPressTraumaHeadInjuriesHidden} 
               hidden = {this.state.traumaticHeadInjuriesHidden}
               component={<TraumaticHeadInjuriesMGH />}
               buttonTitle='Traumatic Head Injuries'
+              scrollToTop={this.scrollToTop}
             />
           </View>
 

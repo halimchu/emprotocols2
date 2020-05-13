@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   customBtnBG: {
     borderWidth: 1,
     borderColor: 'white',
-    backgroundColor: "#DCE2EA",
+    backgroundColor: '#dedede',
     width: Dimensions.get('window').width/1,
     height: Dimensions.get('window').height/20,
   },

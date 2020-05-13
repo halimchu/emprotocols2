@@ -262,7 +262,7 @@ export default class TraumaBWH extends React.Component {
                           toggle={this.onPressCodeTraumaHidden} 
                           hidden = {this.state.codeTraumaHidden}
                           component={<CodeTraumaBWH />}
-                          buttonTitle='Code Trauma Criteria'
+                          buttonTitle='Code Trauma Criteria'   
                         />
                       </View>
  
