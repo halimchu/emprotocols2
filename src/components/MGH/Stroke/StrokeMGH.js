@@ -107,7 +107,7 @@ export default class StrokeMGH extends React.Component {
       'Facial Droop',
       'Arm or Leg Weakness',
       'Speech Difficulties',
-      'Fingerstick Glucose >50 or <400'
+      'Check Fingerstick Glucose'
     ],
     dataTwo: [
       'Obtain Last Seen Well (LSW) time',

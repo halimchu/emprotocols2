@@ -142,6 +142,21 @@ export default class COVIDDispoMGH extends React.Component {
                             <Text style={styles.customBtnTextSecondLine}>(BCEC)</Text>
                           </TouchableOpacity>  
                 </View>
+                <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 1.5 }}>
+                          <TouchableOpacity
+                            style={styles.customBtnBG} 
+                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/7vpsdwj6vlkxoh6/DispoGuide_MGH.pdf?dl=0')}}>
+                            <Text style={styles.customBtnTextThreeLines}>Dispo Guide for Ambulatory ED Presentation</Text>
+                          
+                          </TouchableOpacity>
+                </View>
+                <View style={{ marginLeft: 1.5, marginTop: 1.5}}>
+                    <TouchableOpacity 
+                      style={styles.customBtnBG}     
+                      onPress={() => {this.onPressButtonHidden()}}>
+                    <Text style={styles.customBtnTextSingleLine}>Homelessness</Text>
+                    </TouchableOpacity>
+                </View>
                 <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5 }}>
                           <TouchableOpacity
                             style={styles.customBtnBG} 
@@ -158,23 +173,18 @@ export default class COVIDDispoMGH extends React.Component {
                             <Text style={styles.customBtnTextSecondLine}>Admission</Text>
                           </TouchableOpacity>
                 </View>
-
-                <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
-                    <TouchableOpacity 
-                      style={styles.customBtnBG}     
-                      onPress={() => {this.onPressButtonHidden()}}>
-                    <Text style={styles.customBtnTextSingleLine}>Homelessness</Text>
-                    </TouchableOpacity>
-                </View>
-
-                <View style={{ marginLeft: 1.5, marginTop: 1.5 }}>
+                <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5 }}>
                           <TouchableOpacity
                             style={styles.customBtnBG} 
-                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/7vpsdwj6vlkxoh6/DispoGuide_MGH.pdf?dl=0')}}>
-                            <Text style={styles.customBtnTextThreeLines}>Dispo Guide for Ambulatory ED Presentation</Text>
-                          
+                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/namo7fk1h5kt21b/RemotePatientMonitoring_MGH.pdf?dl=0')}}>
+                            <Text style={styles.customBtnTextFirstLine}>Remote Patient</Text>
+                            <Text style={styles.customBtnTextSecondLine}>Monitoring (RPM)</Text>
                           </TouchableOpacity>
                 </View>
+
+               
+
+               
             </View>
 
 

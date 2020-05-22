@@ -93,13 +93,13 @@ export default class MTPNextStepsBWH extends React.Component {
 
   state = {
     dataOne: [
-     '6U PRBCs',
-     '2U FFP (4 more to follow because plasma has to be thawed and matched)',
+     '6U RBC',
+     '6U FFP',
      '1U platelets'
     ],
     dataTwo: [
-      '6U PRBCs',
-      '2U FFP (4 more to follow because plasma has to be thawed and matched)',
+      '6U RBC',
+      '6U FFP',
       '1U platelets'
     ],
     dataThree: [
@@ -167,11 +167,7 @@ export default class MTPNextStepsBWH extends React.Component {
             marginRight: Dimensions.get('window').width/20, 
             paddingTop: Dimensions.get('window').height/50,
           }}>
-            <Text>
-              <Text style={styles.text}>Before the</Text>
-              <Text style={{fontSize: Dimensions.get('window').width/20.5, fontWeight: 'bold'}}> third round,</Text>
-              <Text  style={styles.text}> blood bank will call and confirm if you want to continue. If you continue, blood bank sends you products q15 mins automatically.</Text>
-            </Text>
+            <Text style={styles.text}>After second round, call Blood Bank if more products needed.</Text>
           </View>
         </View>
 

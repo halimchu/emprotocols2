@@ -7,9 +7,10 @@ export default class StrokeTwo extends React.Component {
 
   state = {
     data: [
-      ['1)', 'ED resident or attending group page "Stroke Code" (Acute Stroke ED Group 107)'],
-      ['2)', 'Order STAT CT Angio Head & Neck'],
-      ['3)', 'ED resident or attending group page "Stroke Code" (Acute Stroke ED Group 107)'],
+      ['1)', 'Go to Paging Directory'],
+      ['2)', 'Send Group Page'],
+      ['3)', 'ED2MRI 6-24 hours'],
+      ['4)', 'Order STAT CTA Head & Neck'],
 
     ],
   }
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
   },
   bulletPointText: {
     marginLeft: Dimensions.get('window').height/120,
-    fontSize: Dimensions.get('window').height/37,
+    fontSize: Dimensions.get('window').height/40,
   },
   customBtnText: {
     fontWeight: '600',

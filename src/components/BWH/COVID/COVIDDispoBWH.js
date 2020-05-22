@@ -125,47 +125,7 @@ export default class COVIDDispoBWH extends React.Component {
   
   
           <View style={{ flexDirection: 'row', flexWrap: 'wrap',}}>
-                <View style={{ marginLeft: Dimensions.get('window').width/13, }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/hcsjb9obbbwcsqv/DispoGuide_BWH.pdf?dl=0')}} >
-                            <Text style={styles.customBtnTextFirstLine}>Dispo</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Guide</Text>
-                          </TouchableOpacity>
-                </View>
-                <View style={{marginLeft: 1.5}}> 
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => {Linking.openURL('https://www.dropbox.com/s/fmi8p33dep966v1/Stroke%26TIADispoGuide_BWH.pdf?dl=0')}}>
-                            <Text style={styles.customBtnTextFirstLine}>Stroke & TIA</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Dispo Guide</Text>
-                          </TouchableOpacity>  
-                </View>
-                <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/y61uhhw695joxuy/Dentistry_BWH.pdf?dl=0')}}>
-                            <Text style={styles.customBtnTextFirstLine}>Oral Medicine &</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Dentistry Clinic</Text>
-                          </TouchableOpacity>
-                </View>
-                <View style={{ marginLeft: 1.5, marginTop: 1.5 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/k7qrmbszsg6m5wx/PsychAmbulatoryReferral_BWH.pdf?dl=0')}}>
-                            <Text style={styles.customBtnText3Lines}>Psychiatry Ambulatory Referral</Text>
-                          </TouchableOpacity>
-                </View>
-
-                <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
-                    <TouchableOpacity 
-                      style={styles.customBtnBG} 
-                      onPress={ () => { Linking.openURL('https://www.dropbox.com/s/tk5iymvgotzibfg/Homelessness_BWH.pdf?dl=0')}}>
-                    <Text style={styles.customBtnTextSingleLine}>Homelessness</Text>
-                    </TouchableOpacity>
-                </View>
-
-                <View style={{ marginLeft: 1.5, marginTop: 1.5 }}>
+                <View style={{ marginLeft: Dimensions.get('window').width/13 }}>
                           <TouchableOpacity
                             style={styles.customBtnBG} 
                             onPress={ () => { Linking.openURL('https://www.dropbox.com/s/hmjnfy6wtnycaqo/BostonHope_BWH.pdf?dl=0')}}>
@@ -173,6 +133,50 @@ export default class COVIDDispoBWH extends React.Component {
                           
                           </TouchableOpacity>
                 </View>
+                <View style={{ marginLeft: 1.5 }}>
+                          <TouchableOpacity
+                            style={styles.customBtnBG} 
+                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/hcsjb9obbbwcsqv/DispoGuide_BWH.pdf?dl=0')}} >
+                            <Text style={styles.customBtnTextFirstLine}>Dispo</Text>
+                            <Text style={styles.customBtnTextSecondLine}>Guide</Text>
+                          </TouchableOpacity>
+                </View>
+                <View style={{ marginLeft: Dimensions.get('window').width/13, marginTop: 1.5}}>
+                    <TouchableOpacity 
+                      style={styles.customBtnBG} 
+                      onPress={ () => { Linking.openURL('https://www.dropbox.com/s/tk5iymvgotzibfg/Homelessness_BWH.pdf?dl=0')}}>
+                    <Text style={styles.customBtnTextSingleLine}>Homelessness</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{ marginLeft: 1.5, marginTop: 1.5 }}>
+                          <TouchableOpacity
+                            style={styles.customBtnBG} 
+                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/y61uhhw695joxuy/Dentistry_BWH.pdf?dl=0')}}>
+                            <Text style={styles.customBtnTextFirstLine}>Oral Medicine &</Text>
+                            <Text style={styles.customBtnTextSecondLine}>Dentistry Clinic</Text>
+                          </TouchableOpacity>
+                </View>
+                <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 1.5 }}>
+                          <TouchableOpacity
+                            style={styles.customBtnBG} 
+                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/k7qrmbszsg6m5wx/PsychAmbulatoryReferral_BWH.pdf?dl=0')}}>
+                            <Text style={styles.customBtnText3Lines}>Psychiatry Ambulatory Referral</Text>
+                          </TouchableOpacity>
+                </View>
+                <View style={{marginLeft: 1.5, marginTop: 1.5}}> 
+                          <TouchableOpacity
+                            style={styles.customBtnBG} 
+                            onPress={() => {Linking.openURL('https://www.dropbox.com/s/fmi8p33dep966v1/Stroke%26TIADispoGuide_BWH.pdf?dl=0')}}>
+                            <Text style={styles.customBtnTextFirstLine}>Stroke & TIA</Text>
+                            <Text style={styles.customBtnTextSecondLine}>Dispo Guide</Text>
+                          </TouchableOpacity>  
+                </View>
+               
+                
+
+               
+
+                
             </View>
 
 

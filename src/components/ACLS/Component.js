@@ -17,7 +17,7 @@ export default class Component extends React.Component {
         {!this.props.hidden ? this.props.goToNextComponent() : null}
       </View>
     )
-  }
+  }    
 }
 
 
