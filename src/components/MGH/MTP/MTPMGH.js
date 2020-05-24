@@ -111,16 +111,16 @@ export default class MTPMGH extends React.Component {
       }}>
 
         <View>
-            <Text style={{marginTop: 5, fontSize: Dimensions.get('window').width/19, fontWeight: '300' }}>
+            <Text style={{marginTop: 5, fontSize: Dimensions.get('window').height/39, fontWeight: '300' }}>
                 You must notify the coordinator that we need “additional emergency release of blood products.” 
             </Text>
 
-            <Text style={{marginTop: 10, fontSize: Dimensions.get('window').width/19, fontWeight: '300' }}> 
+            <Text style={{marginTop: 10, fontSize: Dimensions.get('window').height/39, fontWeight: '300' }}> 
               You must then pick up any wall phone in Acute and use the speed dial button to call 
               the blood bank to give a verbal order.
             </Text>
         </View>
-
+   
 
       
         <View style={{ marginTop: Dimensions.get('window').height/40}}>

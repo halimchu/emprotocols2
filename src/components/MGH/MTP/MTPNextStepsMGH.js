@@ -91,29 +91,8 @@ export default class MTPNextStepsMGH extends React.Component {
     }
   }
 
-  state = {
-    data: [
-      'If indicated, order 1g TXA followed by another gram to be given over 8 hours',
-      'Give 2 grams of Ca++ up front',
-      'Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals'
-    ]
-  }
 
-  dialCall = () => {
-    let phoneNumber = '';
-    if (Platform.OS === 'android') { phoneNumber = `tel:6177263333` }
-    else {phoneNumber = `telprompt:6177263333` }
-    Linking.openURL(phoneNumber);
-  }
 
-  state = {
-    data: [
-      '1. If indicated, order 1g TXA followed by another gram to be given over 8 hours',
-      '2. Give 2 grams of Ca++ up front',
-      '3. Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals',
-      '4. One whole blood unit has a volume of approximately 500 mL'
-    ]
-  }
   
   render() { 
     return (  
@@ -141,7 +120,7 @@ export default class MTPNextStepsMGH extends React.Component {
             marginTop: Dimensions.get('window').width/20
           }}>
               <Text style={styles.text}>2) </Text>
-              <Text style={styles.text}>Give 2 grams of Ca++ up front</Text>
+              <Text style={styles.text}>Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals</Text>
           </View>
 
 
@@ -150,7 +129,7 @@ export default class MTPNextStepsMGH extends React.Component {
             marginTop: Dimensions.get('window').width/20
           }}>
               <Text style={styles.text}>3) </Text>
-              <Text style={styles.text}>Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals</Text>
+              <Text style={styles.text}>Consider repleting Ca++ if indicated</Text>
           </View>
 
           <View style={{

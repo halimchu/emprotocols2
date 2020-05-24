@@ -91,15 +91,6 @@ export default class MTPNextStepsRememberBWH extends React.Component {
   }
 
 
-  state = {
-    data: [
-      '1. If indicated, order 1g TXA followed by another gram to be given over 8 hours',
-      '2. Give 2 grams of Ca++ up front',
-      '3. Check Ca++, INR, platelets, & fibrinogen levels at regular intervals'
-    ]
-  }
-
-
 
   render() { 
     return (  
@@ -121,33 +112,41 @@ export default class MTPNextStepsRememberBWH extends React.Component {
     </View>
 
     <View style={{
-      marginLeft: Dimensions.get('window').width/30, 
-      marginRight: Dimensions.get('window').width/30,
-      marginTop: Dimensions.get('window').height/70, }}>
-      <Text style={styles.header}>Remember:</Text>
-      <View style={{flexDirection: 'row', marginTop: Dimensions.get('window').height/50}}>
-          <Text style={styles.text}>1) </Text>
-          <Text style={styles.text}>If indicated, order 1g TXA followed by another gram to be given over 8 hours</Text>
-      </View>
+          marginLeft: Dimensions.get('window').width/20, 
+          marginRight: Dimensions.get('window').width/10,
+          marginTop: Dimensions.get('window').height/70, }}>
+          <Text style={styles.header}>Remember:</Text>
+          <View style={{flexDirection: 'row', marginTop: Dimensions.get('window').height/50}}>
+              <Text style={styles.text}>1) </Text>
+              <Text style={styles.text}>If indicated, order 1g TXA followed by another gram to be given over 8 hours</Text>
+          </View>
 
-      <View style={{
-        flexDirection: 'row',
-        marginTop: Dimensions.get('window').height/40,
-      }}>
-          <Text style={styles.text}>2) </Text>
-          <Text style={styles.text}>Give 2 grams of Ca++ up front</Text>
-      </View>
 
-      <View style={{
-        flexDirection: 'row',
-        marginTop: Dimensions.get('window').height/40,
-        marginRight: Dimensions.get('window').width/20
+          <View style={{
+            flexDirection: 'row',
+            marginTop: Dimensions.get('window').width/20
+          }}>
+              <Text style={styles.text}>2) </Text>
+              <Text style={styles.text}>Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals</Text>
+          </View>
 
-      }}>
-          <Text style={styles.text}>3) </Text>
-          <Text style={styles.text}>Check Ca++, K+, INR, platelets, & fibrinogen levels at regular intervals</Text>
-      </View>
-    </View>
+
+          <View style={{
+            flexDirection: 'row',
+            marginTop: Dimensions.get('window').width/20
+          }}>
+              <Text style={styles.text}>3) </Text>
+              <Text style={styles.text}>Consider repleting Ca++ if indicated</Text>
+          </View>
+
+          <View style={{
+            flexDirection: 'row',
+            marginTop: Dimensions.get('window').width/20
+          }}>
+              <Text style={styles.text}>4) </Text>
+              <Text style={styles.text}>One whole blood unit has a volume of approximately 500 mL</Text>
+          </View>
+        </View>
 
   </SafeAreaView>
     )

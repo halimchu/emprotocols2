@@ -109,7 +109,7 @@ export default class BradyCardia extends React.Component {
       dosesDetailsView: event.nativeEvent.layout.height
     })
   }
-
+ 
 
   goToEnd = () => {
     const added = this.state.imageHeight + this.state.dosesDetailsView

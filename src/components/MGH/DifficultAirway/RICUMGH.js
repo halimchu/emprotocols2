@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import { Button, Divider } from 'react-native-elements'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import ComponentFour from '../../ComponentFour'
-import SurgicalAirway from './SurgicalAirway'
+// import SurgicalAirway from './SurgicalAirway'
 
 export default class RICUMGH extends React.Component {
   static navigationOptions = ({ navigation }) => {
@@ -89,6 +89,7 @@ export default class RICUMGH extends React.Component {
       'After use of a laryngeal mask airway (LMA) as a rescue device after failed intubation'
     ],
     surgicalAirwayHidden: true,
+    surgicalAirwayView: 0,
     totalHeight: 0,
     buttonHeight: 0,
   }
@@ -97,17 +98,40 @@ export default class RICUMGH extends React.Component {
     this.setState({ surgicalAirwayHidden: !this.state.surgicalAirwayHidden})
   }
 
+  scrollToTop = () => {
+    this.scroller.scrollTo({x: 0, y: 0, animated: true})
+  }
+
+  scrollToBottom  = () => {
+    const added = this.state.surgicalAirwayView
+    this.scroller.scrollTo({x: 0, y: added, animated: true});
+  }
+
+  setScrollViewRef = (scroller) => {
+    this.scroller = scroller;
+  }
+
+  measureSurgicalAirwayView = (event) => {
+    this.setState({
+      surgicalAirwayView: event.nativeEvent.layout.height
+    })
+  }
+
 
   show () {
     return (
+      // <View onLayout={this.measureSurgicalAirwayView}>
       this.state.data.map((item) => (
-        <View key={item} style={ styles.bulletPoints }>
-          <View style={{ flexDirection: 'row' }}>
-            <Text style={styles.bulletPoint}>{`\u2022`}</Text>
-            <Text style={styles.bulletPointText}>{item}</Text>
-          </View>
-        </View>        
-    )))
+            <View key={item} style={ styles.bulletPoints }>
+              <View style={{ flexDirection: 'row' }}>
+                <Text style={styles.bulletPoint}>{`\u2022`}</Text>
+                <Text style={styles.bulletPointText}>{item}</Text>
+              </View>
+            </View>        
+        )
+        )
+      // </View>
+    )
   }
 
   measureView = (event) => {
@@ -138,10 +162,14 @@ export default class RICUMGH extends React.Component {
   render() { 
     console.log('Total Height:', this.state.totalHeight)
     console.log('Button Height:', this.state.buttonHeight)
+    console.log('surgical airway view', this.state.surgicalAirwayView)
 
 
     return (  
       <SafeAreaView style={styles.container}>
+         <ScrollView 
+          ref={this.setScrollViewRef}
+        >
         
           <View style={styles.top} >
             <Text style={styles.title}>RICU Airway Team</Text>
@@ -151,6 +179,7 @@ export default class RICUMGH extends React.Component {
           </View>
 
 <View style={{
+    paddingTop: Dimensions.get('window').height/45,
     paddingBottom: Dimensions.get('window').height/45,
     justifyContent: 'center',
     alignItems: 'center',
@@ -169,11 +198,12 @@ export default class RICUMGH extends React.Component {
                             </View>
                           </View>
                           <View style={{flexDirection: 'column',}}>
-                            <Text style={{marginLeft: Dimensions.get('window').width/12, fontSize: Dimensions.get('window').width/21, color: 'white', fontWeight: 'bold' }}>Call RICU Consult</Text>
+                            <Text style={{fontSize: Dimensions.get('window').width/21, color: 'white', fontWeight: 'bold' }}>Call Page Operator for RICU</Text>
                             <Text style={{ 
                               marginTop: Dimensions.get('window').height/150, 
                               color: 'white', 
-                              textAlign: 'center',
+                              // textAlign: 'center',
+                              marginLeft: Dimensions.get('window').width/5.5,
                               fontSize: Dimensions.get('window').width/24, fontWeight: '400'
                             }}>x6-3333
                             </Text>
@@ -190,26 +220,50 @@ export default class RICUMGH extends React.Component {
             marginLeft: Dimensions.get('window').width/15,
             marginRight: Dimensions.get('window').width/15,
           }}>
-            <Text style={{fontSize: Dimensions.get('window').height/37, textAlign: 'center'}}>  
-                    <Text>
-                      If concern for 
-                    </Text>
-                    <Text style={{fontWeight: 'bold'}}> difficult emergent airway,</Text>
-                    <Text> state:</Text>
+            <Text style={{
+              fontSize: Dimensions.get('window').height/37, 
+            }}>  
+                    <Text>If need for</Text>
+                    <Text style={{fontWeight: 'bold'}}> emergent RICU intervention,</Text>
+                    <Text> tell page operator:</Text>
                     <Text style={{
                       fontStyle: 'italic',  
-                    }}> "Request RICU emergent airway at [ED location]."</Text>
+                    }}> "STAT RICU"</Text>
+            </Text>
+          </View>
+
+
+
+          <View style={{ 
+            marginTop: Dimensions.get('window').height/50, 
+            marginLeft: Dimensions.get('window').width/15,
+            marginRight: Dimensions.get('window').width/15,
+          }}>
+            <Text style={{
+              fontSize: Dimensions.get('window').height/37, 
+              // textAlign: 'center'
+            }}>  
+                    <Text>If need for</Text>
+                    <Text style={{fontWeight: 'bold'}}> non-emergent RICU assistance,</Text>
+                    <Text> tell page operator this is a </Text>
+                    <Text style={{
+                      fontStyle: 'italic',  
+                    }}>"Please Call"</Text>
+                    <Text> RICU consult. Be sure to give page operator your name and cellphone number.</Text>
             </Text>
           </View>
 
 
 
           <View style={{
-            marginTop: Dimensions.get('window').height/30, 
+            marginTop: Dimensions.get('window').height/50, 
             marginLeft: Dimensions.get('window').width/15,
             marginRight: Dimensions.get('window').width/15,
           }}>
-            <Text style={{fontSize: Dimensions.get('window').height/37, textAlign: 'center'}}>
+            <Text style={{
+              fontSize: Dimensions.get('window').height/37, 
+              // textAlign: 'center'
+            }}>
                       <Text>
                         If concern for 
                       </Text>
@@ -231,11 +285,12 @@ export default class RICUMGH extends React.Component {
             </TouchableOpacity>
           </View>
 
-          <View>
-            {!this.state.surgicalAirwayHidden ? this.show() : null}
+          <View onLayout={this.measureSurgicalAirwayView}>
+            { !this.state.surgicalAirwayHidden ? this.show() : null }
           </View> 
+            { this.state.surgicalAirwayHidden ? this.scrollToTop : this.scrollToBottom() }
 
-
+        </ScrollView>
       </SafeAreaView>
     )
   }
@@ -260,7 +315,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   top: {
-    height: '10%',
+    // height: '10%',
     // backgroundColor: 'yellow'
   },
   

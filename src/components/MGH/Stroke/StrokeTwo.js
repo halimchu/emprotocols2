@@ -9,7 +9,7 @@ export default class StrokeTwo extends React.Component {
     data: [
       ['1)', 'Go to Paging Directory'],
       ['2)', 'Send Group Page'],
-      ['3)', 'ED2MRI 6-24 hours'],
+      ['3)', 'Select "ED2MRI 6-24 hours"'],
       ['4)', 'Order STAT CTA Head & Neck'],
 
     ],

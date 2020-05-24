@@ -86,7 +86,8 @@ export default class RICUBWH extends React.Component {
       'After 1 failed intubation attempt when bag-mask ventilation is inadequate',
       'After use of a laryngeal mask airway (LMA) as a rescue device after failed intubation'
     ],
-    surgicalAirwayHidden: true
+    surgicalAirwayHidden: true,
+    surgicalAirwayView: 0,
   }
 
   onPressSurgicalAirwayHidden = () => {
@@ -110,6 +111,9 @@ export default class RICUBWH extends React.Component {
     )))
   }
 
+
+
+
   dialCall = () => {
     let phoneNumber = '';
     if (Platform.OS === 'android') { phoneNumber = `tel:6177226555` }
@@ -121,6 +125,9 @@ export default class RICUBWH extends React.Component {
   render() { 
     return (  
       <SafeAreaView style={styles.container}>
+        <ScrollView 
+          ref={this.setScrollViewRef}
+        >
         <View style={styles.top} >
           <Text style={styles.title}>Anesthesia Airway Team</Text>
           <View style={{paddingTop: Dimensions.get('window').height/80}}>
@@ -129,51 +136,15 @@ export default class RICUBWH extends React.Component {
         </View>
         
 
-
-        <View style={{ alignItems: 'center', marginTop: Dimensions.get('window').height/40}}>
-
-        <TouchableOpacity style={styles.shadow} onPress={()=>{this.dialCall()}}>
-                    <LinearGradient 
-                      style={styles.callButton}
-                      colors={['#B62619', '#F63826', '#B62619']}
-                      start={{x: 0, y: 0}}
-                      end={{x: 1, y: 0}}
-                    >
-                        <View style={{ flexDirection: 'row'}}>
-                          <View style={{flexDirection: 'column'}}>
-                            <View style={{}}>
-                              <MaterialIcons name="phone-in-talk" size={Dimensions.get('window').width/10} color="white" />
-                            </View>
-                          </View>
-                          <View style={{flexDirection: 'column',}}>
-                            <Text style={{marginLeft: Dimensions.get('window').width/15, fontSize: Dimensions.get('window').width/21, color: 'white', fontWeight: 'bold' }}>Call Anesthesia Consult</Text>
-                            <Text style={{ 
-                              marginTop: Dimensions.get('window').height/150, 
-                              color: 'white', 
-                              textAlign: 'center',
-                              fontSize: Dimensions.get('window').width/24, fontWeight: '400'
-                            }}>x2-6555
-                            </Text>
-                          </View>
-                        </View>
-                        
-                    </LinearGradient>
-              </TouchableOpacity>
-
-        </View>
-
-
-
-
         <View style={{ 
-            marginTop: Dimensions.get('window').height/23, 
-            marginLeft: Dimensions.get('window').width/37,
+            marginTop: Dimensions.get('window').height/30, 
+            marginLeft: Dimensions.get('window').width/15,
             marginRight: Dimensions.get('window').width/37,
             
           }}>
-            <Text style={{fontSize: Dimensions.get('window').height/37, textAlign: 'center'}}>  
+            <Text style={{fontSize: Dimensions.get('window').height/37,}}>  
                     <Text>
-                      If anticipate 
+                      If anticipate need for anesthesia assistance for
                     </Text>
                     <Text style={{fontWeight: 'bold'}}> difficult intubation,</Text>
                     <Text> ask ED business specialist to call the STAT line to activate the Anesthesia Airway Team.</Text>
@@ -184,10 +155,10 @@ export default class RICUBWH extends React.Component {
 
           <View style={{
             marginTop: Dimensions.get('window').height/30, 
-            marginLeft: Dimensions.get('window').width/37,
+            marginLeft: Dimensions.get('window').width/15,
             marginRight: Dimensions.get('window').width/37,
           }}>
-            <Text style={{fontSize: Dimensions.get('window').height/37, textAlign: 'center'}}>
+            <Text style={{fontSize: Dimensions.get('window').height/37,}}>
                       <Text>
                         If anticipate
                       </Text>
@@ -199,18 +170,24 @@ export default class RICUBWH extends React.Component {
    
 
           <View style={{
-            marginTop: Dimensions.get('window').height/200,
-            alignItems: 'center'}}>
+            marginTop: Dimensions.get('window').height/100,
+            alignItems: 'center'
+          }}>
             <TouchableOpacity style={styles.customBtnBG} onPress={() => {
               this.onPressSurgicalAirwayHidden()
             }}>
               <Text style={styles.customBtnText}>Indications for surgical airway</Text>
             </TouchableOpacity>
 
-            <View onLayout={this.measureCheckButtonView}>
+            <View>
               {!this.state.surgicalAirwayHidden ? this.show() : null}
             </View> 
+            {/* { this.state.surgicalAirwayHidden ? this.scrollToTop : this.scrollToBottom() } */}
+
+
+
           </View>  
+        </ScrollView>
       </SafeAreaView>
     )
   }
@@ -235,7 +212,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   top: {
-    height: '10%'
+    // height: '10%'
     // backgroundColor: 'yellow'
   },
   middle: {
