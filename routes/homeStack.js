@@ -2,6 +2,7 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 
 import Home from '../src/components/Home'
+
 import MGHHome from '../src/components/MGH/MGHHome'
 import ACLSHomeBWH from '../src/components/ACLS/ACLSHomeBWH'
 import ACLSHomeMGH from '../src/components/ACLS/ACLSHomeMGH'
@@ -26,7 +27,6 @@ import TraumaMGH from '../src/components/MGH/Trauma/TraumaMGH'
 import MTPMGH from '../src/components/MGH/MTP/MTPMGH'
 import MTPNextStepsMGH from '../src/components/MGH/MTP/MTPNextStepsMGH'
 
-
 import BWHHome from '../src/components/BWH/BWHHome'
 import ADBWH from '../src/components/BWH/AorticDissection/ADBWH'
 import ADInitialStepsBWH from '../src/components/BWH/AorticDissection/ADInitialStepsBWH'
@@ -48,8 +48,8 @@ import MassiveTransfusionProtocolBWH from '../src/components/BWH/MTP/MassiveTran
 import MTPNextStepsBWH from '../src/components/BWH/MTP/MTPNextStepsBWH'
 import MTPNextStepsRememberBWH from '../src/components/BWH/MTP/MTPNextStepsRememberBWH'
 import TraumaBWH from '../src/components/BWH/Trauma/TraumaBWH'
-import CodeTraumaBWH from '../src/components/BWH/Trauma/CodeTraumaBWH'
-import CodeBurnBWH from '../src/components/BWH/Trauma/CodeBurnBWH'
+import TraumaSceneUndesignatedBWH from '../src/components/BWH/Trauma/SceneUndesignated/SceneUndesignated'
+import TraumaTransferBWH from '../src/components/BWH/Trauma/Transfer/Transfer'
 
 import COVIDHomeMGH from '../src/components/MGH/COVID/COVIDHomeMGH'
 import COVIDHomeBWH from '../src/components/BWH/COVID/COVIDHomeBWH'
@@ -102,7 +102,8 @@ const HomeStack = createStackNavigator({
   StrokeBWH: { screen: StrokeBWH },
   TraumaMGH: { screen: TraumaMGH },
   TraumaBWH: { screen: TraumaBWH },
-  CodeBurnBWH: { screen: CodeBurnBWH },
+  TraumaSceneUndesignatedBWH: { screen: TraumaSceneUndesignatedBWH},
+  TraumaTransferBWH: { screen:  TraumaTransferBWH },
   MTPMGH: { screen: MTPMGH },
   MTPNextStepsMGH: { screen: MTPNextStepsMGH},
   MTPBWH: { screen: MTPBWH },

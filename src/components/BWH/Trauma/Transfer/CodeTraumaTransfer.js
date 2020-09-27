@@ -1,33 +1,23 @@
 import React from 'react'
-import { Linking, Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
-import { Button, Divider } from 'react-native-elements'
-import Icon from 'react-native-vector-icons/Ionicons' 
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons' 
+import { Dimensions, View, Text, StyleSheet } from 'react-native'
 
 
-export default class CodeTraumaBWH extends React.Component {
+export default class CodeTraumaTransfer extends React.Component {
   
   state = {
     dataOne: [
-     'Any intubated patient with suspected traumatic injury coming from the scene',
-     'Failed intubation in a trauma patient, including those with a rescue airway',
-     'BP <90 systolic AT ANY TIME',
-     'BP <110 systolic AT ANY TIME if age ≥65 years old',
-     'Any patient actively receiving blood products to maintain systolic blood pressure >90',
-     'GCS ≤8',
-     'ANY penetrating trauma to head, face, neck, or torso (chest, abdomen, back or buttocks)',
-     'New quadriplegia, paraplegia, or hemiplegia (presumed SCI)',
-     'Major amputation/mangled extremity proximal to elbow or knee',
-     'Burn >20% TBSA or burn of lower % combined with other injury (page CODE BURN as well)',
-    ],
-    
+     'Unsecured / uncontrolled airway',
+     'Patient with traumatic injury actively receiving blood products or vasopressors to maintain blood pressure',
+     'Major amputation/mangled extremity proximal to elbow or knee requiring tourniquet application',
+     'At the request of the EM or Trauma Attending',
+    ]
   }
+
+
   
   render() { 
-    console.log('this.props for CodeTrauma', this.props)
     return (  
       <View>
-        
             <View style={{marginRight: Dimensions.get('window').width/12 }}>
                 {this.state.dataOne.map((item) => (
                   <View key={item} style={ styles.bulletPoints }> 
@@ -36,27 +26,25 @@ export default class CodeTraumaBWH extends React.Component {
                       <Text style={styles.bulletPointText}>{item}</Text>
                     </View>
                   </View>        
-                ))} 
+                ))}   
             </View>
 
-            <View style={{
-          
-              marginRight: Dimensions.get('window').width/22
-          }}>
+    
+
+            <View style={{marginRight: Dimensions.get('window').width/22}}>
                 <View style={{alignItems: 'center'}}>
-                  <Text style={{fontSize: Dimensions.get('window').height/35}}>**</Text>
+                  <Text style={{fontSize: Dimensions.get('window').height/35}}>-- -- -- --</Text>
                 </View>
                   <Text style={{
                     marginLeft: Dimensions.get('window').width/13,
                     fontSize: Dimensions.get('window').height/41,
-                    color: '#464646',
-                    fontWeight: '500'
+                    fontWeight: '400'
                   }}>
-                    The above criteria constitute ACS Minimum Criteria for full trauma team 
-                    activation and must be activated as a CODE TRAUMA. If your patient does not 
-                    meet the above criteria but you feel your patient warrants a full activation, 
-                    please activate as a Code Trauma.
+                    If your patient does not meet the above criteria but you feel your
+                    patient warrants a full activation, please activate as a Code
+                    Trauma.
                   </Text>
+
             </View>
 
       </View>

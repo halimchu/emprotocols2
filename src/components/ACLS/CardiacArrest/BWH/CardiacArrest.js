@@ -11,6 +11,8 @@ import CardiacArrestAdvancedAirway from '../cardiacArrestAdvancedAirway'
 import Component from '../../Component'
 import LinearGradient from 'react-native-linear-gradient'
 import Timer from '../Timer'
+import TimerDashboardBWH from '../TimerDashboard/BWH/TimerDashboardBWH'
+import TimerDashboardBottomBWH from '../TimerDashboard/BWH/TimerDashboardBottomBWH'
 
 
 export default class CardiacArrest extends React.Component {
@@ -283,67 +285,11 @@ export default class CardiacArrest extends React.Component {
   }
 
 
-  IPhone414x896 () { //11 Pro Max, Xs Max
-    if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 896) {
-      return (
-        <Image
-          source={require('../../../../../assets/CardiacArrest3000x2700.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.5}}
-        />
-      )
-    }
-  } 
-
-
-  IPhone375x812 () { // Xs, X, 11 Pro
-    if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 812) {
-      return (
-        <Image
-          source={require('../../../../../assets/CardiacArrest3000x2700.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.5}}
-        />
-      )
-    }
-  }
-
-  IPhone414x736 () { // 6+ 6x+ 7+ 8+ 
-    if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736) {
-      return (
-        <Image
-          source={require('../../../../../assets/CardiacArrest3000x2700.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.22 }}
-        />
-      )
-    }
-  }
-
-  IPhone375x667 () { // 6, 6s, 7, 8
-    if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667) {
-      return (
-        <Image
-          source={require('../../../../../assets/CardiacArrest3000x2700.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.22 }}
-        />
-      )
-    }
-  }
-
-  IPhone320x568 () { // SE
-    if (Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568) {
-      return (
-        <Image
-          source={require('../../../../../assets/CardiacArrest3000x2700.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.22 }}
-        />
-      )
-    }
-  }
-
-  IPhoneNotYet () {
+  allIphoneDevices () {
     return (
       <Image
-        source={require('../../../../../assets/CardiacArrest3000x2700.png')}
-        style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.5}}
+        source={require('../../../../../assets/images/CA_iPhone_ACLS_4000x4000.png')}
+        style={{marginTop: Dimensions.get('window').height/300, width: Dimensions.get('window').width, height: Dimensions.get('window').width * 1.45}}
       />
     )
   }
@@ -353,7 +299,8 @@ export default class CardiacArrest extends React.Component {
     return ( 
       <SafeAreaView style={styles.container}>
 
-      <Timer />
+      {/* <Timer /> */}
+      <TimerDashboardBWH />
       <Divider />
       
 
@@ -370,19 +317,7 @@ export default class CardiacArrest extends React.Component {
 
 
 
-          {
-          
-              this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
-              
-              ? 
-              
-              this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
-              
-              : 
-              
-              this.IPhoneNotYet()
-          
-          }  
+          {this.allIphoneDevices()}  
    
 
 
@@ -390,7 +325,7 @@ export default class CardiacArrest extends React.Component {
 <View style={{alignItems: 'center',}}>
   <View style={{flexDirection: 'row'}}>
   <View style={{
-    backgroundColor: '#CBE7F7', 
+    backgroundColor: '#D8EFF5', 
     borderRadius: 10, 
     width: '36%',
     paddingTop: Dimensions.get('window').width/150,
@@ -399,7 +334,7 @@ export default class CardiacArrest extends React.Component {
     <View style={{alignItems: 'center',}}>
       <Text style={{fontWeight: 'bold', fontSize: Dimensions.get('window').width/26}}>CPR 2 min</Text>
     </View>
-    <View style={{flexDirection: 'row'}}>
+    <View style={{flexDirection: 'row', marginTop: Dimensions.get('window').height/200}}>
         <Text style={{
           fontSize: Dimensions.get('window').height/42, 
           marginRight: Dimensions.get('window').width/90,}}>{`\u2022`}</Text>
@@ -419,7 +354,7 @@ export default class CardiacArrest extends React.Component {
 
 
     <View style={{
-        backgroundColor: '#EED8C5', 
+        backgroundColor: '#E8E8E8', 
         borderRadius: 10, 
         marginLeft: Dimensions.get('window').width/30,
         width: '57%',
@@ -537,6 +472,8 @@ export default class CardiacArrest extends React.Component {
         </View>
 
       </ScrollView>
+
+      <TimerDashboardBottomBWH />
     </SafeAreaView> 
     )
   }
@@ -579,7 +516,7 @@ const styles = StyleSheet.create({
   },
   customBtnBG3: {
     alignItems: 'center',
-    backgroundColor: '#B93E2F',
+    backgroundColor: '#007fa1',
     borderRadius: 4, 
     marginTop: Dimensions.get('window').height/250,
     width: Dimensions.get('window').width/2,

@@ -6,12 +6,10 @@ export default class CodeTraumaCriteriaBWH extends React.Component {
   
   state = {
     dataOne: [
-      'GCS 9-13',
-      'Extensive maxillofacial injury (Lefort II & III, unstable mandible)',
-      'Major/unstable pelvic fracture',
-      'Pregnant >20 wk w/ high energy mechanism*',
-      'Age ≥65yo with high energy mechanism*',
-      'At the request of the EM Attending'
+      'Fall > 10 feet (1 stair = 1 foot)',
+      'High speed MVC',
+      'Pedestrian/ bicyclist struck',
+      'Motorcycle collision',
     ]
   }
   
@@ -19,7 +17,12 @@ export default class CodeTraumaCriteriaBWH extends React.Component {
     return (  
       <View style={styles.container}>
 
+
+
             <View style={{marginRight: Dimensions.get('window').width/12 }}>
+                <View style={styles.bulletPoints}>
+                  <Text style={styles.bulletPointText}>High energy mechanisms include but are not limited to:</Text>
+                </View>
                 {this.state.dataOne.map((item) => (
                   <View key={item} style={ styles.bulletPoints }>
                     <View style={{ flexDirection: 'row' }}>
@@ -37,11 +40,13 @@ export default class CodeTraumaCriteriaBWH extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f2f2f2'
+    // backgroundColor: '#d9d9d9',
+    backgroundColor: '#f5f2b5',
+    marginTop: Dimensions.get('window').height/200,
   },
   bulletPoints: {
     flexDirection: 'row',
-    marginLeft: Dimensions.get('window').width/9,
+    marginLeft: Dimensions.get('window').width/6,
     marginBottom: Dimensions.get('window').height/200,
   },
   bulletPoint: {

@@ -78,7 +78,7 @@ export default class About extends React.Component {
         <View style={{marginLeft: Dimensions.get('window').width/25, paddingRight: Dimensions.get('window').width/40, }}>
             <Text style={styles.bold}>About the App</Text>
             <Text style={styles.text}>
-            The EMP app is a reference for clinical protocols, resources, and content to guide providers through acutely life threatening illnesses. All ED algorithms and protocols are developed and vetted by their respective EM faculty review groups in partnership with specialty specific committees. All ACLS content in the app is material developed, studied, and vetted by the American Heart Association. For COVID19 specific content, EM faculty within HICS leadership meet with specialty specific committees to develop, vet, and release ED specific COVID19 guidelines.
+            The EMP app is a reference for clinical protocols, resources, and content to guide providers through acutely life-threatening illnesses. All ED algorithms and protocols are developed and vetted by their respective EM faculty review groups in partnership with specialty specific committees. All ACLS content in the app is material developed, studied, and vetted by the American Heart Association. For COVID19 specific content, EM faculty within HICS leadership meet with specialty specific committees to develop, vet, and release ED specific COVID19 guidelines.
             The AHA has given permission and a license to use their ACLS materials for the purposes of this app. 
             
             </Text>

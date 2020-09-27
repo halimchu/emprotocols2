@@ -3,8 +3,9 @@ import { Image, Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity
 import Icon from 'react-native-vector-icons/Ionicons' 
 import { Button, Divider } from 'react-native-elements'
 import ComponentFive from '../../ComponentFive'
+import Component from '../Component'
 import DosesDetails from './DosesDetails'
-import LinearGradient from 'react-native-linear-gradient'
+import LinearGradient from 'react-native-linear-gradient' 
 
 export default class BradyCardia extends React.Component {
   static navigationOptions = ({ navigation }) => {
@@ -136,66 +137,11 @@ export default class BradyCardia extends React.Component {
     this.scroller = scroller;
   }
 
-  IPhone414x896 () {
-    if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 896) {
-      return (
-        <Image
-          source={require('../../../../assets/Bradycardia3000x2300.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.5}}
-        />
-      )
-    }
-  }
-
-  IPhone375x812 () {
-    if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 812) {
-      return (
-        <Image
-          source={require('../../../../assets/Bradycardia3000x2300.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.5}}
-        />
-      )
-    }
-  }
-
-  IPhone414x736 () {
-    if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736) {
-      return (
-        <Image
-          source={require('../../../../assets/Bradycardia3000x2300.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.22 }}
-        />
-      )
-    }
-  }
-
-  IPhone375x667 () {
-    if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667) {
-      return (
-        <Image 
-          source={require('../../../../assets/Bradycardia3000x2300.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.25}}
-        />
-      )
-    }
-  } 
-
-  IPhone320x568 () {
-    if (Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568) {
-      return (
-        <Image
-          source={require('../../../../assets/Bradycardia3000x2300.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.23 }}
-        />
-      )
-    }
-  }
-
-  IPhoneNotYet () {
+  iPhoneDevices () {
     return (
       <Image
-        source={require('../../../../assets/Bradycardia3000x2300.png')}
-        style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.5}}
+        source={require('../../../../assets/images/Bradycardia_iPhone_4000x4000.png')}
+        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').width * 1.42 }}
       />
     )
   }
@@ -224,25 +170,13 @@ export default class BradyCardia extends React.Component {
           </View>
               
           <View onLayout={this.measureImageView}>
-            {
-            
-                this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
-                
-                ? 
-                
-                this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
-                
-                : 
-                
-                this.IPhoneNotYet()
-              
-            }  
+           {this.iPhoneDevices()}
           </View>
 
           <View style={{marginBottom: Dimensions.get('window').height/80}}></View>
 
           <View onLayout={this.measureDosesDetailsView}>
-            <ComponentFive
+            <Component
               goToNextComponent={this.goToEnd} 
               toggle={this.onPressDosesDetailsHidden} 
               hidden = {this.state.dosesDetailsHidden}

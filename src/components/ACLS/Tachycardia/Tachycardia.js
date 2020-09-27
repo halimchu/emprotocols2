@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { ThemeProvider, Button, Divider } from 'react-native-elements'
 import DosesDetails from './DosesDetails'
 import ComponentFive from '../../ComponentFive'
+import Component from '../Component'
 import LinearGradient from 'react-native-linear-gradient'
 
 
@@ -153,69 +154,15 @@ export default class Tachycardia extends React.Component {
     })
   }
 
-  IPhone414x896 () {
-    if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 896) {
-      return (
-        <Image
-          source={require('../../../../assets/Tachycardia3000x2500.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.4}}
-        />
-      )
-    }
-  }
 
-  IPhone375x812 () {
-    if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 812) {
-      return (
-        <Image
-          source={require('../../../../assets/Tachycardia3000x2500.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.4 }}
-        />
-      )
-    }
-  }
-
-  IPhone414x736 () {
-    if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736) {
-      return (
-        <Image
-          source={require('../../../../assets/Tachycardia3000x2500.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.13 }}
-        />
-      )
-    }
-  }
-
-  IPhone375x667 () {
-    if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667) {
-      return (
-        <Image
-          source={require('../../../../assets/Tachycardia3000x2500.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.17 }}
-        />
-      )
-    }
-  }
-
-  IPhone320x568 () {
-    if (Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568) {
-      return (
-        <Image
-          source={require('../../../../assets/Tachycardia3000x2500.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.17 }}
-        />
-      )
-    }
-  }
-
-  IPhoneNotYet () {
+  iPhoneDevices () {
     return (
       <Image
-        source={require('../../../../assets/Tachycardia3000x2500.png')}
-        style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.4}}
+        source={require('../../../../assets/images/Tachycardia_iPhone_4000x4000.png')}
+        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').width * 1.42 }}
       />
     )
-  }
+  } 
 
 
   scrollToTop = () => {
@@ -240,25 +187,13 @@ export default class Tachycardia extends React.Component {
           </View>
 
           <View onLayout={this.measureImageView}>
-            {
-            
-                this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
-                
-                ? 
-                
-                this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
-                
-                : 
-                
-                this.IPhoneNotYet()
-            
-            }  
+            {this.iPhoneDevices()}  
           </View>
 
           <View style={{marginBottom: Dimensions.get('window').height/80}}></View>
 
             <View onLayout={this.measureSynchronizedCardioversionView}>
-              <ComponentFive
+              <Component
                 goToNextComponent={this.goToComponentTwo} 
                 toggle={this.onPressSynchronizedCardioversionHidden} 
                 hidden = {this.state.synchronizedCardioversionHidden}

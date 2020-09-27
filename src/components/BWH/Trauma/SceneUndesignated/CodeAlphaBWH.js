@@ -1,11 +1,7 @@
 
 import React from 'react'
-import { ScrollView, Linking, Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
-import { Button, Divider } from 'react-native-elements'
-import Icon from 'react-native-vector-icons/Ionicons' 
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons' 
-import CodeTraumaCriteriaBWH from './CodeTraumaCriteriaBWH'
-import ComponentTwo from '../../ComponentTwo'
+import { Dimensions, View, Text, StyleSheet, TouchableOpacity,} from 'react-native'
+import CodeTraumaCriteriaBWH from '../CodeTraumaCriteriaBWH'
 
 export default class CodeAlphaBWH extends React.Component {
 
@@ -14,15 +10,14 @@ export default class CodeAlphaBWH extends React.Component {
     criteriaHidden: true,
 
     dataOne: [
-     'intubated',
-     'hemothorax or pneumothorax', 
+     'Multisystem trauma not meeting Code Trauma criteria',
+     'GCS 9-13 with evidence of head injury', 
+     'Extensive maxillofacial injury (Lefort II or III, unstable mandible)',
+     'Unstable pelvic fracture',
     ],
     dataTwo: [
-      'Fall >10 feet',
-      'High speed MVC',
-      'Pedestrian/bicyclist struck',
-      'Motorcycle collision',
-      'Team discretion'
+      'Pregnant > 20 weeks',
+      'Age ≥ 65'
     ],
   }
 
@@ -52,41 +47,15 @@ export default class CodeAlphaBWH extends React.Component {
 
 
 
-                  <View style={{ flexDirection: 'row', marginLeft: Dimensions.get('window').width/15,}}>
-                            <Text style={styles.bulletPoint}>{`\u2022`}</Text>
-                            <Text style={styles.bulletPointText}>multi-system trauma not meeting Code Trauma Criteria</Text>   
-                </View>
+            <View style={ styles.bulletPoints }>
+              <Text style={styles.bulletPoint}>{`\u2022`}</Text>
+              <Text style={styles.bulletPointText}>
+                <Text>High energy mechanism* </Text>
+                <Text style={{fontWeight: 'bold', textDecorationLine: 'underline' }}>AND</Text>
+              </Text>
+            </View>
 
-                  
-                  <View style={{marginLeft: Dimensions.get('window').width/9.5}}>
-                      <TouchableOpacity style={styles.customBtnBG2} onPress={() => {
-                        this.onPressCriteriaHidden()
-                      }}>
-                        <Text style={styles.customBtnText2}>Examples</Text>
-                      </TouchableOpacity> 
-                  </View>
-                  <View>
-                    {!this.state.criteriaHidden ? <CodeTraumaCriteriaBWH /> : null}
-                  </View>   
-
-      
-
-
-        <View style={{
-          marginLeft: Dimensions.get('window').width/20, 
-          marginTop: Dimensions.get('window').height/30, 
-        }}>
-          <View style={{marginBottom: Dimensions.get('window').height/100}}>
-            <Text style={{fontSize: Dimensions.get('window').height/41}}>
-              <Text>Note: if above criteria are identified at any point, activate as indicated.</Text>
-              <Text style={{fontWeight: 'bold'}}> High energy mechanisms</Text>
-              <Text> include, but are not limited to:</Text>
-            </Text>
-          </View>
-        </View> 
-
-
-            <View>
+            <View style={{marginLeft: Dimensions.get('window').width/10, }}>
                 {this.state.dataTwo.map((item) => (
                   <View key={item} style={ styles.bulletPoints }>
                     <View style={{ flexDirection: 'row' }}>
@@ -96,6 +65,27 @@ export default class CodeAlphaBWH extends React.Component {
                   </View>        
                 ))} 
             </View> 
+
+            <View style={{marginLeft: Dimensions.get('window').width/6}}>
+                      <TouchableOpacity style={styles.customBtnBG2} onPress={() => {
+                        this.onPressCriteriaHidden()
+                      }}>
+                        <Text style={styles.customBtnText2}>Examples</Text>
+                      </TouchableOpacity> 
+                  </View>
+                  <View>
+                    {!this.state.criteriaHidden ? <CodeTraumaCriteriaBWH /> : null}
+            </View>   
+
+
+            <View style={ styles.bulletPoints }>
+              <View style={{ flexDirection: 'row', marginTop: Dimensions.get('window').height/50 }}>
+                <Text style={styles.bulletPoint}>{`\u2022`}</Text>
+                <Text style={styles.bulletPointText}>
+                  <Text style={{fontStyle: 'italic'}}>At the request of the EM or Trauma Attending</Text>
+                </Text>
+              </View>
+            </View>  
 
 
       </View>
@@ -150,14 +140,13 @@ const styles = StyleSheet.create({
   },
   customBtnText2: {
     fontWeight: '600',
-    color: "#fff",
     textAlign: 'center',
     fontSize: Dimensions.get('window').height/44,
     marginTop: Dimensions.get('window').height/300,
   },
   customBtnBG2: {
     borderRadius: 8,
-    backgroundColor: "#69c8a1",
+    backgroundColor: '#f5f2b5',
     width: Dimensions.get('window').width/3.5,
     height: Dimensions.get('window').height/30,
     shadowColor: 'black',

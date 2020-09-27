@@ -142,66 +142,11 @@ export default class PostCardiacArrestCare extends React.Component {
     this.scroller.scrollTo({x: 0, y: added, animated: true});
   }
 
-  IPhone414x896 () {
-    if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 896) {
-      return (
-        <Image
-          source={require('../../../../assets/PostCardiac4000x4000.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.4 }}
-        />
-      )
-    }
-  }
-
-  IPhone375x812 () {
-    if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 812) {
-      return (
-        <Image
-          source={require('../../../../assets/PostCardiac4000x4000.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.4 }}
-        />
-      )
-    }
-  }
-
-  IPhone414x736 () {
-    if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736) {
-      return (
-        <Image
-          source={require('../../../../assets/PostCardiac4000x4000.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.15 }}
-        />
-      )
-    }
-  }
-
-  IPhone375x667 () {
-    if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667) {
-      return (
-        <Image
-          source={require('../../../../assets/PostCardiac4000x4000.png')}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.15}}
-        />
-      )
-    }
-  }
-
-  IPhone320x568 () {
-    if (Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568) {
-      return (
-        <Image
-          source={require('../../../../assets/PostCardiac4000x4000.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.15 }}
-        />
-      )
-    }
-  }
-
-  IPhoneNotYet () {
+  iPhoneDevices () {
     return (
       <Image
-        source={require('../../../../assets/PostCardiac4000x4000.png')}
-        style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.4}}
+        source={require('../../../../assets/images/PostCardiac_iPhone_4000x4000.png')}
+        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').width * 1.44 }}
       />
     )
   }
@@ -228,19 +173,7 @@ export default class PostCardiacArrestCare extends React.Component {
           <Text>{Dimensions.get('window').height}</Text> */}
               
           <View onLayout={this.measureImageView}>
-            {
-            
-                this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
-                
-                ? 
-                
-                this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
-                
-                : 
-                
-                this.IPhoneNotYet()
-            
-            }  
+            {this.iPhoneDevices()}  
           </View>
 
           {/* <View style={{marginBottom: Dimensions.get('window').height/50}}>

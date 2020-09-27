@@ -1,20 +1,11 @@
 import React from 'react'
 import { TouchableOpacity, Dimensions, View, Text, StyleSheet } from 'react-native'
 
-export default class ComponentFive extends React.Component {
+export default class ComponentFour extends React.Component {
 
 
-  ifPresent = () => {
-    if (this.props.buttonTitle === 'Code Alpha') {
-      if (!this.props.hidden) {
-        // if () {
-
-        // }
-        this.props.goToNextComponent()
-      }
-    } else {
-      this.props.goToNextComponent = null
-    }
+  backgroundColor() {
+    return this.props.color
   }
 
 
@@ -22,15 +13,22 @@ export default class ComponentFive extends React.Component {
     return (
       <View>
         <View style={{alignItems: 'center'}}>
-          <TouchableOpacity style={styles.customBtnBG} onPress={() => {
-            this.props.toggle()
-          }}>
+          <TouchableOpacity 
+            style={{
+              borderWidth: 1,
+              borderColor: 'white',
+              width: Dimensions.get('window').width/1,
+              height: Dimensions.get('window').height/18,
+              backgroundColor: this.props.color
+            }} 
+            onPress={() => {this.props.toggle()}}
+          >
             <Text style={styles.customBtnText}>{this.props.buttonTitle}</Text>
           </TouchableOpacity>
         </View>
 
         {!this.props.hidden ? this.props.component : null} 
-        {!this.props.hidden ? this.ifPresent() : null}
+        {/* {!this.props.hidden ? this.ifPresent() : null} */}
 
       </View>
     )
@@ -41,7 +39,7 @@ export default class ComponentFive extends React.Component {
 const styles = StyleSheet.create({
   customBtnText: {
     fontWeight: '600',
-    color: "#333333",
+    color: 'black',
     textAlign: 'center',
     fontSize: Dimensions.get('window').height/44,
     marginTop: Dimensions.get('window').height/80,
@@ -49,7 +47,7 @@ const styles = StyleSheet.create({
   customBtnBG: {
     borderWidth: 1,
     borderColor: 'white',
-    backgroundColor: '#dedede',
+    // backgroundColor: this.props.color,
     width: Dimensions.get('window').width/1,
     height: Dimensions.get('window').height/18,
   },

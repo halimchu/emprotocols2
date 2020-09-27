@@ -11,11 +11,11 @@ export default class TraumaConsultBWH extends React.Component {
     criteriaHidden: true,
 
     dataOne: [
-     'Trauma transfer with multi-system injury with time of injury >12h ago',
-     '2 or more rib fractures',
-     'Vertebral body fractures',
-     'Isolated, traumatic head bleed with GCS of 14-15',
-     'At the request of the EM Attending for all other isolated head bleeds with GCS ≤13, utilize Code Trauma and Code Alpha criteria to determine appropriate level of activation'
+     'Two (2) or more rib fractures',
+     'Vertebral body fracture(s)',
+     'Isolated, traumatic head bleed with GCS of 14-15*',
+     'Traumatic injury involving two (2) or more organ systems',
+     'At the request of the EM or Trauma Attending'
     ],
 
   }
@@ -45,6 +45,31 @@ export default class TraumaConsultBWH extends React.Component {
                   </View>        
                 ))} 
             </View>
+
+                <View style={{alignItems: 'center'}}>
+                  <Text style={{fontSize: Dimensions.get('window').height/35}}>- - - -</Text>
+                </View>
+                <Text style={{
+                  marginTop: Dimensions.get('window').height/40,
+                  marginRight: Dimensions.get('window').width/13,
+                  marginLeft: Dimensions.get('window').width/13,
+                  fontSize: Dimensions.get('window').height/41,
+                  color: '#464646',
+                  fontWeight: '500'
+                }}>
+
+
+                    <View style={{ flexDirection: 'row',}}>
+                      <Text style={styles.asterick}>*</Text>
+                      <Text style={styles.bulletPointTextTwo}>
+                        For all other isolated head bleeds with GCS ≤ 13, utilize
+                        Code Trauma and Code Alpha criteria to determine
+                        appropriate level of activation.
+                      </Text>
+                    </View>
+           
+                </Text>
+       
   
       </View>
     )
@@ -95,5 +120,11 @@ const styles = StyleSheet.create({
     marginLeft: Dimensions.get('window').height/120,
     fontSize: Dimensions.get('window').height/41,
   },
+  bulletPointTextTwo: {
+    fontSize: Dimensions.get('window').height/41,
+  },
+  asterick: {
+    fontSize: Dimensions.get('window').height/41,
+  }
 
 })

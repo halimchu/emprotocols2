@@ -11,6 +11,8 @@ import CardiacArrestCPR from '../cardiacArrestCPR'
 import CardiacArrestAdvancedAirwayCOVID from '../cardiacArrestAdvancedAirwayCOVID'
 import Component from '../../Component'
 import Timer from '../Timer'
+import TimerDashboardCOVID from '../TimerDashboard/MGH/TimerDashboardCOVID'
+import TimerdashboardBottomCovid from '../TimerDashboard/MGH/TimerDashboardBottomCovid'
 
 
 export default class CardiacArrestCOVIDMGH extends React.Component {
@@ -285,66 +287,11 @@ export default class CardiacArrestCOVIDMGH extends React.Component {
 
 
 
-  IPhone414x896 () {
-    if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 896) {
-      return (
-        <Image
-          source={require('../../../../../assets/CardiacArrestCOVID3000x2500.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.03}}
-        />
-      )
-    }
-  }
-
-  IPhone375x812 () {
-    if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 812) {
-      return (
-        <Image
-          source={require('../../../../../assets/CardiacArrestCOVID3000x2500.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.03}}
-        />
-      )
-    }
-  }
-
-  IPhone414x736 () {
-    if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736) {
-      return (
-        <Image
-          source={require('../../../../../assets/CardiacArrestCOVID3000x2500.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/.85 }}
-        />
-      )
-    }
-  }
-
-  IPhone375x667 () {
-    if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667) {
-      return (
-        <Image
-          source={require('../../../../../assets/CardiacArrestCOVID3000x2500.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/.85 }}
-        />
-      )
-    }
-  }
-
-  IPhone320x568 () {
-    if (Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568) {
-      return (
-        <Image
-          source={require('../../../../../assets/CardiacArrestCOVID3000x2500.png')}
-          style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/.85 }}
-        />
-      )
-    }
-  }
-
-  IPhoneNotYet () {
+  iPhoneDevices () {
     return (
       <Image
-        source={require('../../../../../assets/CardiacArrestCOVID3000x2500.png')}
-        style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height/1.03}}
+        source={require('../../../../../assets/images/CA_COVID_iPhone_ACLS_4000x4000.png')}
+        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').width * 2.05 }}
       />
     )
   }
@@ -353,7 +300,7 @@ export default class CardiacArrestCOVIDMGH extends React.Component {
     return ( 
       <SafeAreaView style={styles.container}>
 
-        <Timer />
+        <TimerDashboardCOVID />
         <Divider />
 
 
@@ -368,111 +315,108 @@ export default class CardiacArrestCOVIDMGH extends React.Component {
 
 
           <View onLayout={this.measureImageView}>
-            {
-            
-                this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
-                
-                ? 
-                
-                this.IPhone375x812() || this.IPhone414x896() || this.IPhone414x736() || this.IPhone375x667() || this.IPhone320x568()
-                
-                : 
-                
-                this.IPhoneNotYet()
-            
-            }  
+           {this.iPhoneDevices()}
           </View>
 
 
 
-  <View style={{alignItems: 'center',}}>
-    <View style={{flexDirection: 'row'}}>
-    <View style={{
-      backgroundColor: '#CBE7F7', 
-      borderRadius: 10, 
-      width: '36%',
-      paddingTop: Dimensions.get('window').width/150,
-      paddingLeft: Dimensions.get('window').width/100,
-    }}>
-      <View style={{alignItems: 'center',}}>
-        <Text style={{fontWeight: 'bold', fontSize: Dimensions.get('window').width/26}}>CPR 2 min</Text>
-      </View>
-      <View style={{flexDirection: 'row'}}>
-          <Text style={{
-            fontSize: Dimensions.get('window').height/42, 
-            marginRight: Dimensions.get('window').width/90,}}>{`\u2022`}</Text>
-            <Text>
-              <Text style={{marginTop: Dimensions.get('window').height/200, fontWeight: 'bold'}}>Amiodarone</Text> 
-              <Text style={{marginTop: Dimensions.get('window').height/200}}> or</Text> 
-              <Text style={{marginTop: Dimensions.get('window').height/200, fontWeight: 'bold'}}> Lidocaine</Text> 
-            </Text>
-      </View>
-      <View style={{flexDirection: 'row'}}>
-          <Text style={{fontSize: Dimensions.get('window').height/40}}>{`\u2022`}</Text>
-          <Text style={{marginTop: Dimensions.get('window').height/200,  marginRight: Dimensions.get('window').width/90,}}>Treat reversible causes</Text> 
-      </View>
-    </View>
+          <View style={{alignItems: 'center'}}>
+                          <View style={{flexDirection: 'row', }}>
+                              <View style={{
+                                backgroundColor: '#D8EFF5', 
+                                borderRadius: 10, 
+                                borderWidth: .5,
+                                borderColor: '#B3D7E0',
+                                width: '36%',
+                                paddingTop: Dimensions.get('window').width/150,
+                                paddingLeft: Dimensions.get('window').width/100,
+                                height: '75%'
+                              }}>
+                                <View style={{alignItems: 'center',  marginTop: Dimensions.get('window').height/200, marginBottom: Dimensions.get('window').height/200 }}>
+                                  <Text style={{fontWeight: 'bold', fontSize: Dimensions.get('window').width/26}}>CPR 2 min</Text>
+                                </View>
+                                <View style={{flexDirection: 'row', }}>
+                                    <Text style={{
+                                      fontSize: Dimensions.get('window').height/42, 
+                                      marginRight: Dimensions.get('window').width/90,}}>{`\u2022`}</Text>
+                                      <Text>
+                                        <Text style={{marginTop: Dimensions.get('window').height/200, fontWeight: 'bold'}}>Amiodarone</Text> 
+                                        <Text style={{marginTop: Dimensions.get('window').height/200}}> or</Text> 
+                                        <Text style={{marginTop: Dimensions.get('window').height/200, fontWeight: 'bold'}}> Lidocaine</Text> 
+                                      </Text>
+                                </View>
+                                <View style={{flexDirection: 'row'}}>
+                                    <Text style={{fontSize: Dimensions.get('window').height/40}}>{`\u2022`}</Text>
+                                    <Text style={{
+                                      marginTop: Dimensions.get('window').height/200,  
+                                      marginLeft: Dimensions.get('window').width/90,
+                                      marginRight: Dimensions.get('window').width/90,}}>Treat reversible causes</Text> 
+                                </View>
+                              </View>
 
 
 
+                                <View style={{
+                                    backgroundColor: '#E8E8E8', 
+                                    borderRadius: 10, 
+                                    borderWidth: .5,
+                                    borderColor: '#C9C9C9',
+                                    marginLeft: Dimensions.get('window').width/30,
+                                    width: '56%',
+                                    padding: Dimensions.get('window').width/150,
+                                }}>
+                                  <View style={{flexDirection: 'row',}}>
+                                    <Text style={{
+                                      marginRight: Dimensions.get('window').width/90, 
+                                      fontSize: Dimensions.get('window').height/42,}}>{`\u2022`}</Text>
+                                    <Text style={{flex: 1, flexWrap: 'wrap', marginTop: Dimensions.get('window').height/200}}>
+                                      <Text>If no signs of return of spontaneous circulation (ROSC), go to</Text>
+                                      <Text style={{fontWeight: 'bold'}}> 10</Text>
+                                      <Text> or</Text>
+                                      <Text style={{fontWeight: 'bold'}}> 11</Text> 
+                                    </Text>
+                                  </View>
 
-      <View style={{
-          backgroundColor: '#EED8C5', 
-          borderRadius: 10, 
-          marginLeft: Dimensions.get('window').width/30,
-          width: '57%',
-          padding: Dimensions.get('window').width/150,
-      }}>
-        <View style={{flexDirection: 'row',}}>
-          <Text style={{
-            // marginTop: Dimensions.get('window').height/140, 
-            // marginRight: Dimensions.get('window').width/90, 
-            fontSize: Dimensions.get('window').height/42,}}>{`\u2022`}</Text>
-          <Text style={{
-            flex: 1, 
-            flexWrap: 'wrap', 
-            marginTop: Dimensions.get('window').height/200
-          }}>
-            <Text>If no signs of return of spontaneous circulation (ROSC), go to</Text>
-            <Text style={{fontWeight: 'bold'}}> 10</Text>
-            <Text> or</Text>
-            <Text style={{fontWeight: 'bold'}}> 11</Text> 
-          </Text>
-        </View>
 
-        <View style={{alignItems: 'center'}}>
-          <TouchableOpacity
-            style={styles.customBtnBG3} 
-            onPress={() => this.props.navigation.navigate('ECMOOne')}>
-            <Text style={styles.customBtnText2}>Consider ECMO</Text>
-          </TouchableOpacity>
-        </View>
-            
+                                  <View style={{alignItems: 'center', marginTop: Dimensions.get('window').height/200,}}>
+                                    <TouchableOpacity
+                                      style={styles.customBtnBG3} 
+                                      onPress={() => this.props.navigation.navigate('ECMOOne')}>
+                                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                                          <Text style={styles.customBtnText2}>Consider ECMO</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                  </View>
 
-        <View style={{flexDirection: 'row'}}>
-              <Text style={{
-                  marginRight: Dimensions.get('window').width/90,
-                  marginTop: Dimensions.get('window').height/140, 
-                  fontSize: Dimensions.get('window').height/42,}}>{`\u2022`}
-              </Text>
 
-              <Text style={{
-                marginTop: Dimensions.get('window').height/80, 
-                fontSize: Dimensions.get('window').width/27,}}>If ROSC, go to 
-              </Text>
-        </View>
+                                      
 
-        <View style={{alignItems: 'center'}}>
-          <TouchableOpacity
-            style={styles.customBtnBG3} 
-            onPress={() => this.props.navigation.navigate('PostCardiacArrestCare')}>
-            <Text style={styles.customBtnText2}>Post-Cardiac Arrest Care</Text>
-          </TouchableOpacity>
-        </View>
+                                  <View style={{flexDirection: 'row'}}>
+                                        <Text style={{
+                                            marginRight: Dimensions.get('window').width/90,
+                                            marginTop: Dimensions.get('window').height/140, 
+                                            fontSize: Dimensions.get('window').height/42,}}>{`\u2022`}
+                                        </Text>
 
-      </View>
-    </View>
-  </View>
+                                        <Text style={{
+                                          marginTop: Dimensions.get('window').height/80, 
+                                          fontSize: Dimensions.get('window').width/27,}}>If ROSC, go to 
+                                        </Text>
+                                  </View>
+ 
+                                  <View style={{alignItems: 'center'}}>
+                                  <TouchableOpacity
+                                    style={styles.customBtnBG3} 
+                                    onPress={() => this.props.navigation.navigate('PostCardiacArrestCare')}>
+                                    <View style={{justifyContent: 'center', alignItems: 'center', flex:1}}>
+                                      <Text style={styles.customBtnText2}>Post-Cardiac Arrest Care</Text>
+                                    </View>
+                                  </TouchableOpacity>
+                                  </View>
+
+                                </View>
+                              </View>
+              </View>
 
 
 
@@ -549,6 +493,7 @@ export default class CardiacArrestCOVIDMGH extends React.Component {
               
           </View>
         </ScrollView>
+        <TimerdashboardBottomCovid />
       </SafeAreaView> 
     )
   }
@@ -584,16 +529,13 @@ const styles = StyleSheet.create({
   customBtnText2: {
     fontWeight: '500',
     textAlign: 'center',
-    textAlignVertical: "center",
     color: 'white',
-    marginTop: Dimensions.get('window').height/155,
     fontSize: Dimensions.get('window').width/25,
   },
   customBtnBG3: {
     alignItems: 'center',
-    backgroundColor: '#B93E2F',
+    backgroundColor: '#007fa1',
     borderRadius: 4, 
-    marginTop: Dimensions.get('window').height/250,
     width: Dimensions.get('window').width/2,
     height: Dimensions.get('window').height/25,
   }
