@@ -1,8 +1,5 @@
 import React from 'react'
-import { Linking, Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
-import { Button, Divider } from 'react-native-elements'
-import Icon from 'react-native-vector-icons/Ionicons' 
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons' 
+import { Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
 
 export default class StrokeOne extends React.Component {
 

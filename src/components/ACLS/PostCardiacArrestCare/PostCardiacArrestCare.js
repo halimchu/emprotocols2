@@ -5,91 +5,11 @@ import { Button, Divider } from 'react-native-elements'
 import Component from './../Component'
 import CardiacArrestReversibleCauses from '../CardiacArrest/cardiacArrestReversibleCauses'
 import DosesDetails from './DosesDetails'
-import LinearGradient from 'react-native-linear-gradient';
+import { generateNavigationOptions } from '../../../../utils/header'
 
 export default class PostCardiacArrestCare extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    let headerLeft = ( 
-      <View style={{ flexDirection: 'row' }}>
-          <Button 
-            icon={
-              <View style={{ marginLeft: Dimensions.get('window').width/45, }}>
-                <Icon name="ios-arrow-back" size={Dimensions.get('window').height/29} color="white" />
-              </View>
-            }
-            onPress={() => navigation.goBack()}
-            type='clear'
-          />
-
-          <Button 
-            icon={
-              <View style={{ marginLeft: Dimensions.get('window').width/45 }}>
-                <Icon name="ios-arrow-back" size={Dimensions.get('window').height/26} color="rgba(0, 0, 0, 0)" />
-              </View>
-            }
-            onPress={() => navigation.goBack()}
-            type='clear'
-          />
-
-          <Button 
-            icon={
-              <View style={{ marginLeft: Dimensions.get('window').width/45 }}>
-                <Icon name="ios-arrow-back" size={Dimensions.get('window').height/26} color="rgba(0, 0, 0, 0)" />
-              </View>
-            }
-            onPress={() => navigation.goBack()}
-            type='clear'
-          />
-      </View>
-    )
-
-    headerTitle = (
-      <View>
-        <Text style={{ 
-          fontSize: Dimensions.get('window').height/43, 
-          marginTop: Dimensions.get('window').height/200, 
-          color: 'white', fontWeight: 'bold', 
-          textAlign: 'center'}}>ACLS</Text>
-      </View>
-    )
-      
-    let headerRight = (
-      <View style={{ flexDirection: 'row' }}>
-        <Button 
-          icon={
-            <View style={{ marginRight: Dimensions.get('window').width/75 }}>
-              <Icon name="md-home" size={Dimensions.get('window').height/26} color="rgba(0, 0, 0, 0)"  />
-            </View>
-          }
-          onPress={() => navigation.navigate('Home')}
-          type='clear'
-        />
-
-        <Button 
-          icon={
-            <View style={{ marginRight: Dimensions.get('window').width/75 }}>
-              <Icon name="md-home" size={Dimensions.get('window').height/29} color="white" />
-            </View>
-          }
-          onPress={() => navigation.navigate('Home')}
-          type='clear'
-        />
-      </View>
-    )
-    
-    return {
-      headerLeft, 
-      headerRight,
-      headerTitle,
-      headerBackground: (
-        <LinearGradient
-            colors={['#0795C7', '#079BCB', '#069FCB', '#06A5CF', '#0DA9D1', '#0DADD3', '#0EB2D5', '#02B7D9']}
-            style={{ flex: 1 }}
-            start={{x: 0, y: 0}}
-            end={{x: 1, y: 0}}
-        />
-      ),   
-    }
+  static navigationOptions (props) {
+    return generateNavigationOptions(props.navigation, ['#0795C7', '#079BCB', '#069FCB', '#06A5CF', '#0DA9D1', '#0DADD3', '#0EB2D5', '#02B7D9'], 'ACLS') 
   }
 
   
