@@ -6,10 +6,8 @@ import { generateNavigationOptions } from '../../../../utils/header'
 
 export default class ADInitialStepsMGH extends React.Component {
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#02bfdb', '#00c0dc', '#02c1dd'], 'MGH') 
-  }
-
-
+    return generateNavigationOptions(props.navigation, ['#02bfdb', '#00c0dc', '#02c1dd'], 'MGH', 'arrow-back-ios') 
+  } 
 
   state = {
     initialSteps: [

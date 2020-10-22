@@ -1,10 +1,8 @@
 import React from 'react'
-import { ScrollView, Linking, Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
-import { Button, Divider } from 'react-native-elements'
-import Icon from 'react-native-vector-icons/Ionicons' 
+import { ScrollView, Linking, Dimensions, View, Text, StyleSheet, SafeAreaView } from 'react-native'
+import { Divider } from 'react-native-elements'
 import CodeAlphaTransfer from './CodeAlphaTransfer'
 import CodeTraumaTransfer from './CodeTraumaTransfer'
-import LinearGradient from 'react-native-linear-gradient'
 import ComponentFour from '../../../ComponentFour'
 import ComponentThree from '../../../ComponentThree'
 import TraumaConsultTransfer from './TraumaConsultTransfer'
@@ -14,7 +12,7 @@ import { generateNavigationOptions } from '../../../../../utils/header'
  
 export default class TraumaTransferBWH extends React.Component {
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH') 
+    return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH', 'arrow-back-ios') 
   }
 
   dialCall = () => {

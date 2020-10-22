@@ -1,11 +1,11 @@
 import React from 'react'
 import { Linking, Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
-import { ScrollView, RotationGestureHandler } from 'react-native-gesture-handler'
+import { ScrollView } from 'react-native-gesture-handler'
 import { generateNavigationOptions } from '../../../../utils/header'
 
 export default class STEMIBWH extends React.Component {
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH') 
+    return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH', 'arrow-back-ios') 
   }
 
   dialCall = () => {
@@ -72,142 +72,45 @@ export default class STEMIBWH extends React.Component {
     listHidden: true,
   }
 
-  iPhones414x736And375x812 = () => {
-    if (
-      Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736 || 
-      Dimensions.get('window').width === 375 && Dimensions.get('window').height === 812) {
-      return true
-    }
-  }
-  iPhones375x667 = () => {
-    if (Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667){
-      return true
-    }
-  }
-  iPhones414x896 = () => {
-    if (Dimensions.get('window').width === 414 && Dimensions.get('window').height === 896){
-      return true
-    }
-  }
+
 
 
 
 
   showNextStepsButton () {
-
-    // iphones 6Plus, 6sPlus, 7Plus, 8Plus 414x736 
-    // iphones X, Xs, 11Pro                375x812
-    if (this.state.pressed === false && this.iPhones414x736And375x812()) {
-      return (
-          <View style={{alignItems: 'center',  }}>
-              <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/14,}}>
+    let ratio = Dimensions.get('window').height/Dimensions.get('window').width
+    if (this.state.pressed === true) {
+      return (  
+        <View style={{alignItems: 'center'}}>
+            <View style={{
+              flexDirection: 'row', 
+              marginTop: Dimensions.get('window').width/50,
+              marginBottom: Dimensions.get('window').width/30,
+              }}>
                 <TouchableOpacity
                   style={styles.customBtnBG} 
                   onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
                   <Text style={styles.customBtnText}>Next Steps</Text>
                 </TouchableOpacity>
             </View>
-          </View>  
+        </View>
       )
-    } else if (this.state.pressed === true && this.iPhones414x736And375x812()) {
-      return (
-        <View style={{alignItems: 'center',  }}>
-            <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200}}>
-              <TouchableOpacity
-                style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
-                <Text style={styles.customBtnText}>Next Steps</Text>
-              </TouchableOpacity>
-          </View>
-        </View>  
-      )
-    }
-
-
-
-    // iphones 6, 6s, 7, 8 - 375x667
-    if (this.state.pressed === false && this.iPhones375x667()) {
-      return (
-        <View style={{alignItems: 'center',  }}>
-            <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/45,}}>
-              <TouchableOpacity
-                style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
-                <Text style={styles.customBtnText}>Next Steps</Text>
-              </TouchableOpacity>
-          </View>
-        </View>  
-      )
-    } else if (this.state.pressed === true && this.iPhones375x667()) {
-      return (
-        <View style={{alignItems: 'center',  }}>
-            <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/40,}}>
-              <TouchableOpacity
-                style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
-                <Text style={styles.customBtnText}>Next Steps</Text>
-              </TouchableOpacity>
-          </View>
-        </View>  
-      )
-    }
-
-
-
-    // iphones XR, Xs Max, 11, 11 Pro Max - 414x896
-    if (this.state.pressed === false && this.iPhones414x896()) {
-      return (
-        <View style={{alignItems: 'center',  }}>
-            <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/8.5}}>
-              <TouchableOpacity
-                style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
-                <Text style={styles.customBtnText}>Next Steps</Text>
-              </TouchableOpacity>
-          </View>
-        </View>  
-      )
-    } else if (this.state.pressed === true && this.iPhones414x896()) {
-      return (
-        <View style={{alignItems: 'center',  }}>
-            <View style={{ alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200,marginTop: Dimensions.get('window').height/50}}>
-              <TouchableOpacity
-                style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
-                <Text style={styles.customBtnText}>Next Steps</Text>
-              </TouchableOpacity>
-          </View>
-        </View>  
-      )
-    }
-
-    // iphones not listed yet 
-    if (this.state.pressed === false && !this.iPhones414x736And375x812() || !this.iPhones375x667() || !this.iPhones414x896()) {
-      return (
-          <View style={{alignItems: 'center',  }}>
-              <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200, marginTop: Dimensions.get('window').height/14,}}>
+    } else {
+      return (  
+        <View style={{alignItems: 'center'}}>
+            <View style={{
+              flexDirection: 'row', 
+              marginTop: ratio*28,
+              }}>
                 <TouchableOpacity
                   style={styles.customBtnBG} 
                   onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
                   <Text style={styles.customBtnText}>Next Steps</Text>
                 </TouchableOpacity>
             </View>
-          </View>  
-      )
-    } else if (this.state.pressed === true && !this.iPhones414x736And375x812() || !this.iPhones375x667() || !this.iPhones414x896()) {
-      return (
-        <View style={{alignItems: 'center',  }}>
-            <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: Dimensions.get('window').height/200}}>
-              <TouchableOpacity
-                style={styles.customBtnBG} 
-                onPress={() => this.props.navigation.navigate('STEMIPageBWH')}>
-                <Text style={styles.customBtnText}>Next Steps</Text>
-              </TouchableOpacity>
-          </View>
-        </View>  
+        </View>
       )
     }
-
   }
 
   

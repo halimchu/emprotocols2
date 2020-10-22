@@ -5,18 +5,9 @@ import { generateNavigationOptions } from '../../../../utils/header'
 
 export default class COVIDHomeBWH extends React.Component {
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH') 
+    return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH', 'arrow-back-ios') 
   }
 
-  iPhonesUpTo8 = () => {
-    if (
-      Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667 ||
-      Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736 ||
-      Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568
-    ){
-      return true
-    }
-  }
 
   render() { 
     return (  
@@ -27,7 +18,7 @@ export default class COVIDHomeBWH extends React.Component {
 
           <Image
               source={require('../../../../assets/BWH1125x400_3x_covid.png')}
-              style={[ this.iPhonesUpTo8() ? styles.imageiPhonesUpTo8 : styles.imageiPhonesAfter8]}
+              style={styles.image}
           />
 
   <View style={{marginTop: Dimensions.get('window').height/13}}>
@@ -38,8 +29,10 @@ export default class COVIDHomeBWH extends React.Component {
                           <TouchableOpacity
                             style={styles.customBtnBG} 
                             onPress={ () => { Linking.openURL('https://www.dropbox.com/s/i09flhu4660p20y/TestingCriteria_BWH.pdf?dl=0')}} >
-                            <Text style={styles.customBtnTextFirstLine}>Testing</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Criteria</Text>
+                            <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+                              <Text style={styles.text}>Testing</Text>
+                              <Text style={styles.text}>Criteria</Text>
+                            </View>
                           </TouchableOpacity>
                 </View>
 
@@ -47,7 +40,9 @@ export default class COVIDHomeBWH extends React.Component {
                           <TouchableOpacity
                             style={styles.customBtnBG} 
                             onPress={() => this.props.navigation.navigate('COVIDWorkflowBWH')}>
-                            <Text style={styles.customBtnTextSingleLine}>Workflow</Text>
+                            <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+                              <Text style={styles.text}>Workflow</Text>
+                            </View>
                           </TouchableOpacity>
                 </View>
 
@@ -60,8 +55,10 @@ export default class COVIDHomeBWH extends React.Component {
                           <TouchableOpacity
                             style={styles.customBtnBG} 
                             onPress={() => this.props.navigation.navigate('ClinicalManagementBWH')}>
-                            <Text style={styles.customBtnTextFirstLine}>Clinical</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Management</Text>
+                            <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+                              <Text style={styles.text}>Clinical</Text>
+                              <Text style={styles.text}>Management</Text>
+                            </View>
                           </TouchableOpacity>  
                 </View>
                 
@@ -69,7 +66,9 @@ export default class COVIDHomeBWH extends React.Component {
                           <TouchableOpacity
                             style={styles.customBtnBG} 
                             onPress={() => this.props.navigation.navigate('COVIDDispoBWH')}>
-                            <Text style={styles.customBtnTextSingleLine}>Dispo</Text>
+                              <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+                                <Text style={styles.text}>Dispo</Text>
+                              </View>
                           </TouchableOpacity>
                 </View>
           </View>
@@ -86,9 +85,11 @@ export default class COVIDHomeBWH extends React.Component {
                 <TouchableOpacity
                       style={styles.customBtnBG2}
                       onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.swl?APP=PDPERS&FF=PDA&ACTION=FROMDESKTOP&DACTION=PAGE&DTID=244230&DSRCHNM=')}}>
-                      <View style={{flexDirection: 'row', marginLeft: Dimensions.get('window').width/40,  marginTop: Dimensions.get('window').height/30,}}>
-                          <FontAwesome5Icons name="pager" size={22} color="black" />
-                          <Text style={styles.customBtnTextSingleLinePager}> Biothreats</Text>
+                      <View style={{justifyContent: 'center', flex: 1}}>
+                          <View style={{flexDirection: 'row', marginLeft: Dimensions.get('window').width/40, }}>
+                              <FontAwesome5Icons name="pager" size={22} color="black" />
+                              <Text style={styles.text}> Biothreats</Text>
+                          </View>
                       </View> 
                   </TouchableOpacity>
             </View>
@@ -97,9 +98,11 @@ export default class COVIDHomeBWH extends React.Component {
                 <TouchableOpacity
                       style={styles.customBtnBG2}
                       onPress={ () => { Linking.openURL('https://ppd.partners.org/scripts/phsweb.swl?APP=PDPERS&FF=PDA&ACTION=SEARCHRES&SRCHNM=42200')}}>
-                      <View style={{flexDirection: 'row',marginLeft: Dimensions.get('window').width/40,  marginTop: Dimensions.get('window').height/30,}}>
-                          <FontAwesome5Icons name="pager" size={22} color="black" />
-                          <Text style={styles.customBtnTextSingleLinePager}> Palliative Care</Text>
+                      <View style={{justifyContent: 'center', flex: 1}}>
+                          <View style={{flexDirection: 'row', marginLeft: Dimensions.get('window').width/40, }}>
+                            <FontAwesome5Icons name="pager" size={22} color="black" />
+                            <Text style={styles.customBtnTextSingleLinePager}> Palliative Care</Text>
+                          </View>
                       </View> 
                   </TouchableOpacity>
             </View>   
@@ -114,13 +117,9 @@ export default class COVIDHomeBWH extends React.Component {
 }
   
 const styles = StyleSheet.create({
-  imageiPhonesUpTo8: {
+  image: {
     width: Dimensions.get('window').width, 
-    height: Dimensions.get('window').height/5,
-  },
-  imageiPhonesAfter8: {
-    width: Dimensions.get('window').width, 
-    height: Dimensions.get('window').height/6
+    height: Dimensions.get('window').width/3,
   },
   container: {
     flex: 1,
@@ -164,13 +163,9 @@ const styles = StyleSheet.create({
     paddingTop: Dimensions.get('window').height/20,
     fontSize: Dimensions.get('window').height/47,
   },
-  customBtnTextFirstLine: {
-    // fontFamily: 'Interstate-Bold',
+  text: {
     fontWeight: '600',
     color: "black",
-    textAlign: 'center',
-    textAlignVertical: "center",
-    paddingTop: Dimensions.get('window').height/30,
     fontSize: Dimensions.get('window').height/47,
   },
   customBtnTextSecondLine: {

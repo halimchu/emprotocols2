@@ -11,7 +11,7 @@ import { generateNavigationOptions } from '../../../../../utils/header'
  
 export default class TraumaSceneUndesignatedBWH extends React.Component {
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH') 
+    return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH', 'arrow-back-ios') 
   }
 
   dialCall = () => {

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Image, View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions } from 'react-native'
 import { Button } from 'react-native-elements'
-import Icon from 'react-native-vector-icons/Ionicons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import LinearGradient from 'react-native-linear-gradient'
 
@@ -47,15 +46,7 @@ export default class Home extends React.Component {
     }
   }
 
-  iPhonesUpTo8 = () => {
-    if (
-      Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667 ||
-      Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736 ||
-      Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568
-    ){
-      return true
-    }
-  }
+
 
 
   render() { 
@@ -69,7 +60,7 @@ export default class Home extends React.Component {
         <View style={styles.top}>
               <Image
                   source={require('../../assets/homeHeader_3x.png')}
-                  style={[ this.iPhonesUpTo8() ? styles.imageiPhonesUpTo8 : styles.imageiPhonesAfter8]}
+                  style={styles.image}
               />
         </View>
 
@@ -125,13 +116,9 @@ export default class Home extends React.Component {
 }
   
 const styles = StyleSheet.create({
-  imageiPhonesUpTo8: {
+  image: {
     width: Dimensions.get('window').width, 
-    height: Dimensions.get('window').height/4.2,
-  },
-  imageiPhonesAfter8: {
-    width: Dimensions.get('window').width, 
-    height: Dimensions.get('window').height/5
+    height: Dimensions.get('window').width/2.4,
   },
   container: {
     flex: 1,
@@ -140,7 +127,6 @@ const styles = StyleSheet.create({
   top: {
     height: '25%',
     alignItems: 'center',
-    // paddingTop: Dimensions.get('window').height/55, 
     // backgroundColor: 'yellow',
   },
   middle: {
@@ -152,19 +138,15 @@ const styles = StyleSheet.create({
   bottom: {
     height: '25%',
     alignItems: 'center', 
-    // paddingTop: Dimensions.get('window').height/25,
     justifyContent: 'center',
-    // paddingTop: Dimensions.get('window').height/80, 
     // backgroundColor: 'gray'
   },
   title: {
-    // fontFamily: 'Interstate-Bold',
     fontWeight: '600',
     color: '#333333',
     fontSize: Dimensions.get('window').height/30, 
   },
   header: {
-    // fontFamily: 'Interstate-Light',
     fontSize: Dimensions.get('window').height/42, 
   },
   customBtnText: {

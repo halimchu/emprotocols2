@@ -11,7 +11,12 @@ const myIcon = <Icon name="ios-arrow-back" size={30} color="white" />;
 export default class Tachycardia extends React.Component {
 
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#0795C7', '#079BCB', '#069FCB', '#06A5CF', '#0DA9D1', '#0DADD3', '#0EB2D5', '#02B7D9'], 'ACLS') 
+    return generateNavigationOptions(
+      props.navigation, 
+      ['#0795C7', '#079BCB', '#069FCB', '#06A5CF', '#0DA9D1', '#0DADD3', '#0EB2D5', '#02B7D9'], 
+      'ACLS',
+      'arrow-back-ios'
+      ) 
   }
   
 

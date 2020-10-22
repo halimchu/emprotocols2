@@ -3,38 +3,46 @@ import { Image, Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity
 import Icon from 'react-native-vector-icons/MaterialIcons' 
 import { Button } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient'
+function generateNavigationOptions (navigation, backgroundColorArray, headerTitle, iconName) { 
 
-function generateNavigationOptions (navigation, backgroundColorArray, headerTitle) { 
+  function generateNavigationAction () {
+    if (iconName === 'menu') {
+      return navigation.openDrawer()
+    } else if (iconName === 'arrow-back-ios') {
+      return navigation.goBack()
+    }
+  }
+
   return {
     headerLeft: () => ( 
       <View style={{ flexDirection: 'row' }}> 
           <Button 
             icon={
               <View style={{ marginLeft: Dimensions.get('window').width/33, marginTop: Dimensions.get('window').height/200,}}>
-                <Icon name="arrow-back-ios" size={Dimensions.get('window').height/33} color="white" />
+                <Icon name={iconName} size={Dimensions.get('window').height/33} color="white" />
               </View>
             }
-            onPress={() => navigation.goBack()}
+            onPress={() => generateNavigationAction()}
             type='clear'
           />
 
           <Button 
             icon={
               <View style={{ marginLeft: Dimensions.get('window').width/45 }}>
-                <Icon name="ios-arrow-back" size={Dimensions.get('window').height/26} color="rgba(0, 0, 0, 0)" />
+                <Icon name={iconName} size={Dimensions.get('window').height/26} color="rgba(0, 0, 0, 0)" />
               </View>
             }
-            onPress={() => navigation.goBack()}
+            onPress={() => generateNavigationAction()}
             type='clear'
           />
 
           <Button 
             icon={
               <View style={{ marginLeft: Dimensions.get('window').width/45 }}>
-                <Icon name="ios-arrow-back" size={Dimensions.get('window').height/26} color="rgba(0, 0, 0, 0)" />
+                <Icon name={iconName} size={Dimensions.get('window').height/26} color="rgba(0, 0, 0, 0)" />
               </View>
             }
-            onPress={() => navigation.goBack()}
+            onPress={() => generateNavigationAction()}
             type='clear'
           />
       </View>

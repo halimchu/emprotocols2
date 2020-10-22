@@ -5,120 +5,67 @@ import { generateNavigationOptions } from '../../../utils/header'
 export default class ACLSHome extends React.Component {
 
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#0795C7', '#079BCB', '#069FCB', '#06A5CF', '#0DA9D1', '#0DADD3', '#0EB2D5', '#02B7D9'], 'BWH') 
+    return generateNavigationOptions(
+      props.navigation, 
+      ['#0795C7', '#079BCB', '#069FCB', '#06A5CF', '#0DA9D1', '#0DADD3', '#0EB2D5', '#02B7D9'], 
+      'BWH',
+      'arrow-back-ios'
+    ) 
   }
+ 
 
-
-  iPhonesUpTo8 = () => {
-    if (
-      Dimensions.get('window').width === 375 && Dimensions.get('window').height === 667 ||
-      Dimensions.get('window').width === 414 && Dimensions.get('window').height === 736 ||
-      Dimensions.get('window').width === 320 && Dimensions.get('window').height === 568
-    ){
-      return true
-    }
-  }
 
   render() { 
     return (  
       <SafeAreaView style={styles.container}>
+          <View style={styles.top}>
+                <Image
+                    source={require('../../../assets/ACLS1125x400_3x.png')}
+                    style={styles.image}
+                />
+          </View>
 
 
-  
-
-
-          <Image
-              source={require('../../../assets/ACLS1125x400_3x.png')}
-              style={[ this.iPhonesUpTo8() ? styles.imageiPhonesUpTo8 : styles.imageiPhonesAfter8]}
-          />
-
-        {/* <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center'}}>
-
-
-                <View style={{ }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('CardiacArrestCOVID')}>
-                            <Text style={styles.customBtnTextFirstLine}>Cardiac Arrest</Text>
-                            <Text style={styles.customBtnTextSecondLineCOVID}>COVID-19</Text>
-                          </TouchableOpacity>    
-                </View>
-                <View style={{ marginLeft: 1.5 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('CardiacArrest')}>
-                            <Text style={styles.customBtnTextFirstLine}>Cardiac</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Arrest</Text>
-                          </TouchableOpacity>        
-                </View>
-                <View style={{ marginTop: 2 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('Bradycardia')}>
-                            <Text style={styles.customBtnTextSingleLine}>Bradycardia</Text>
-                          </TouchableOpacity>        
-                </View>
-                <View style={{ marginLeft: 1.5, marginTop: 2 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('Tachycardia')}>
-                            <Text style={styles.customBtnTextSingleLine}>Tachycardia</Text>
-                          </TouchableOpacity>  
-                </View>
-                <View style={{  marginTop: 2 }}>
-                          <TouchableOpacity
-                            style={styles.customBtnBG} 
-                            onPress={() => this.props.navigation.navigate('PostCardiacArrestCare')}>
-                            <Text style={styles.customBtnTextFirstLine}>Post Cardiac</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Arrest Care</Text>
-                          </TouchableOpacity>
-                          
-                </View>
-              </View> */}
-
-
-          <View style={{alignItems: 'center', marginTop: Dimensions.get('window').height/30}}>
-
-
-            <View style={styles.margin}>
-                      <TouchableOpacity
-                        style={styles.customBtnBG} 
-                        onPress={() => this.props.navigation.navigate('CardiacArrestCOVID')}>
-                        <Text style={styles.customBtnTextFirstLine}>Cardiac Arrest</Text>
-                        <Text style={styles.customBtnTextSecondLineCOVID}>COVID-19</Text>
-                      </TouchableOpacity>    
-            </View>
-            <View style={styles.margin}>
-                      <TouchableOpacity
-                        style={styles.customBtnBG} 
-                        onPress={() => this.props.navigation.navigate('CardiacArrest')}>
-                        <Text style={styles.customBtnTextFirstLine}>Cardiac</Text>
-                        <Text style={styles.customBtnTextSecondLine}>Arrest</Text>
-                      </TouchableOpacity>        
-            </View>
-            <View style={styles.margin}>
-                      <TouchableOpacity
-                        style={styles.customBtnBG} 
-                        onPress={() => this.props.navigation.navigate('Bradycardia')}>
-                        <Text style={styles.customBtnTextSingleLine}>Bradycardia</Text>
-                      </TouchableOpacity>        
-            </View>
-            <View style={styles.margin}>
-                      <TouchableOpacity
-                        style={styles.customBtnBG} 
-                        onPress={() => this.props.navigation.navigate('Tachycardia')}>
-                        <Text style={styles.customBtnTextSingleLine}>Tachycardia</Text>
-                      </TouchableOpacity>  
-            </View>
-            <View style={styles.margin}>
-                      <TouchableOpacity
-                        style={styles.customBtnBG} 
-                        onPress={() => this.props.navigation.navigate('PostCardiacArrestCare')}>
-                        <Text style={styles.customBtnTextFirstLine}>Post Cardiac</Text>
-                        <Text style={styles.customBtnTextSecondLine}>Arrest Care</Text>
-                      </TouchableOpacity>
-                      
-            </View>
+          <View style={styles.bottom}>
+                  <View style={styles.margin}>
+                            <TouchableOpacity
+                              style={styles.customBtnBG} 
+                              onPress={() => this.props.navigation.navigate('CardiacArrestCOVID')}>
+                              <Text style={styles.customBtnTextFirstLine}>Cardiac Arrest</Text>
+                              <Text style={styles.customBtnTextSecondLineCOVID}>COVID-19</Text>
+                            </TouchableOpacity>    
+                  </View>
+                  <View style={styles.margin}>
+                            <TouchableOpacity
+                              style={styles.customBtnBG} 
+                              onPress={() => this.props.navigation.navigate('CardiacArrest')}>
+                              <Text style={styles.customBtnTextFirstLine}>Cardiac</Text>
+                              <Text style={styles.customBtnTextSecondLine}>Arrest</Text>
+                            </TouchableOpacity>        
+                  </View>
+                  <View style={styles.margin}>
+                            <TouchableOpacity
+                              style={styles.customBtnBG} 
+                              onPress={() => this.props.navigation.navigate('Bradycardia')}>
+                              <Text style={styles.customBtnTextSingleLine}>Bradycardia</Text>
+                            </TouchableOpacity>        
+                  </View>
+                  <View style={styles.margin}>
+                            <TouchableOpacity
+                              style={styles.customBtnBG} 
+                              onPress={() => this.props.navigation.navigate('Tachycardia')}>
+                              <Text style={styles.customBtnTextSingleLine}>Tachycardia</Text>
+                            </TouchableOpacity>  
+                  </View>
+                  <View style={styles.margin}>
+                            <TouchableOpacity
+                              style={styles.customBtnBG} 
+                              onPress={() => this.props.navigation.navigate('PostCardiacArrestCare')}>
+                              <Text style={styles.customBtnTextFirstLine}>Post Cardiac</Text>
+                              <Text style={styles.customBtnTextSecondLine}>Arrest Care</Text>
+                            </TouchableOpacity>
+                            
+                  </View>
           </View>
 
       </SafeAreaView>
@@ -127,24 +74,24 @@ export default class ACLSHome extends React.Component {
 }
   
 const styles = StyleSheet.create({
+  image: {
+    width: Dimensions.get('window').width, 
+    height: Dimensions.get('window').width/3,
+  },
 
-  imageiPhonesUpTo8: {
-    width: Dimensions.get('window').width, 
-    height: Dimensions.get('window').height/5,
-  },
-  imageiPhonesAfter8: {
-    width: Dimensions.get('window').width, 
-    height: Dimensions.get('window').height/6
-  },
   container: {
     flex: 1,
-    // justifyContent: 'center',
     backgroundColor: 'white',
-    // backgroundColor: 'yellow'
   },
   top: {
-    height: '10%',
+    height: '15%',
     // backgroundColor: 'yellow'
+  },
+  bottom: {
+    height: '85%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    // backgroundColor: 'brown'
   },
 
   margin: {
@@ -162,17 +109,8 @@ const styles = StyleSheet.create({
   button: {
     marginTop: Dimensions.get('window').height/100
   },
-  // customBtnText: {
-  //   fontWeight: '600',
-  //   color: "#fff",
-  //   textAlign: 'center',
-  //   textAlignVertical: "center",
-  //   fontSize: Dimensions.get('window').height/35,
-  //   // marginTop: Dimensions.get('window').height/40
-  // },
 
   customBtnTextSingleLine: {
-    // fontFamily: 'Interstate-Bold',
     fontWeight: '600',
     color: "black",
     textAlign: 'center',
@@ -180,11 +118,6 @@ const styles = StyleSheet.create({
     paddingTop: Dimensions.get('window').height/25,
     fontSize: Dimensions.get('window').height/40,
   },
-  // customBtnBG: {
-  //   backgroundColor: "#DCE2EA",
-  //   width: Dimensions.get('window').width/2.385,
-  //   height: Dimensions.get('window').height/7.36,
-  // },
 
   customBtnBG: {
     backgroundColor: "#e8e8e8",
@@ -193,7 +126,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   customBtnTextFirstLine: { 
-    // fontFamily: 'Interstate-Bold',
     fontWeight: '600',
     color: "black",
     textAlign: 'center',
@@ -202,7 +134,6 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/40,
   },
   customBtnTextSecondLine: {
-    // fontFamily: 'Interstate-Bold',
     fontWeight: '600',
     color: "black",
     textAlign: 'center',
@@ -210,7 +141,6 @@ const styles = StyleSheet.create({
     fontSize: Dimensions.get('window').height/40,
   },
   customBtnTextSecondLineCOVID: {
-    // fontFamily: 'Interstate-Bold',
     fontWeight: '600',
     color: "red",
     textAlign: 'center',

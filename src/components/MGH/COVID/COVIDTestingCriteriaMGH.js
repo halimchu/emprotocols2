@@ -5,7 +5,7 @@ import { generateNavigationOptions } from '../../../../utils/header'
 
 export default class COVIDTestingCriteriaMGH extends React.Component {
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#02bfdb', '#00c0dc', '#02c1dd'], 'MGH') 
+    return generateNavigationOptions(props.navigation, ['#02bfdb', '#00c0dc', '#02c1dd'], 'MGH', 'arrow-back-ios') 
   }
 
   constructor(props) {
@@ -47,17 +47,21 @@ export default class COVIDTestingCriteriaMGH extends React.Component {
                 <View style={{ marginLeft: Dimensions.get('window').width/13, }}>
                           <TouchableOpacity
                             style={styles.customBtnBG} 
-                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/riubb9c7f703iu6/TestingMGH.pdf?dl=0')}} >
-                            <Text style={styles.customBtnTextFirstLine}>COVID Testing</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Algorithm</Text>
+                            onPress={ () => { Linking.openURL('https://www.dropbox.com/s/riubb9c7f703iu6/TestingMGH.pdf?dl=0')}}>
+                            <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+                              <Text style={styles.text}>COVID Testing</Text>
+                              <Text style={styles.text}>Algorithm</Text>
+                            </View>
                           </TouchableOpacity>
                 </View>
                 <View style={{marginLeft: 1.5}}>
                           <TouchableOpacity
                             style={styles.customBtnBG} 
                             onPress={() => {Linking.openURL('https://www.dropbox.com/s/62ysmn0rpnak9gt/COVIDOrderTipsheet_MGH.pdf?dl=0')}}>
-                            <Text style={styles.customBtnTextFirstLine}>COVID Order</Text>
-                            <Text style={styles.customBtnTextSecondLine}>Tip Sheet</Text>
+                             <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+                                <Text style={styles.text}>COVID Order</Text>
+                                <Text style={styles.text}>Tip Sheet</Text>
+                             </View>
                           </TouchableOpacity>  
                 </View>
        
@@ -104,30 +108,9 @@ const styles = StyleSheet.create({
     textAlignVertical: "center",
     fontSize: Dimensions.get('window').height/35,
   },
-  customBtnTextSingleLine: {
-    // fontFamily: 'Interstate-Bold',
+  text: {
     fontWeight: '600',
     color: "black",
-    textAlign: 'center',
-    textAlignVertical: "center",
-    paddingTop: Dimensions.get('window').height/19,
-    fontSize: Dimensions.get('window').height/47,
-  },
-  customBtnTextFirstLine: {
-    // fontFamily: 'Interstate-Bold',
-    fontWeight: '600',
-    color: "black",
-    textAlign: 'center',
-    textAlignVertical: "center",
-    paddingTop: Dimensions.get('window').height/24,
-    fontSize: Dimensions.get('window').height/47,
-  },
-  customBtnTextSecondLine: {
-    // fontFamily: 'Interstate-Bold',
-    fontWeight: '600',
-    color: "black",
-    textAlign: 'center',
-    textAlignVertical: "center",
     fontSize: Dimensions.get('window').height/47,
   },
   customBtnBG: {

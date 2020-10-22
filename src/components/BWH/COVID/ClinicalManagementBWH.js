@@ -1,16 +1,17 @@
 import React from 'react'
-import { Linking, View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions } from 'react-native'
+import { StatusBar, Linking, View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions } from 'react-native'
 import { Divider } from 'react-native-elements'
 import { generateNavigationOptions } from '../../../../utils/header'
 
 export default class ClinicalManagementBWH extends React.Component {
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH') 
+    return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH', 'arrow-back-ios') 
   }
 
   render() { 
     return (  
         <SafeAreaView style={styles.container}>
+          {/* <StatusBar barStyle="light-content" /> */}
           <View style={styles.top}>
             <View style={{alignItems: 'center', marginBottom: Dimensions.get('window').height/100, }}>
            

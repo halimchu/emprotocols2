@@ -1,7 +1,6 @@
 import React from 'react'
 import { Image, Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons' 
-import { Button, Divider } from 'react-native-elements'
+import { Divider } from 'react-native-elements'
 import CardiacArrestReversibleCauses from '../cardiacArrestReversibleCauses'
 import CardiacArrestShockEnergy from '../cardiacArrestShockEnergy'
 import CardiacArrestDrugTherapy from '../cardiacArrestDrugTherapy'
@@ -9,7 +8,6 @@ import CardiacArrestROSC from '../cardiacArrestROSC'
 import CardiacArrestCPR from '../cardiacArrestCPR'
 import CardiacArrestAdvancedAirway from '../cardiacArrestAdvancedAirway'
 import Component from '../../Component'
-import Timer from '../Timer'
 import TimerDashboard from '../TimerDashboard/MGH/TimerDashboard'
 import TimerDashboardBottom from '../TimerDashboard/MGH/TimerDashboardBottom'
 import { generateNavigationOptions } from '../../../../../utils/header'
@@ -17,7 +15,12 @@ import { generateNavigationOptions } from '../../../../../utils/header'
 
 export default class CardiacArrestMGH extends React.Component { 
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#0795C7', '#079BCB', '#069FCB', '#06A5CF', '#0DA9D1', '#0DADD3', '#0EB2D5', '#02B7D9'], 'ACLS') 
+    return generateNavigationOptions(
+      props.navigation, 
+      ['#0795C7', '#079BCB', '#069FCB', '#06A5CF', '#0DA9D1', '#0DADD3', '#0EB2D5', '#02B7D9'], 
+      'ACLS',
+      'arrow-back-ios'
+      ) 
   }
 
 

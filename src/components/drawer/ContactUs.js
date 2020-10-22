@@ -1,75 +1,11 @@
 import React from 'react'
-import { Image, Linking, Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons' 
-import { Button, Divider } from 'react-native-elements'
-import LinearGradient from 'react-native-linear-gradient'
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import { Image, Linking, Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
+import { generateNavigationOptions } from '../../../utils/header'
 
 export default class ContactUs extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    let headerLeft = ( 
-      <View style={{ flexDirection: 'row' }}>
-          <Button 
-            icon={
-              <View style={{ marginLeft: Dimensions.get('window').width/45, }}>
-                <MaterialIcons name="menu" size={Dimensions.get('window').height/26} color="white" />
-              </View>
-            }
-            onPress={ () => navigation.openDrawer()}
-            type='clear'
-          /> 
-      </View>
-    )
-
-    headerTitle = (
-      <View>
-        <Text style={{ 
-          fontSize: Dimensions.get('window').height/43, 
-          marginTop: Dimensions.get('window').height/200, 
-          color: 'white', fontWeight: 'bold', 
-          textAlign: 'center'}}>EMP</Text>
-      </View>
-    )
-      
-    let headerRight = (
-      <View style={{ flexDirection: 'row' }}>
-        <Button 
-          icon={
-            <View style={{ marginRight: Dimensions.get('window').width/75 }}>
-              <Icon name="md-home" size={Dimensions.get('window').height/26} color="rgba(0, 0, 0, 0)"  />
-            </View>
-          }
-          onPress={() => navigation.navigate('Home')}
-          type='clear'
-        />
-
-        <Button 
-          icon={
-            <View style={{ marginRight: Dimensions.get('window').width/75 }}>
-              <Icon name="md-home" size={Dimensions.get('window').height/29} color="white" />
-            </View>
-          }
-          onPress={() => navigation.navigate('Home')}
-          type='clear'
-        />
-      </View>
-    )
-    
-    return { 
-      headerLeft,
-      headerRight,
-      headerTitle,
-      headerBackground: (
-        <LinearGradient
-            colors={['#0B58AC', '#0F93BD']}
-            style={{ flex: 1 }}
-            start={{x: 0, y: 0}}
-            end={{x: 1, y: 0}}
-        />
-      ),   
-    }
-  }
-
+  static navigationOptions (props) {
+    return generateNavigationOptions(props.navigation, ['#0B58AC', '#0F93BD'], 'EMP', 'menu') 
+  }  
 
   render() { 
     return (  

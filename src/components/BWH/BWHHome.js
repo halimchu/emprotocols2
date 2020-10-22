@@ -6,7 +6,7 @@ import { generateNavigationOptions } from '../../../utils/header'
 export default class BWHHome extends React.Component {
 
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH') 
+    return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH', 'arrow-back-ios') 
   }
 
   iPhonesUpTo8 = () => {
@@ -22,27 +22,22 @@ export default class BWHHome extends React.Component {
   render() { 
     return (  
         <SafeAreaView style={styles.container}>
-          {/* <View style={styles.top}>
-            <Text style={styles.title}>Choose the Appropriate</Text>
-            <Text style={styles.title}>Emergency Medicine Protocol</Text>
-          </View> */}
-  
-  
-          <View style={styles.middle}>
 
-          <Image
-              source={require('../../../assets/BWH_1125x400_3x.png')}
-              style={[ this.iPhonesUpTo8() ? styles.imageiPhonesUpTo8 : styles.imageiPhonesAfter8]}
-          />
+  
+  
+          <View style={styles.top}>
+              <Image
+                  source={require('../../../assets/BWH_1125x400_3x.png')}
+                  style={styles.image}
+              />
+          </View>
 
 
             {/* <Text>{Dimensions.get('window').width}</Text>
             <Text>{Dimensions.get('window').height}</Text> */}
 
-              <View style={{ paddingTop: Dimensions.get('window').height/25, flexDirection: 'row', flexWrap: 'wrap',}}>
+          <View style={styles.bottom}>
 
-
-                
                     <View style={{ marginLeft: Dimensions.get('window').width/13, }}>
                               <TouchableOpacity
                                 style={styles.customBtnBG} 
@@ -104,38 +99,32 @@ export default class BWHHome extends React.Component {
                                 <Text style={styles.customBtnTextSingleLine}>Trauma</Text>
                               </TouchableOpacity>
                     </View>
+
+
+                    <View style={{marginLeft: Dimensions.get('window').width/13, marginTop: 5}}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('COVIDHomeBWH')}>
+                          <LinearGradient 
+                            style={styles.covidButton}
+                            colors={['#9A0100', '#E7522E']}
+                            start={{x: 0, y: 0}}
+                            end={{x: 1, y: 0}}
+                          >
+                            <Text style={styles.covidCustomBtnText}>COVID-19</Text>
+                          </LinearGradient>
+                        </TouchableOpacity>
+                  </View>
               </View>
 
-
-              <View style={{alignItems: 'center', marginTop: 10}}>
-
-                  <TouchableOpacity onPress={() => this.props.navigation.navigate('COVIDHomeBWH')}>
-                    <LinearGradient 
-                      style={styles.covidButton}
-                      colors={['#9A0100', '#E7522E']}
-                      start={{x: 0, y: 0}}
-                      end={{x: 1, y: 0}}
-                    >
-                      <Text style={styles.covidCustomBtnText}>COVID-19</Text>
-                    </LinearGradient>
-                  </TouchableOpacity>
-            </View>
-          </View>
-
-        
+      
       </SafeAreaView>
     )
   }
 }
   
 const styles = StyleSheet.create({
-  imageiPhonesUpTo8: {
+  image: {
     width: Dimensions.get('window').width, 
-    height: Dimensions.get('window').height/5,
-  },
-  imageiPhonesAfter8: {
-    width: Dimensions.get('window').width, 
-    height: Dimensions.get('window').height/6
+    height: Dimensions.get('window').width/3,
   },
   covidCustomBtnText: {
     fontWeight: '600',
@@ -155,24 +144,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     // backgroundColor: 'pink'
   },
-  top: { 
-    height: '5%',
-    // paddingTop: Dimensions.get('window').height/21, 
-    alignItems: 'center',
+  top: {
+    height: '20%',
     // backgroundColor: 'yellow'
   },
-  middle: {
-    height: '85%',
-    // flexDirection: 'row', 
-    // flexWrap: 'wrap',
-    // paddingTop: Dimensions.get('window').height/45, 
-    // backgroundColor: 'pink'
-  },
   bottom: {
-    height: '15%',
-    alignItems: 'center', 
-    justifyContent: 'center',
-    // backgroundColor: 'gray'
+    height: '60%',
+    flexDirection: 'row', 
+    flexWrap: 'wrap',
+    paddingTop: Dimensions.get('window').height/25, 
+    // backgroundColor: 'brown'
   },
   
 

@@ -1,9 +1,6 @@
 import React from 'react'
-import { ScrollView, Linking, Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
-import { Button, Divider } from 'react-native-elements'
-import LinearGradient from 'react-native-linear-gradient'
-import Icon from 'react-native-vector-icons/Ionicons'  
-import ComponentFour from '../../ComponentFour'
+import { ScrollView, Linking, Dimensions, View, Text, StyleSheet, SafeAreaView } from 'react-native'
+import { Divider } from 'react-native-elements'
 import ComponentFive from '../../ComponentFive'
 import TraumaSTATMGH from './TraumaSTATMGH'
 import TraumaAlertMGH from './TraumaAlertMGH'
@@ -12,7 +9,7 @@ import { generateNavigationOptions } from '../../../../utils/header'
 
 export default class TraumaMGH extends React.Component {
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#02bfdb', '#00c0dc', '#02c1dd'], 'MGH') 
+    return generateNavigationOptions(props.navigation, ['#02bfdb', '#00c0dc', '#02c1dd'], 'MGH', 'arrow-back-ios') 
   }
 
   dialCall = () => {

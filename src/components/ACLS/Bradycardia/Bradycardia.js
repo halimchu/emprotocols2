@@ -10,7 +10,12 @@ import { generateNavigationOptions } from '../../../../utils/header'
 
 export default class BradyCardia extends React.Component {
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#0795C7', '#079BCB', '#069FCB', '#06A5CF', '#0DA9D1', '#0DADD3', '#0EB2D5', '#02B7D9'], 'ACLS') 
+    return generateNavigationOptions(
+      props.navigation, 
+      ['#0795C7', '#079BCB', '#069FCB', '#06A5CF', '#0DA9D1', '#0DADD3', '#0EB2D5', '#02B7D9'], 
+      'ACLS',
+      'arrow-back-ios'
+      ) 
   }
     
 

@@ -8,7 +8,7 @@ import { generateNavigationOptions } from '../../../../utils/header'
 
 export default class COVIDDispoMGH extends React.Component {
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#02bfdb', '#00c0dc', '#02c1dd'], 'MGH') 
+    return generateNavigationOptions(props.navigation, ['#02bfdb', '#00c0dc', '#02c1dd'], 'MGH', 'arrow-back-ios') 
   }
 
   constructor(props) {

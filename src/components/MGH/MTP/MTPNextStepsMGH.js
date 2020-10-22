@@ -1,11 +1,11 @@
 import React from 'react'
-import { Dimensions, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
+import { Dimensions, View, Text, StyleSheet, SafeAreaView } from 'react-native'
 import {  Divider } from 'react-native-elements'
 import { generateNavigationOptions } from '../../../../utils/header'
 
 export default class MTPNextStepsMGH extends React.Component {
   static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#02bfdb', '#00c0dc', '#02c1dd'], 'MGH') 
+    return generateNavigationOptions(props.navigation, ['#02bfdb', '#00c0dc', '#02c1dd'], 'MGH', 'arrow-back-ios') 
   }
 
 
