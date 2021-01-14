@@ -251,6 +251,7 @@ export default class CardiacArrest extends React.Component {
     width: '36%',
     paddingTop: Dimensions.get('window').width/150,
     paddingLeft: Dimensions.get('window').width/100,
+    height: '65%'
   }}>
     <View style={{alignItems: 'center',}}>
       <Text style={{fontWeight: 'bold', fontSize: Dimensions.get('window').width/26}}>CPR 2 min</Text>
@@ -314,6 +315,20 @@ export default class CardiacArrest extends React.Component {
           onPress={() => this.props.navigation.navigate('PostCardiacArrestCare')}>
           <Text style={styles.customBtnText2}>Post Cardiac Arrest Care</Text>
         </TouchableOpacity>
+      </View>
+
+
+      <View style={{flexDirection: 'row'}}>
+            <Text style={{
+                marginRight: Dimensions.get('window').width/90,
+                marginTop: Dimensions.get('window').height/140, 
+                fontSize: Dimensions.get('window').height/42,}}>{`\u2022`}
+            </Text>
+
+            <Text style={{
+              marginTop: Dimensions.get('window').height/80, 
+              fontSize: Dimensions.get('window').width/27,}}>Consider appropriateness of continued resuscitation
+            </Text>
       </View>
 
     </View>

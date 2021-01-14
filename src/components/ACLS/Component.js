@@ -7,7 +7,7 @@ const Component = (props) => {
   function border () {
     if ( props.buttonTitle === 'Doses/Details' && props.title==='postCardiac') {
       return styles.buttonWithoutBottomBorder
-    } else if (props.buttonTitle === "H's and T's" || props.buttonTitle === 'Doses/Details') {
+    } else if (props.buttonTitle === "H's and T's" || props.buttonTitle === 'Doses/Details' || props.buttonTitle === 'Reversible Causes') {
       return styles.buttonWithBottomBorder
     } else if (!props.hidden) {
       return styles.buttonWithoutBottomBorder

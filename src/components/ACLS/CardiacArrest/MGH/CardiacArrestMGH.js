@@ -247,7 +247,7 @@ export default class CardiacArrestMGH extends React.Component {
                       width: '36%',
                       paddingTop: Dimensions.get('window').width/150,
                       paddingLeft: Dimensions.get('window').width/100,
-                      height: '75%'
+                      height: '55%'
                     }}>
                       <View style={{alignItems: 'center',  marginTop: Dimensions.get('window').height/200, marginBottom: Dimensions.get('window').height/200 }}>
                         <Text style={{fontWeight: 'bold', fontSize: Dimensions.get('window').width/26}}>CPR 2 min</Text>
@@ -331,6 +331,20 @@ export default class CardiacArrestMGH extends React.Component {
                         </TouchableOpacity>
                         </View>
 
+
+
+                        <View style={{flexDirection: 'row'}}>
+                              <Text style={{
+                                  marginRight: Dimensions.get('window').width/90,
+                                  marginTop: Dimensions.get('window').height/140, 
+                                  fontSize: Dimensions.get('window').height/42,}}>{`\u2022`}
+                              </Text>
+
+                              <Text style={{
+                                marginTop: Dimensions.get('window').height/80, 
+                                fontSize: Dimensions.get('window').width/27,}}>Consider appropriateness of continued resuscitation
+                              </Text>
+                        </View>
                       </View>
                     </View>
             </View>
