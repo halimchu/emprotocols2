@@ -215,8 +215,8 @@ export default class CardiacArrestCOVIDMGH extends React.Component {
   iPhoneDevices () {
     return (
       <Image
-        source={require('../../../../../assets/images/CA_COVID_iPhone_ACLS_4000x4000.png')}
-        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').width * 2.05 }}
+        source={require('../../../../../assets/images/MGH_CA_COVID_4000x4000.png')}
+        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').width * 2.15 }}
       />
     )
   }

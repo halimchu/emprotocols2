@@ -7,7 +7,7 @@ const Component = (props) => {
   function border () {
     if ( props.buttonTitle === 'Doses/Details' && props.title==='postCardiac') {
       return styles.buttonWithoutBottomBorder
-    } else if (props.buttonTitle === 'Reversible Causes' || props.buttonTitle === 'Doses/Details') {
+    } else if (props.buttonTitle === "H's and T's" || props.buttonTitle === 'Doses/Details') {
       return styles.buttonWithBottomBorder
     } else if (!props.hidden) {
       return styles.buttonWithoutBottomBorder
@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
   customBtnText: {
     fontWeight: '600',
     color: '#303333',
+    marginRight: Dimensions.get('window').width/5,
   },
   button: {
     borderWidth: 1,

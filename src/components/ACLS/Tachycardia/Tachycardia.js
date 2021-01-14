@@ -1,8 +1,8 @@
 import React, {Fragment} from "react";
 import { Image, Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView,  TouchableWithoutFeedback} from "react-native";
 import Icon from 'react-native-vector-icons/Ionicons' 
-import { ThemeProvider, Button, Divider } from 'react-native-elements'
-import DosesDetails from './DosesDetails'
+import {  Divider } from 'react-native-elements'
+import DosesDetailsTachycardia from './DosesDetailsTachycardia'
 import Component from '../Component'
 import { generateNavigationOptions } from '../../../../utils/header'
 
@@ -82,7 +82,7 @@ export default class Tachycardia extends React.Component {
     return (
       <Image
         source={require('../../../../assets/images/Tachycardia_iPhone_4000x4000.png')}
-        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').width * 1.42 }}
+        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').width * 1.68 }}
       />
     )
   } 
@@ -104,8 +104,7 @@ export default class Tachycardia extends React.Component {
           <View styles={styles.top}>
             <Text style={styles.titleFirstLine}>Tachycardia with a Pulse</Text>
             <Divider style={styles.divider} />
-            {/* <Text>{Dimensions.get('window').height}</Text>
-            <Text>{Dimensions.get('window').width}</Text> */}
+
             
           </View>
 
@@ -120,7 +119,7 @@ export default class Tachycardia extends React.Component {
                 goToNextComponent={this.goToComponentTwo} 
                 toggle={this.onPressSynchronizedCardioversionHidden} 
                 hidden = {this.state.synchronizedCardioversionHidden}
-                component={<DosesDetails />}
+                component={<DosesDetailsTachycardia />}
                 buttonTitle='Doses/Details'
                 scrollToTop={this.scrollToTop}
               />

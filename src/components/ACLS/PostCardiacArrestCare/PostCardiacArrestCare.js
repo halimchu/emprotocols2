@@ -1,10 +1,10 @@
 import React from 'react'
 import { Image, Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons' 
-import { Button, Divider } from 'react-native-elements'
+import { Divider } from 'react-native-elements'
 import Component from './../Component'
 import CardiacArrestReversibleCauses from '../CardiacArrest/cardiacArrestReversibleCauses'
-import DosesDetails from './DosesDetails'
+import InitialStabilizationPhase from './InitialStabilizationPhase'
+import ContinuedManagement from './ContinuedManagement'
 import { generateNavigationOptions } from '../../../../utils/header'
 
 export default class PostCardiacArrestCare extends React.Component {
@@ -26,6 +26,7 @@ export default class PostCardiacArrestCare extends React.Component {
       reversibleCausesView: 0,
       dosesDetailsView: 0,
 
+      initialStabilizationPhaseHidden: true, 
       reversibleCausesHidden: true,
       dosesDetailsHidden: true,
     }
@@ -47,14 +48,26 @@ export default class PostCardiacArrestCare extends React.Component {
     })
   } 
 
-
+  onPressInitialStabilizationPhaseHidden = () => {
+    this.setState({ 
+      initialStabilizationPhaseHidden: !this.state.initialStabilizationPhaseHidden,
+      reversibleCausesHidden: true,
+      dosesDetailsHidden: true
+    })
+  }
   onPressReversibleCausesHidden = () => {
-    this.setState({ reversibleCausesHidden: !this.state.reversibleCausesHidden})
-    this.setState({ dosesDetailsHidden: true})
+    this.setState({ 
+      initialStabilizationPhaseHidden: true,
+      reversibleCausesHidden: !this.state.reversibleCausesHidden,
+      dosesDetailsHidden: true
+    })
   }
   onPressDosesDetailsHidden = () => {
-    this.setState({ reversibleCausesHidden: true})
-    this.setState({ dosesDetailsHidden: !this.state.dosesDetailsHidden})
+    this.setState({ 
+      initialStabilizationPhaseHidden: true,
+      reversibleCausesHidden: true,
+      dosesDetailsHidden: !this.state.dosesDetailsHidden
+    })
   }
 
 
@@ -71,7 +84,7 @@ export default class PostCardiacArrestCare extends React.Component {
     return (
       <Image
         source={require('../../../../assets/images/PostCardiac_iPhone_4000x4000.png')}
-        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').width * 1.44 }}
+        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').width * 1.75 }}
       />
     )
   }
@@ -101,18 +114,15 @@ export default class PostCardiacArrestCare extends React.Component {
             {this.iPhoneDevices()}  
           </View>
 
-          {/* <View style={{marginBottom: Dimensions.get('window').height/50}}>
-
-          </View> */}
 
           <View style={{ alignItems: 'center', marginTop: Dimensions.get('window').height/80 }} onLayout={this.measureParentView}>
               <View onLayout={this.measureReversibleCausesView}>
                 <Component 
                   goToNextComponent={this.goToComponentTwo} 
-                  toggle={this.onPressReversibleCausesHidden} 
-                  hidden = {this.state.reversibleCausesHidden}
-                  component={<CardiacArrestReversibleCauses />}
-                  buttonTitle='Reversible Causes'
+                  toggle={this.onPressInitialStabilizationPhaseHidden} 
+                  hidden = {this.state.initialStabilizationPhaseHidden}
+                  component={<InitialStabilizationPhase />}
+                  buttonTitle='Initial Stabilization Phase'
                 />
               
               </View>
@@ -124,8 +134,18 @@ export default class PostCardiacArrestCare extends React.Component {
               goToNextComponent={this.goToEnd} 
               toggle={this.onPressDosesDetailsHidden} 
               hidden = {this.state.dosesDetailsHidden}
-              component={<DosesDetails />}
-              buttonTitle='Doses/Details'
+              component={<ContinuedManagement />}
+              buttonTitle='Continued Management and Additional Emergent Activities'
+            />
+          </View>
+
+          <View onLayout={this.measureDosesDetailsView}>
+            <Component
+              goToNextComponent={this.goToEnd} 
+              toggle={this.onPressReversibleCausesHidden} 
+              hidden = {this.state.reversibleCausesHidden}
+              component={<CardiacArrestReversibleCauses />}
+              buttonTitle="H's and T's"
             />
           </View>
 

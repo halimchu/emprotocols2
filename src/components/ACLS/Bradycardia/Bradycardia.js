@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { Button, Divider } from 'react-native-elements'
 import ComponentFive from '../../ComponentFive'
 import Component from '../Component'
-import DosesDetails from './DosesDetails'
+import DosesDetailsBradycardia from './DosesDetailsBradycardia'
 import LinearGradient from 'react-native-linear-gradient' 
 import { generateNavigationOptions } from '../../../../utils/header'
 
@@ -104,7 +104,7 @@ export default class BradyCardia extends React.Component {
               goToNextComponent={this.goToEnd} 
               toggle={this.onPressDosesDetailsHidden} 
               hidden = {this.state.dosesDetailsHidden}
-              component={<DosesDetails />}
+              component={<DosesDetailsBradycardia />}
               buttonTitle='Doses/Details'
               scrollToTop={this.scrollToTop}
             />
