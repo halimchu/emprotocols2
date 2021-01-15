@@ -74,7 +74,8 @@ export default class COVIDDispoMGH extends React.Component {
                 <View style={{ marginLeft: 1.5, marginTop: 1.5}}>
                     <TouchableOpacity 
                       style={styles.customBtnBG}     
-                      onPress={() => {this.onPressButtonHidden()}}>
+                      // onPress={() => {this.onPressButtonHidden()}}>
+                      onPress={ () => { Linking.openURL('https://www.dropbox.com/s/lq9qt6hzb2uwzzq/Homelessness_MGH.pdf?dl=0')}}>
                     <Text style={styles.customBtnTextSingleLine}>Homelessness</Text>
                     </TouchableOpacity>
                 </View>
