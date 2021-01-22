@@ -305,8 +305,8 @@ export default class ADBWH extends React.Component {
               }}>
                 <Text style={{textAlign: 'center'}}>
                   <Text style={{fontWeight: 'bold', fontSize: Dimensions.get('window').height/39,}}>Concern for Acute Aortic Dissection or AAA Rupture? </Text>
-                  <Text style={{fontSize: Dimensions.get('window').height/43}}>(Includes expected transfers and patients newly diagnosed in the ED)</Text>
                 </Text>
+                  <Text style={{fontSize: Dimensions.get('window').height/43}}>(For patients newly diagnosed in the ED)</Text>
                 
               </View>
 

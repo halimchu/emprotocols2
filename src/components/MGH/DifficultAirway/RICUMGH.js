@@ -199,7 +199,7 @@ export default class RICUMGH extends React.Component {
                       <Text> state: </Text>
                       <Text style={{
                         fontStyle: 'italic',
-                      }}>"Request surgical airway at [ED location]."</Text>
+                      }}>"Emergency surgical airway at [ED location]."</Text>
             </Text>
           </View>
  
