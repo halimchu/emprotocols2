@@ -3,7 +3,7 @@ import { Image, View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Dimensio
 import LinearGradient from 'react-native-linear-gradient'
 import { generateNavigationOptions } from '../../../utils/header'
 
-export default class BWHHome extends React.Component {
+export default class BWHHome extends React.Component { 
 
   static navigationOptions (props) {
     return generateNavigationOptions(props.navigation, ['#146EB5', '#1D74B7', '#277ABB'], 'BWH', 'arrow-back-ios') 
@@ -22,8 +22,6 @@ export default class BWHHome extends React.Component {
   render() { 
     return (  
         <SafeAreaView style={styles.container}>
-
-  
   
           <View style={styles.top}>
               <Image
@@ -31,10 +29,6 @@ export default class BWHHome extends React.Component {
                   style={styles.image}
               />
           </View>
-
-
-            {/* <Text>{Dimensions.get('window').width}</Text>
-            <Text>{Dimensions.get('window').height}</Text> */}
 
           <View style={styles.bottom}>
 

@@ -11,7 +11,7 @@ export default class ACLSHome extends React.Component {
       'BWH',
       'arrow-back-ios'
     ) 
-  }
+  } 
  
 
 
@@ -27,10 +27,10 @@ export default class ACLSHome extends React.Component {
 
 
           <View style={styles.bottom}>
-                  <View style={styles.margin}>
+                  <View style={styles.margin}> 
                             <TouchableOpacity
                               style={styles.customBtnBG} 
-                              onPress={() => this.props.navigation.navigate('CardiacArrestCOVID')}>
+                              onPress={() => this.props.navigation.navigate('CardiacArrestCOVIDBWH')}>
                               <Text style={styles.customBtnTextFirstLine}>Cardiac Arrest</Text>
                               <Text style={styles.customBtnTextSecondLineCOVID}>COVID-19</Text>
                             </TouchableOpacity>    
@@ -38,7 +38,7 @@ export default class ACLSHome extends React.Component {
                   <View style={styles.margin}>
                             <TouchableOpacity
                               style={styles.customBtnBG} 
-                              onPress={() => this.props.navigation.navigate('CardiacArrest')}>
+                              onPress={() => this.props.navigation.navigate('CardiacArrestBWH')}>
                               <Text style={styles.customBtnTextFirstLine}>Cardiac</Text>
                               <Text style={styles.customBtnTextSecondLine}>Arrest</Text>
                             </TouchableOpacity>        

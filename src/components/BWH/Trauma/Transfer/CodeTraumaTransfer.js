@@ -17,7 +17,7 @@ export default class CodeTraumaTransfer extends React.Component {
   
   render() { 
     return (  
-      <View>
+      <View style={styles.container}>
             <View style={{marginRight: Dimensions.get('window').width/12 }}>
                 {this.state.dataOne.map((item) => (
                   <View key={item} style={ styles.bulletPoints }> 
@@ -53,6 +53,10 @@ export default class CodeTraumaTransfer extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginTop: Dimensions.get('window').height/100,
+    marginBottom: Dimensions.get('window').height/100
+  },
   top: {
     height: '10%',
     // backgroundColor: 'yellow'

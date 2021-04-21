@@ -8,7 +8,7 @@ import DosesDetailsBradycardia from './DosesDetailsBradycardia'
 import LinearGradient from 'react-native-linear-gradient' 
 import { generateNavigationOptions } from '../../../../utils/header'
 
-export default class BradyCardia extends React.Component {
+export default class Bradycardia extends React.Component {
   static navigationOptions (props) {
     return generateNavigationOptions(
       props.navigation, 

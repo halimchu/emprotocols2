@@ -12,7 +12,7 @@ import TimerDashboardBWH from '../TimerDashboard/BWH/TimerDashboardBWH'
 import TimerDashboardBottomBWH from '../TimerDashboard/BWH/TimerDashboardBottomBWH'
 import { generateNavigationOptions } from '../../../../../utils/header'
 
-export default class CardiacArrest extends React.Component {
+export default class CardiacArrestBWH extends React.Component { 
   static navigationOptions (props) {
     return generateNavigationOptions(
       props.navigation, 

@@ -30,7 +30,7 @@ export default class CodeAlphaTransfer extends React.Component {
   
   render() { 
     return (  
-      <View>
+      <View style={styles.container}>
 
                 <View style={ styles.bulletPoints }> 
                   <View style={{ flexDirection: 'row' }}>
@@ -119,6 +119,10 @@ export default class CodeAlphaTransfer extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginTop: Dimensions.get('window').height/100,
+    marginBottom: Dimensions.get('window').height/100
+  },
   top: {
     height: '10%',
     // backgroundColor: 'yellow'

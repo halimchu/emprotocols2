@@ -231,7 +231,7 @@ export default class CardiacArrestMGH extends React.Component {
       <ScrollView 
         maximumZoomScale={2.5}
         ref={(scroller) => {this.scroller = scroller}}
-        onContentSizeChange={this.onContentSizeChange}
+        onContentSizeChange={this.onContentSizeChange} 
       >
 
         {this.allIphoneDevices()} 

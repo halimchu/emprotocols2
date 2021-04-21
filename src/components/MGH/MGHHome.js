@@ -1,9 +1,9 @@
 import React from 'react'
 import { Image, View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
-import { generateNavigationOptions } from '../../../utils/header'
+import { generateNavigationOptions } from '../../../utils/header' 
 
-
+ 
 export default class MGHHome extends React.Component {
 
   static navigationOptions (props) {
@@ -22,7 +22,7 @@ export default class MGHHome extends React.Component {
 
      
 
-            <View style={styles.bottom}>
+            <View style={styles.bottom}> 
               <View style={{ marginLeft: Dimensions.get('window').width/13, }}>
                         <TouchableOpacity
                           style={styles.customBtnBG} 

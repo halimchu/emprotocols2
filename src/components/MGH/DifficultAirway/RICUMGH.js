@@ -6,9 +6,9 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import { generateNavigationOptions } from '../../../../utils/header'
 
 export default class RICUMGH extends React.Component {
-  static navigationOptions (props) {
-    return generateNavigationOptions(props.navigation, ['#02bfdb', '#00c0dc', '#02c1dd'], 'MGH', 'arrow-back-ios') 
-  }
+  // static navigationOptions (props) {
+  //   return generateNavigationOptions(props.navigation, ['#02bfdb', '#00c0dc', '#02c1dd'], 'MGH', 'arrow-back-ios') 
+  // }
    
   state = {
     data: [
@@ -88,11 +88,6 @@ export default class RICUMGH extends React.Component {
 
 
   render() { 
-    console.log('Total Height:', this.state.totalHeight)
-    console.log('Button Height:', this.state.buttonHeight)
-    console.log('surgical airway view', this.state.surgicalAirwayView)
-
-
     return (  
       <SafeAreaView style={styles.container}>
          <ScrollView 
